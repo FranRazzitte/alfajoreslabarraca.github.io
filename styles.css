@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'MaterialIcons';
+    src: url('./MaterialIcons-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  } 
+
 body {
     background-color: #002907;
     font-family: 'Comfortaa', 'Noto Emoji', cursive;
@@ -42,6 +49,13 @@ img {
 p {
     font-size: 16px;
     margin-bottom: 20px;
+    text-align: center;
+}
+
+.emojis {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
