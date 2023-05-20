@@ -90,12 +90,35 @@ footer {
 
 @media screen and (max-width: 480px) {
     h1 {
-      font-size: 24px;
+        font-size: 24px;
+    }
+    h2 {
+        font-size: 18px;
+    }
+    img {
+        height: 20%;
+    }
+    .emojis {
+        text-align: center;
+        flex-direction: column;
     }
     p {
-      font-size: 14px;
+        font-size: 14px;
+    }
+    span {
+        font-size: 14px;
+    }
+    .whatsapp {
+        padding: 10px;
+        font-size: 35px;
+    }
+    .linkCasa {
+        font-size: 14px;
+    }
+    .redes {
+        font-size: 25px;
     }
     footer {
-      font-size: 12px;
+        font-size: 12px;
     }
   }
