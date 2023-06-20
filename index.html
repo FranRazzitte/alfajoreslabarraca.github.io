@@ -1,39 +1,364 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+	<!-- Este página web fue creada por @franrazzitte -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Alfajores, Alfajores Artesanales, Barracas, Emprendimiento">
+	<meta name="description" content="Explora la tienda oficial de los Alfajores la Barraca.">
+	<meta name="author" content="Francisco Razzitte">
+	<link rel="stylesheet" href="./styles.css">
+	<link rel="stylesheet" href="./css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+	<link rel="icon" value="64x64" href="./logo.png">
+	<title>Alfajores La Barraca</title>
+</head>
+<body>
     <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta http-equiv="refresh" content="120">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="Alfajores, Alfajores Artesanales, Barracas, Emprendimiento">
-        <meta name="description" content="Explora la tienda oficial de los Alfajores la Barraca.">
-        <meta name="author" content="Francisco Razzitte">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="icon" value="64x64" href="logo.png">
-        <title>Alfajores La Barraca</title>
+        <nav class="navbar sticky-top bg-body-tertiary">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="./index.html">
+                <img src="./imagenes/LogoGrande.png" alt="Logo" class="d-inline-block align-text-center" style="width: 55px; height: auto;">
+                Alfajores la Barraca
+              </a>
+              <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btnNav" href="./index.html"><span class="material-symbols-outlined">home</span></a>
+                <a class="btnNav disabled" href="#"><span class="material-symbols-outlined">info</span></a>
+				<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">contact_support</span></a>
+				<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">face</span></a>
+              </div>-->
+            </div>
+          </nav>
     </head>
-  <body>
-    <div class="container">
-      <img src="./imagenes/LogoGrande.png" alt="Alfajores La Barraca">
-      <h1>Alfajores la Barraca</h1>
-      <h2>Sitio en construcción</h2>
-      <div class="emojis"><i class='bx bxs-heart'></i><p>Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor</p><i class='bx bxs-heart'></i></div>
-      <p>Visita nuestro catálogo en WhatsApp:</p>
-      <a href="https://wa.me/c/5491120518253" class="whatsapp"><i class='bx bxl-whatsapp' ></i></a>
-    </div>
-    <footer>
-        <p>Siguenos:</p>
-        <div class="redes">
-            <a href="https://www.instagram.com/alfajoreslabarraca1/"><i class='bx bxl-instagram-alt' ></i></a>
-            <a href="https://www.facebook.com/alfajoreslabarraca1"><i class='bx bxl-facebook-circle' ></i></a>
-        </div>
-    </footer>
-  </body>
+	<main>
+		<div>
+			<h4 class="text-center" style="padding-top: 20px;">Nuestros Sabores</h4>
+			<section class="container d-flex justify-content-center flex-wrap">
+				<div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+						<img src="./imagenes/sabores/intenso.png" alt="Alfajor" class="img-fluid rounded-start img">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Chocolate Intenso</h5>
+						<p class="card-text descripcion">Exquisito alfajor de chocolate negro donde predomina el cacao amargo en la galletita, haciéndolo especial por su intenso sabor a chocolate.  Relleno con dulce de leche.  Peso neto 70grs.</p>
+						<p class="precio">$350</p>
+						<a href="https://wa.me/p/2943239592391020/5491120518253" class="linkCatalogo"></a>
+						<p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+				</div>	
+				<div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+						<img src="./imagenes/sabores/suave.png" alt="Alfajor" class="img-fluid rounded-start img">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Chocolate Suave</h5>
+						<p class="card-text descripcion">Alfajor negro bañado con chocolate semiamargo, relleno con mucho dulce de leche. La característica principal de este alfajor esta en la galletita donde tiene una delicada cantidad de cacao amargo. Peso neto 70grs.</p>
+						<p class="precio">$350</p>
+						<a href="https://wa.me/p/3772179199521813/5491120518253" class="linkCatalogo"></a>
+						<p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+						<img src="./imagenes/sabores/blanco.png" alt="Alfajor" class="img-fluid rounded-start img">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Chocolate Blanco</h5>
+						<p class="card-text descripcion">Riquísimo alfajor, con un excelente baño de chocolate blanco con dos galletita con un especial sabor a vainilla relleno con dulce de leche. Peso neto 70grs.</p>
+						<p class="precio">$350</p>
+						<a href="https://wa.me/p/2648568928598208/5491120518253" class="linkCatalogo"></a>
+						<p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+					<img class="img-fluid rounded-start img" src="./imagenes/sabores/leche.png" alt="Chocolate con Leche">
+					</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Chocolate con Leche</h5>
+					<p class="card-text descripcion">El chocolate con leche al tener menos cacao en su composición, se diferencia por ser más dulce que el chocolate negro. Su relleno de dulce de leche le da un sabor especial a éste riquísimo alfajor. Peso Neto 70grs.</p>
+					<p class="precio">$350</p>
+					<a href="https://wa.me/p/2867341769987819/5491120518253" class="linkCatalogo"></a>
+					<p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+				</div>
+				<div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena.png" alt="Maicena">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Maicena</h5>
+				  <p class="card-text descripcion">Clásico alfajor de Maicena. Relleno con mucho dulce de leche y decorado con coco rayado. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/3188162611217945/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+				<div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada.png" alt="Maicena Bañada Blanco">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Maicena Bañada Blanco</h5>
+				  <p class="card-text descripcion">Éste alfajor es la combinación perfecta del clásico alfajor de maicena con el agregado especial de un baño de chocolate blanco. Relleno con dulce de leche. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/4946660275375824/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada_negro.png" alt="Maicena Bañada Negro">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Maicena Bañada Negro</h5>
+				  <p class="card-text descripcion">Éste alfajor es la combinación perfecta del clásico alfajor de maicena con el agregado especial de un baño de chocolate semiamargo. Relleno con dulce de leche. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/3522782987738668/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena.png" alt="Avena">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Avena</h5>
+				  <p class="card-text descripcion">Deliciosooooooo!!!!! Cuando pruebes éste alfajor será un antes y un después!!! Seguramente lo vas a recomendar. Bañado con chocolate semiamargo y relleno con mucho dulce de leche. La avena en su interior lo hace, más saludable y le aporta un crocantito que lo hace especial!!!! Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/3174337869283824/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_nevada.png" alt="Avena Nevada">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Avena Nevada</h5>
+				  <p class="card-text descripcion">Alfajor de avena, en éste caso el baño de chocolate no está presente. Dos galletita de avena con cacao, relleno con dulce de leche y coco rayado decorando en su exterior. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/3040309089365303/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_frutal.png" alt="Avena Frutal">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Avena Frutal</h5>
+				  <p class="card-text descripcion">Para los que quieren disfrutar de un alfajor distinto, te presentamos una alternativa sin cobertura de chocolate. Dos galletita de avena con cacao y relleno con dulce de membrillo. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/3584773164969219/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/frutos_rojos.png" alt="Frutos Rojos">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Frutos Rojos</h5>
+				  <p class="card-text descripcion">Alfajor de Frutos Rojos (frutilla, arándanos, mora, frambuesa), es una mezcla de gustos y sensaciones increíbles!!!! El baño de chocolate semiamargo, las suaves galletitas sabor a vainilla con un toque de cacao les da a éste alfajor una combinación perfecta. Peso neto 70grs.</p>
+				  <p class="precio">$400</p>
+				  <a href="https://wa.me/p/5304282312977837/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_negro.png" alt="Membrillo Negro">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Membrillo Negro</h5>
+				  <p class="card-text descripcion">Excelente alfajor de fruta. Para los más exigente, éste alfajor se destaca por su gran cantidad de dulce de membrillo, bañado con chocolate semiamargo. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/5071317579609956/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_blanco.png" alt="Membrillo Blanco">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Membrillo Blanco</h5>
+				  <p class="card-text descripcion">Excelente alfajor de fruta. Otra alternativa de éste alfajor de membrillo, es que la diferencia en este caso es con chocolate blanco. Su increíble sabor deja una sensación suave en el paladar. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/5307116175973129/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/integral.png" alt="Integral">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Integral</h5>
+				  <p class="card-text descripcion">100% Integral!!!! Dos galletitas con harina integral y cacao amargo, relleno con dulce de leche bañado con chocolate semiamargo. Peso neto 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/5425917737421250/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  </div>
+			</section>			
+		</div>
+		<!-- Ventana -->
+		<section>
+			<div class="modal fade show" id="ventana">
+			  <div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+				  <div class="modal-body p-4">
+					<div class="row">
+					  <div class="col-xl-5 col-lg-6 mb-4 mb-lg-0 modal-dialog-centered">
+						<img class="w-100 rounded-3 shadow-4 mb-4" id="imgProducto" src="">
+					  </div>
+					  <div class="col-xl-7 col-lg-6">
+						<div class="d-flex justify-content-between align-items-center mb-3">
+						  <h4 class="fw-bold mb-0" id="tituloProducto"></h4>
+						  <button type="button" class="btn-close" id="cerrar-ventana"></button>
+						</div>
+						<p class="mb-4"><span class="lead fw-normal" id="precio"></span> <span class="small text-muted">ARS</span></p>
+						<p class="fw-bold">Descripción</p>
+						<p class="mb-4" id="descProducto"></p>
+						<p class="mb-4 small">Hace tú pedido con 72hrs de anticipación.<br>Podés retirar tu pedido personalmente con previo aviso.<br>Envíos sin cargos adicionales los días sábados para Barracas, La Boca y San Telmo.<br>Medios de pago: Efectivo, Transferencia Bancaría o Mercado Pago.<br>Los pedidos se realizan mediante WhatsApp.</p>
+						<a href="" id="linkProducto" class="btn btn-block btn-primary mb-3">Ver en Catálago</a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+		<!-- Btn flotante -->
+		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
+	</main>
+	<footer class="text-center text-lg-start bg-light text-muted">
+		<section class="">
+		<div class="container text-center text-md-start mt-5">
+			<div class="row mt-3">
+			<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+				<a href="./index.html"><img src="./imagenes/LogoGrande.png" alt="Alfajores la Barraca" class="rounded mx-auto d-block" style="width: 150px"></a>
+			</div>
+			<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+				<h6 class="text-uppercase fw-bold mb-4">Links</h6>
+				<p><a href="https://wa.me/c/5491120518253" class="text-reset">Catálago WhatsApp</a></p>
+				<p><a href="https://wa.me/5491120518253" class="text-reset">+54 9 11 2051-8253</a></p>
+				<!--<p><a href="#!" class="text-reset">Sobre Nosotros</a></p>
+				<p><a href="#!" class="text-reset">Preguntas Frecuentes</a></p>-->
+			</div>
+			<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 btnIcon">
+				<h6 class="text-uppercase fw-bold mb-4">Contactos</h6>
+				<p><span class="material-symbols-outlined">location_on</span> Buenos Aires, Argentina</p>
+				<p><span class="material-symbols-outlined">mail</span> alfajoreslabarraca@gmail.com</p>
+				<p><a href="https://www.instagram.com/alfajoreslabarraca1/" class="text-reset text-decoration-none"><i class='bx bxl-instagram'></i> Instagram</a></p>
+				<p><a href="https://www.facebook.com/alfajoreslabarraca1" class="text-reset text-decoration-none"><i class='bx bxl-facebook'></i> Facebook</a></p>
+			</div>
+			</div>
+		</div>
+		</section>
+		<div class="text-center p-4">
+			<i class='bx bxs-heart' style="color: red;"></i> Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor <i class='bx bxs-heart' style="color: red;"></i>
+			<br>
+			Hecho con <i class='bx bxs-heart' style="color: red;"></i> por <a href="https://www.instagram.com/franrazzitte/" class="text-reset">FranRazzitte</a>
+		</div>
+	</footer>
+	<!-- Scripts -->
+	<script src="./js/abrirProducto.js"></script>
+	<script src="./js/desplazamientoInicio.js"></script>
+</body>
 </html>
