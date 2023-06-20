@@ -1,7 +1,7 @@
 # alfajoreslabarraca.github.io
 <h1 align="center"> Alfajores la Barraca </h1>
 <p align="center">
-   <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-red">
+   <img src="https://img.shields.io/badge/STATUS-LANZAMIENTO-red">
    </p>
 <p align="center">
    <img src="https://img.shields.io/badge/VERSION-1.0-red">
