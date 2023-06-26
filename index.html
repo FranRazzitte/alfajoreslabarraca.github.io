@@ -39,10 +39,33 @@
           </nav>
     </head>
 	<main>
-		<div>
+		<div style="padding: 25px; display: none;" id="noti">
+			<div class="card" style="background-color: rgb(255, 249, 232);">
+			<div class="card-header d-flex justify-content-between align-items-center">
+				<h5 class="m-0">Próxima feria</h5>
+				<button type="button" class="btn-close" id="cerrar-noti"></button>
+			</div>
+			<div class="card-body">
+			  <h5 class="card-title">
+				El próximo 
+				<span id="dia" style="font-weight: bold;"></span>
+				<span style="font-weight: bold;">de </span>
+				<span class="text-lowercase" id="mes" style="font-weight: bold;"></span>
+				nos encontramos en 
+				<span id="lugar" style="font-weight: bold;"></span>
+				desde las 
+				<span id="horaInicial" style="font-weight: bold;"></span><span style="font-weight: bold;">hs </span>
+				hasta las 
+				<span id="horaFinal" style="font-weight: bold;"></span><span style="font-weight: bold;">hs </span>
+				en 
+				<span id="organizador" style="font-weight: bold;"></span>.
+			  </h5>
+			</div>
+		  </div>
+		</div>
 			<h4 class="text-center" style="padding-top: 20px;">Nuestros Sabores</h4>
 			<section class="container d-flex justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/intenso.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -60,7 +83,7 @@
 					</div>
 					</div>
 				</div>	
-				<div class="card mb-3 card-style tarjeta">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/suave.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -78,7 +101,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/blanco.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -96,7 +119,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 					<img class="img-fluid rounded-start img" src="./imagenes/sabores/leche.png" alt="Chocolate con Leche">
@@ -114,7 +137,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena.png" alt="Maicena">
@@ -132,7 +155,7 @@
 					</div>
 					</div>
 			  </div>
-				<div class="card mb-3 card-style tarjeta">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada.png" alt="Maicena Bañada Blanco">
@@ -150,7 +173,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada_negro.png" alt="Maicena Bañada Negro">
@@ -168,7 +191,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena.png" alt="Avena">
@@ -186,7 +209,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_nevada.png" alt="Avena Nevada">
@@ -204,7 +227,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_frutal.png" alt="Avena Frutal">
@@ -222,7 +245,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/frutos_rojos.png" alt="Frutos Rojos">
@@ -240,7 +263,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_negro.png" alt="Membrillo Negro">
@@ -258,7 +281,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_blanco.png" alt="Membrillo Blanco">
@@ -276,7 +299,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta">
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/integral.png" alt="Integral">
@@ -327,7 +350,7 @@
 		<!-- Btn flotante -->
 		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
 	</main>
-	<footer class="text-center text-lg-start bg-light text-muted">
+	<footer class="text-center text-lg-start bg-light">
 		<section class="">
 		<div class="container text-center text-md-start mt-5">
 			<div class="row mt-3">
@@ -343,16 +366,16 @@
 			</div>
 			<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 btnIcon">
 				<h6 class="text-uppercase fw-bold mb-4">Contactos</h6>
-				<p><span class="material-symbols-outlined">location_on</span> Buenos Aires, Argentina</p>
-				<p><span class="material-symbols-outlined">mail</span> alfajoreslabarraca@gmail.com</p>
-				<p><a href="https://www.instagram.com/alfajoreslabarraca1/" class="text-reset text-decoration-none"><i class='bx bxl-instagram'></i> Instagram</a></p>
-				<p><a href="https://www.facebook.com/alfajoreslabarraca1" class="text-reset text-decoration-none"><i class='bx bxl-facebook'></i> Facebook</a></p>
+				<p><span class="material-symbols-outlined fa-fw">location_on</span> Buenos Aires, Argentina</p>
+				<p><span class="material-symbols-outlined fa-fw">mail</span> alfajoreslabarraca@gmail.com</p>
+				<p><a href="https://www.instagram.com/alfajoreslabarraca1/" class="text-reset text-decoration-none"><i class='bx bxl-instagram fa-fw'></i> @alfajoreslabarraca1</a></p>
+				<p><a href="https://www.facebook.com/alfajoreslabarraca1" class="text-reset text-decoration-none"><i class='bx bxl-facebook fa-fw'></i> @alfajoreslabarraca1</a></p>
 			</div>
 			</div>
 		</div>
 		</section>
-		<div class="text-center p-4">
-			<i class='bx bxs-heart' style="color: red;"></i> Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor <i class='bx bxs-heart' style="color: red;"></i>
+		<div class="text-center p-4 corazon">
+			<i class='bx bxs-heart eslogan' style="color: red;"></i> Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor <i class='bx bxs-heart eslogan' style="color: red;"></i>
 			<br>
 			Hecho con <i class='bx bxs-heart' style="color: red;"></i> por <a href="https://www.instagram.com/franrazzitte/" class="text-reset">FranRazzitte</a>
 		</div>
@@ -360,5 +383,6 @@
 	<!-- Scripts -->
 	<script src="./js/abrirProducto.js"></script>
 	<script src="./js/desplazamientoInicio.js"></script>
+	<script src="./js/eventos.js"></script>
 </body>
 </html>

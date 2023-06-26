@@ -1,7 +1,7 @@
 const botonFlotante = document.getElementById('btn_flotante');
 
 botonFlotante.addEventListener('click', () => {
-  scrollToTop(1000);
+  scrollToTop(500);
 });
 
 function scrollToTop(duration) {

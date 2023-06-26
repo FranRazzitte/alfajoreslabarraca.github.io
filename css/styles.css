@@ -70,7 +70,7 @@
   right: 30px; 
   width: 50px;
   height: 50px;
-  background-color: #ffffff; 
+  background-color: #ffffffb7; 
   color: black;
   border-color: transparent; 
   text-decoration: none;
@@ -102,6 +102,34 @@
 }
 
 @media screen and (max-width: 600px) {
+  .card-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  .btn_flotante {
+    width: 40px;
+    height: 40px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.527);
+  }
+  .btn_flotante i {
+    font-size: 30px;
+  }
+  .btn_flotante:hover {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.527);
+  }
+  .corazon i.eslogan {
+    display: none;
+  }
+}
+@media screen and (max-height: 600px) {
+  .card-style {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
   .btn_flotante {
     width: 40px;
     height: 40px;

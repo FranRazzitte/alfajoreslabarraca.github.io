@@ -742,8 +742,16 @@ progress {
 }
 
 @media (max-width: 768px) {
-  .img-fluid {
-    display: none;
+  .col-md-8 {
+    background-color: rgba(0, 0, 0, 0.507);
+    color: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: var(--bs-card-img-overlay-padding);
+    border-radius: var(--bs-card-inner-border-radius);
   }
 }
 @media (min-width: 576px) {
@@ -4369,7 +4377,7 @@ textarea.form-control-lg {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  height: 230px; /*var(--bs-card-height)*/
+  /*height: 230px; /*var(--bs-card-height)*/
   color: var(--bs-body-color);
   word-wrap: break-word;
   background-color: var(--bs-card-bg);
@@ -8554,7 +8562,7 @@ textarea.form-control-lg {
 
 .text-muted {
   --bs-text-opacity: 1;
-  color: var(--bs-secondary-color) !important;
+  color: #212529;
 }
 
 .text-black-50 {
@@ -9188,6 +9196,12 @@ textarea.form-control-lg {
 
 .z-3 {
   z-index: 3 !important;
+}
+
+@media (max-width: 768px) {
+  .text-muted {
+    color: white
+  }
 }
 
 @media (min-width: 576px) {
