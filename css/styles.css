@@ -38,13 +38,29 @@
   max-height: 300px;
   cursor: pointer;
   overflow: hidden;
+  display: none;
+}
+.card-style:nth-child(-n+4) {
+  display: flex;
+}
+.filter {
+  margin: 10px;
+  max-width: 200px;
+  max-height: 200px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
-.card-style img {
+.card-style img,
+.filter img {
   object-fit: cover;
 }
 
-.card-style:hover {
+.card-style:hover,
+.filter:hover {
   transition: 0.2s;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.322);
 }
@@ -59,7 +75,6 @@
   border-bottom-color: rgba(255, 255, 255, 0.432);
   height: 100px;
   text-overflow: ellipsis;
-  
 }
 
 /* Boton flotante */
@@ -103,7 +118,7 @@
 
 @media screen and (max-width: 600px) {
   .card-style {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;
@@ -125,7 +140,7 @@
 }
 @media screen and (max-height: 600px) {
   .card-style {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     overflow: hidden;

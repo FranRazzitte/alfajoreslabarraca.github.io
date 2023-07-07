@@ -10,13 +10,13 @@ const elementosTarjeta = document.getElementsByClassName('tarjeta');
 for (let i = 0; i < elementosTarjeta.length; i++) {
   elementosTarjeta[i].addEventListener('click', function() {
     const titulo = elementosTarjeta[i].querySelector('.titulo').textContent;
-    const descripcion = elementosTarjeta[i].querySelector('.descripcion').textContent;
+    const descripcion = elementosTarjeta[i].querySelector('.descripcion').innerHTML;
     const precio = elementosTarjeta[i].querySelector('.precio').textContent;
     const imagen = elementosTarjeta[i].querySelector('.img').src;
     const link = elementosTarjeta[i].querySelector('.linkCatalogo').href;
 
     tituloProducto.textContent = titulo;
-    descProducto.textContent = descripcion;
+    descProducto.innerHTML = descripcion;
     precioProducto.textContent = precio;
     imgProducto.src = imagen;
     linkProducto.href = link;
