@@ -23,10 +23,25 @@ for (let i = 0; i < elementosTarjeta.length; i++) {
 
     ventanaEmergente.style.display = 'block';
     body.style.overflow = 'hidden';
+
+    history.pushState({ ventanaEmergenteOpen: true }, '');
+
+    window.addEventListener('popstate', closeVentanaEmergente);
+    window.addEventListener('hashchange', closeVentanaEmergente);
   });
 }
 
 document.getElementById('cerrar-ventana').addEventListener('click', function() {
   ventanaEmergente.style.display = 'none';
   body.style.overflow = 'auto';
+
+  history.pushState({ ventanaEmergenteOpen: false }, '');
 });
+
+function closeVentanaEmergente() {
+  ventanaEmergente.style.display = 'none';
+  body.style.overflow = 'auto';
+
+  window.removeEventListener('popstate', closeVentanaEmergente);
+  window.removeEventListener('hashchange', closeVentanaEmergente);
+}
