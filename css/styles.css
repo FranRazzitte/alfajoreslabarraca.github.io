@@ -6,6 +6,39 @@
     'opsz' 40
   }
 
+.navDiv1 {
+  margin-bottom: 1rem;
+}
+
+.navDiv2 {
+  display: block;
+}
+
+.navDiv3 {
+  display: flex;
+}
+
+#menuOpenButton {
+	display: none; /* Oculta el botón en pantallas grandes */
+}
+
+/* Estilos para el menú lateral */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: -300px;
+	width: 300px;
+	height: 100vh;
+	background-color: #f8f9fa;
+	transition: left 0.3s ease;
+	z-index: 9999;
+}
+
+#sidebar.open {
+	left: 0;
+}
+
+
 .btnNav {
     padding: 15px 20px;
     text-decoration: none;
@@ -21,6 +54,10 @@
 .btnNav.disabled:hover {
     color: rgb(80, 79, 79);
     cursor: default;
+}
+
+.btnNav i {
+  font-size: 25px;
 }
 
 .btnIcon span, 
@@ -77,6 +114,40 @@
   text-overflow: ellipsis;
 }
 
+/* Buscador */
+.busqueda {
+  position: absolute;
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  border-color: #ccc;
+  border-radius: 10px;
+  display: none;
+}
+
+.busqueda.mostrar {
+  display: block;
+}
+
+.resultado,
+.resultado li {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.resultado img {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.resultado li:hover {
+  background-color: rgba(0, 0, 0, 0.116);
+}
+
 /* Boton flotante */
 .btn_flotante {
   transition: 0.3s;
@@ -117,6 +188,14 @@
 }
 
 @media screen and (max-width: 600px) {
+  .navDiv1 {
+    margin-bottom: 0px;
+  }
+  .navDiv2,
+  .navDiv3 {
+    display: none;
+    margin-top: 3%;
+  }
   .card-style {
     display: none;
     justify-content: center;
@@ -139,6 +218,13 @@
   }
 }
 @media screen and (max-height: 600px) {
+  .navDiv1 {
+    margin-bottom: 0px;
+  }
+  .navDiv2,
+  .navDiv3 {
+    display: none;
+  }
   .card-style {
     display: none;
     justify-content: center;

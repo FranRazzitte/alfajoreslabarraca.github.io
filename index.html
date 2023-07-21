@@ -22,50 +22,38 @@
 	<title>Alfajores La Barraca</title>
 </head>
 <body>
-    <!--<head class="mb-7">
+    <head class="mb-7">
 		<div class="navbar-sticky-top-responsive p-3 text-center bg-white border-bottom">
 			<div class="container">
-			  <div class="row">
-				<div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
-				  <a href="./index.html" class="d-inline-block align-text-center">
-					<img src="./imagenes/logo.png" width="55">
-					Alfajores la Barraca
-				  </a>
+				<div class="row">
+					<div class="col-md-4 d-flex justify-content-left justify-content-md-start mb-md-0 navDiv1" style="padding: 0px;">
+						<button class="btn" id="menuOpenButton" style="font-size: 25px;"><i class='bx bx-menu'></i></button>
+						<a href="./index.html" class="d-inline-block align-text-center">
+							<img src="./imagenes/logo.png" width="55">
+							Alfajores la Barraca
+						</a>
+					</div>
+					<div class="col-md-4 navDiv2" id="navDiv2">
+						<form class="d-flex h-100 input-group w-auto my-auto mb-3 mb-md-0">
+							<input id="buscar" autocomplete="off" type="search" class="form-control rounded" placeholder="Buscar...">
+							<span style="background-color: transparent; font-size: 22px;" class="input-group-text border-0 d-none d-lg-flex"><i class='bx bx-search-alt-2'></i></span>
+							<div class="busqueda" id="busqueda">
+								<ul class="list-group list-group-light resultado" id="resultado"></ul>	
+							</div>
+						</form>
+					</div>
+					<div class="col-md-4 justify-content-center justify-content-md-end align-items-center navDiv3">
+						<div class="d-flex">
+							<a class="btnNav" href="./index.html"><i class='bx bxs-home'></i></a>
+							<a class="btnNav" href="./html/nosotros.html"><i class='bx bx-info-circle'></i></a>
+							<a class="btnNav" href="./html/preguntas_frecuentes.html"><i class='bx bx-question-mark'></i></a>
+							<a class="btnNav disabled"><i class='bx bx-share-alt'></i></a>
+						</div>
+					</div>
 				</div>
-		
-				<div class="col-md-4">
-				  <form class="d-flex h-100 input-group w-auto my-auto mb-3 mb-md-0">
-					<input autocomplete="off" type="search" class="form-control rounded" placeholder="Buscar...">
-					<span style="background-color: transparent; font-size: 22px;" class="input-group-text border-0 d-none d-lg-flex"><i class='bx bx-search-alt-2'></i></span>
-				  </form>
-				</div>
-		
-				<div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
-				  <div class="d-flex">
-					<a class="btnNav" href="./index.html"><span class="material-symbols-outlined">home</span></a>
-					<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">info</span></a>
-					<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">contact_support</span></a>
-					<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">face</span></a>
-				  </div>
-				</div>
-			  </div>
 			</div>
-		  </div>-->
-        <nav class="navbar sticky-top bg-body-tertiary">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="./index.html">
-                <img src="./imagenes/logo.png" alt="Logo" class="d-inline-block align-text-center" style="width: 55px; height: auto;">
-                Alfajores la Barraca
-              </a>
-              <!--<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <a class="btnNav" href="./index.html"><span class="material-symbols-outlined">home</span></a>
-                <a class="btnNav disabled" href="#"><span class="material-symbols-outlined">info</span></a>
-				<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">contact_support</span></a>
-				<a class="btnNav disabled" href="#"><span class="material-symbols-outlined">face</span></a>
-              </div>-->
-            </div>
-          </nav>
-    </head>
+		</div>
+	</head>	
 	<main>
 		<div style="padding: 25px; display: none;" id="noti" class="sticky-top">
 			<div class="card" style="background-color: rgb(255, 249, 232);">
@@ -91,9 +79,49 @@
 			</div>
 		  </div>
 		</div>
-			<h4 class="text-center" style="padding-top: 20px;">Nuestros Sabores</h4>
-			<section class="container d-flex justify-content-center flex-wrap" id="todos-sabores">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;" style="height: 230px;">
+		<!-- Ventana -->
+		<section>
+			<div class="modal fade show" id="ventana">
+			  <div class="modal-dialog modal-lg modal-dialog-centered">
+				<div class="modal-content">
+				  <div class="modal-body p-4">
+					<div class="row">
+					  <div class="col-xl-5 col-lg-6 mb-4 mb-lg-0 modal-dialog-centered">
+						<img class="w-100 rounded-3 shadow-4 mb-4" id="imgProducto" src="">
+					  </div>
+					  <div class="col-xl-7 col-lg-6">
+						<div class="d-flex justify-content-between align-items-center mb-3">
+						  <h4 class="fw-bold mb-0" id="tituloProducto"></h4>
+						  <button type="button" class="btn-close" id="cerrar-ventana"></button>
+						</div>
+						<p class="mb-4"><span class="lead fw-normal" style="font-size: 24px;" id="precio"></span><span class="lead fw-normal" style="font-size: 24px;">.-</span> <span class="small">ARS</span></p>
+						<p class="fw-bold">Descripción</p>
+						<p class="mb-4 justify-text-center" id="descProducto"></p>
+						<p class="mb-4 small">Hace tú pedido con 72hrs de anticipación.<br>Podés retirar tu pedido personalmente con previo aviso.<br>Envíos sin cargos adicionales los días sábados para Barracas, La Boca y San Telmo.<br>Medios de pago: Efectivo, Transferencia Bancaría o Mercado Pago.<br>Los pedidos se realizan mediante WhatsApp.</p>
+						<a href="" id="linkProducto" class="btn btn-block btn-primary mb-3">Hace tu pedido</a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </section>
+		<!-- Sabores -->
+		<section class="container">
+			<h4 class="text-center" style="padding-top: 20px;">Nuestros Productos</h4>
+			<div class="text-center">
+				<button id="btnChocolate" type="button" class="btn btn-outline-chocolate active mb-2">Chocolates</button>
+				<button id="btnMaicena" type="button" class="btn btn-outline-maicena mb-2">Maicena</button>
+				<button id="btnAvena" type="button" class="btn btn-outline-avena mb-2">Avena</button>
+				<button id="btnFrutal" type="button" class="btn btn-outline-frutales mb-2">Frutal</button>
+				<button id="btnMerengue" type="button" class="btn btn-outline-merengue mb-2">Merengue</button>
+				<button id="btnIntegral" type="button" class="btn btn-outline-integral mb-2">Integral</button>
+				<button id="btnCajas" type="button" class="btn btn-outline-cajas mb-2">Cajas</button>
+				<button id="btnSabores" type="button" class="btn btn-outline-sabores mb-2">Todos</button>
+			</div>
+			<hr class="hr">
+			<div id="sabores" class="container d-none justify-content-center flex-wrap">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/intenso.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -327,6 +355,42 @@
 					</div>
 					</div>
 			  </div>
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+					<div class="row g-0">
+					<div class="col-md-4">
+				<img class="img-fluid rounded-start img" src="./imagenes/sabores/dulce_de_leche.png" alt="Dulce de Leche">
+				</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Merengue con Dulce de Leche</h5>
+				<p class="card-text descripcion">2 Galletitas de vainilla rellenas con dulce de leche y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				<p class="precio">$350</p>
+				<a href="https://wa.me/p/4661400207319943/5491120518253" class="linkCatalogo"></a>
+				<p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			</div>
+			<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+					<div class="row g-0">
+					<div class="col-md-4">
+				<img class="img-fluid rounded-start img" src="./imagenes/sabores/merengue.png" alt="Merengue">
+				</div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Merengue con Membrillo</h5>
+				<p class="card-text descripcion">2 galletitas de vainilla rellenas con dulce de membrillo y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				<p class="precio">$350</p>
+				<a href="https://wa.me/p/7920957281255043/5491120518253" class="linkCatalogo"></a>
+				<p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			</div>
 			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
 					<div class="row g-0">
 					<div class="col-md-4">
@@ -345,52 +409,12 @@
 					</div>
 					</div>
 			  </div>
-			  </div>
-			</section>	
-			<div class="d-flex justify-content-center align-items-center mb-3">
+			  <div class="d-flex justify-content-center align-items-center mb-3">
 				<button type="button" class="btn" id="mostrar-mas">
 					<i style="font-size: 22px;" class='bi bi-chevron-down'></i>
 					Mostrar más
 				  </button>
-			  </div>
-		</div>
-		<!-- Ventana -->
-		<section>
-			<div class="modal fade show" id="ventana">
-			  <div class="modal-dialog modal-lg modal-dialog-centered">
-				<div class="modal-content">
-				  <div class="modal-body p-4">
-					<div class="row">
-					  <div class="col-xl-5 col-lg-6 mb-4 mb-lg-0 modal-dialog-centered">
-						<img class="w-100 rounded-3 shadow-4 mb-4" id="imgProducto" src="">
-					  </div>
-					  <div class="col-xl-7 col-lg-6">
-						<div class="d-flex justify-content-between align-items-center mb-3">
-						  <h4 class="fw-bold mb-0" id="tituloProducto"></h4>
-						  <button type="button" class="btn-close" id="cerrar-ventana"></button>
-						</div>
-						<p class="mb-4"><span class="lead fw-normal" style="font-size: 24px;" id="precio"></span><span class="lead fw-normal" style="font-size: 24px;">.-</span> <span class="small">ARS</span></p>
-						<p class="fw-bold">Descripción</p>
-						<p class="mb-4 justify-text-center" id="descProducto"></p>
-						<p class="mb-4 small">Hace tú pedido con 72hrs de anticipación.<br>Podés retirar tu pedido personalmente con previo aviso.<br>Envíos sin cargos adicionales los días sábados para Barracas, La Boca y San Telmo.<br>Medios de pago: Efectivo, Transferencia Bancaría o Mercado Pago.<br>Los pedidos se realizan mediante WhatsApp.</p>
-						<a href="" id="linkProducto" class="btn btn-block btn-primary mb-3">Hace tu pedido</a>
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
 			</div>
-		  </section>
-		<!-- Sabores separados -->
-		<section class="container">
-			<hr class="hr" />
-			<div class="text-center">
-				<button id="btnChocolate" type="button" class="btn btn-outline-chocolate active mb-2">Chocolates</button>
-				<button id="btnMaicena" type="button" class="btn btn-outline-maicena mb-2">Maicena</button>
-				<button id="btnAvena" type="button" class="btn btn-outline-avena mb-2">Avena</button>
-				<button id="btnFrutal" type="button" class="btn btn-outline-frutales mb-2">Frutal</button>
-				<button id="btnIntegral" type="button" class="btn btn-outline-integral mb-2">Integral</button>
-				<button id="btnCajas" type="button" class="btn btn-outline-cajas mb-2">Cajas</button>
 			</div>
 			<div id="chocolates" class="container d-flex justify-content-center flex-wrap">
 				<div class="card mb-3 card-style tarjeta" style="height: 230px;" style="height: 230px;">
@@ -633,6 +657,80 @@
 					</div>
 					</div>
 			  </div>
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/merengue.png" alt="Merengue">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Merengue con Membrillo</h5>
+				  <p class="card-text descripcion">2 galletitas de vainilla rellenas con dulce de membrillo y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/7920957281255043/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta d-flex" style="height: 230px;">
+				<div class="row g-0">
+				<div class="col-md-4">
+			  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_frutal.png" alt="Avena Frutal">
+			  </div>
+				<div class="col-md-8">
+					<div class="card-body">
+					<h5 class="card-title titulo">Avena Frutal</h5>
+			  <p class="card-text descripcion">Para los que quieren disfrutar de un alfajor distinto, te presentamos una alternativa sin cobertura de chocolate. Dos galletita de avena con cacao y relleno con dulce de membrillo. <br>Peso neto 70grs.</p>
+			  <p class="precio">$350</p>
+			  <a href="https://wa.me/p/3584773164969219/5491120518253" class="linkCatalogo"></a>
+			  <p class="card-text">
+						<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+					</p>
+					</div>
+				</div>
+				</div>
+		  </div>
+			</div>
+			<div id="merengue" class="container d-none justify-content-center flex-wrap">
+				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/dulce_de_leche.png" alt="Dulce de Leche">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Merengue con Dulce de Leche</h5>
+				  <p class="card-text descripcion">2 Galletitas de vainilla rellenas con dulce de leche y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/4661400207319943/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
+			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+					<div class="row g-0">
+					<div class="col-md-4">
+				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/merengue.png" alt="Merengue">
+				  </div>
+					<div class="col-md-8">
+						<div class="card-body">
+						<h5 class="card-title titulo">Merengue con Membrillo</h5>
+				  <p class="card-text descripcion">2 galletitas de vainilla rellenas con dulce de membrillo y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				  <p class="precio">$350</p>
+				  <a href="https://wa.me/p/7920957281255043/5491120518253" class="linkCatalogo"></a>
+				  <p class="card-text">
+							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
+						</p>
+						</div>
+					</div>
+					</div>
+			  </div>
 			</div>
 			<div id="integrales" class="container d-none justify-content-center flex-wrap">
 				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
@@ -731,23 +829,23 @@
 		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
 	</main>
 	<footer class="text-center text-lg-start bg-light">
-		<section class="">
+		<section>
 		<div class="container text-center text-md-start mt-5">
 			<div class="row mt-3">
-			<div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+			<div class="col-md-3 col-lg-4 col-xl-2 mx-auto mb-4">
 				<a href="./index.html"><img src="./imagenes/logo.png" alt="Alfajores la Barraca" class="rounded mx-auto d-block" style="width: 150px"></a>
 			</div>
-			<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-				<h6 class="text-uppercase fw-bold mb-4">Links</h6>
-				<p><a href="https://wa.me/c/5491120518253" class="text-reset text-decoration-underline">Catálago WhatsApp</a></p>
-				<p><a href="https://wa.me/5491120518253" class="text-reset text-decoration-underline">+54 9 11 2051-8253</a></p>
-				<!--<p><a href="#!" class="text-reset text-decoration-underline">Sobre Nosotros</a></p>
-				<p><a href="#!" class="text-reset text-decoration-underline">Preguntas Frecuentes</a></p>-->
+			<div class="col-md-3 col-lg-2 col-xl-3 mx-auto mb-4 btnIcon">
+				<h6 class="text-uppercase fw-bold mb-4">Info</h6>
+				<p><i class='bx bxs-map'></i> Barracas, Buenos Aires</p>
+				<p><i class='bx bxs-store'></i><a href="https://wa.me/c/5491120518253" class="text-reset text-decoration-none"> Catálago WhatsApp</a></p>
+				<p><i class='bx bx-info-circle'></i><a href="./html/nosotros.html" class="text-reset text-decoration-none"> Sobre Nosotros</a></p>
+				<p><i class='bx bx-question-mark'></i><a href="./html/preguntas_frecuentes.html" class="text-reset text-decoration-none"> Preguntas Frecuentes</a></p>
 			</div>
 			<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 btnIcon">
 				<h6 class="text-uppercase fw-bold mb-4">Contactos</h6>
-				<p><i class='bx bxs-map'></i> Barracas, Buenos Aires</p>
 				<p><i class='bx bx-at'></i> alfajoreslabarraca@gmail.com</p>
+				<p><i class='bx bxl-whatsapp'></i><a href="https://wa.me/5491120518253" class="text-reset text-decoration-none"> +54 9 11 2051-8253</a></p>
 				<p><a href="https://www.instagram.com/alfajoreslabarraca1/" class="text-reset text-decoration-none"><i class='bx bxl-instagram fa-fw'></i> @alfajoreslabarraca1</a></p>
 				<p><a href="https://www.facebook.com/alfajoreslabarraca1" class="text-reset text-decoration-none"><i class='bx bxl-facebook fa-fw'></i> @alfajoreslabarraca1</a></p>
 			</div>
@@ -766,5 +864,7 @@
 	<script src="./js/eventos.js"></script>
 	<script src="./js/filtrar.js"></script>
 	<script src="./js/mostrarMas.js"></script>
+	<script src="./js/busqueda.js"></script>
+	<script src="./js/menuLateral.js"></script>
 </body>
 </html>

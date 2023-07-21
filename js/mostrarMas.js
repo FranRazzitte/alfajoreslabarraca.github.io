@@ -1,5 +1,5 @@
 const mostrarMasBtn = document.getElementById('mostrar-mas');
-const productosContainer = document.getElementById('todos-sabores');
+const productosContainer = document.getElementById('sabores');
 
 let mostrarMas = false;
 
