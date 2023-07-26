@@ -107,10 +107,18 @@
   display: none;
 }
 
+.titulo {
+  max-height: 25px;
+}
+
 .descripcion {
+  height: 100px;
+}
+
+.descripcion,
+.titulo {
   overflow: hidden;
   border-bottom-color: rgba(255, 255, 255, 0.432);
-  height: 100px;
   text-overflow: ellipsis;
 }
 

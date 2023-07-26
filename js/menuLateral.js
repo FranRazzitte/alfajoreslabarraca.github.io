@@ -9,8 +9,8 @@ sidebar.innerHTML = `
         <a class="btnNav bx" id="menuCloseButton"><i class='bx bx-left-arrow-alt'></i> Salir</a>
         <hr class="hr">
         <a class="btnNav bx" href="./index.html"><i class='bx bxs-home'></i> Inicio</a>
-        <a class="btnNav bx" href="./html/nosotros.html"><i class='bx bx-info-circle'></i> Sobre Nosotros</a>
-        <a class="btnNav bx" href="./html/preguntas_frecuentes.html"><i class='bx bx-question-mark'></i> Preguntas Frecuentes</a>
+        <a class="btnNav bx" href="./nosotros.html"><i class='bx bx-info-circle'></i> Nosotros</a>
+        <a class="btnNav bx" href="./preguntas.html"><i class='bx bx-question-mark'></i> Preguntas Frecuentes</a>
         <a class="btnNav disabled bx"><i class='bx bx-share-alt'></i> Compartir</a>
         <a class="btnNav bx" id="buscarMobileBtn"><i class='bx bx-search'></i> Buscar</a>
     </div>
