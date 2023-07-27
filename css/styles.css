@@ -118,7 +118,7 @@
 .descripcion,
 .titulo {
   overflow: hidden;
-  border-bottom-color: rgba(255, 255, 255, 0.432);
+  border-bottom-color: white;
   text-overflow: ellipsis;
 }
 
@@ -129,7 +129,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: #c7c7c7;
   border-color: #ccc;
   border-radius: 10px;
   display: none;
