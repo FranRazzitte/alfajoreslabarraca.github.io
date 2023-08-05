@@ -8,7 +8,7 @@ const organizadorSpan = document.getElementById('organizador');
 
 const proximosEventos = [
   { dia: 15, mes: 7, horaI: '10', horaF: '14', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' },
-  { dia: 18, mes: 8, horaI: '10', horaF: '14', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' }
+  { dia: 12, mes: 8, horaI: '10', horaF: '14', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' }
 ];
 
 const fechaActual = new Date();
