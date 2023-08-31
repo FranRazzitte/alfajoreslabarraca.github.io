@@ -44,6 +44,7 @@
     text-decoration: none;
     color: #485206;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .btnNav:hover {
@@ -195,6 +196,19 @@
   cursor: pointer;
 }
 
+@media screen and (min-width: 600px) {
+  #noti {
+  padding: 25px;
+  display: none;
+  width: 330px;
+  height: 320px;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .navDiv1 {
     margin-bottom: 0px;
@@ -223,6 +237,15 @@
   }
   .corazon i.eslogan {
     display: none;
+  }
+  #noti {
+    padding: 25px;
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 1020;
+    height: auto;
+    width: auto;
   }
 }
 @media screen and (max-height: 600px) {

@@ -11,7 +11,7 @@ sidebar.innerHTML = `
         <a class="btnNav bx" href="https://alfajoreslabarraca.com.ar/"><i class='bx bxs-home'></i> Inicio</a>
         <a class="btnNav bx" href="./nosotros"><i class='bx bxs-info-circle'></i> Nosotros</a>
         <a class="btnNav bx" href="./preguntas"><i class='bx bx-question-mark'></i> Preguntas Frecuentes</a>
-        <a class="btnNav disabled bx"><i class='bx bx-share-alt'></i> Compartir</a>
+        <a class="btnNav bx" id="btnCompartir"><i class='bx bx-share-alt'></i> Compartir</a>
         <a class="btnNav bx" id="buscarMobileBtn"><i class='bx bx-search'></i> Buscar</a>
     </div>
 `;
