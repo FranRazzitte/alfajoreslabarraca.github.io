@@ -10,7 +10,6 @@ btnCompartir.addEventListener('click', async () => {
       });
       console.log('Enlace compartido con éxito!');
     } else {
-      // Si la API Web Share no está disponible, mostrar mensaje de error
       btnCompartir.style.display = 'none';
     }
   } catch (error) {
