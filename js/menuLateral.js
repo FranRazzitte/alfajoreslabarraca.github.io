@@ -5,14 +5,34 @@ const menuOpenButton = document.getElementById('menuOpenButton');
 const sidebar = document.createElement('div');
 sidebar.id = 'sidebar';
 sidebar.innerHTML = `
-    <div class="d-flex btn-group-vertical">
-        <a class="btnNav bx" id="menuCloseButton"><i class='bx bx-left-arrow-alt'></i> Salir</a>
-        <hr class="hr">
-        <a class="btnNav bx" href="https://alfajoreslabarraca.com.ar/"><i class='bx bxs-home'></i> Inicio</a>
-        <a class="btnNav bx" href="./nosotros"><i class='bx bxs-info-circle'></i> Nosotros</a>
-        <a class="btnNav bx" href="./preguntas"><i class='bx bx-question-mark'></i> Preguntas Frecuentes</a>
-        <a class="btnNav bx" id="btnCompartir"><i class='bx bx-share-alt'></i> Compartir</a>
-        <a class="btnNav bx" id="buscarMobileBtn"><i class='bx bx-search'></i> Buscar</a>
+    <div>
+        <div class="d-flex align-items-center justify-content-center">
+        <img src="./imagenes/logo.png" width="100" style="padding: 5px; padding-top: 15px;">
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+        <p style="font-family: 'pristinastd'; font-size: 26px; margin: 0px">Alfajores La Barraca</p>
+        </div>
+        <hr class="hr hr-blurry" />
+        <div class="list-group list-group-light d-flex h-100 w-100" >
+        <button type="button" id="menuCloseButton" class="list-group-item list-group-item-action px-3 border-0" style="padding-bottom: 20px;">
+        <i class='bx bx-left-arrow-alt'></i> Salir
+        </button>
+        <a href="https://alfajoreslabarraca.com.ar/" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bxs-home'></i> Inicio
+        </a>
+        <a href="./nosotros" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bxs-info-circle'></i> Nosotros
+        </a>
+        <a href="./preguntas" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bx-question-mark'></i> Preguntas Frecuentes
+        </a>
+        <button type="button" id="btnCompartir" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bx-share-alt'></i> Compartir
+        </button>
+        <button type="button" id="buscarMobileBtn" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bx-search'></i> Buscar
+        </button>
+        </div>
     </div>
 `;
 

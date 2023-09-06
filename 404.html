@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="keywords" content="Alfajores, Alfajores Artesanales, Barracas, Emprendimiento">
-	<meta name="description" content="Explora la tienda oficial de los Alfajores la Barraca.">
+	<meta name="description" content="Explora la página web oficial de los Alfajores la Barraca.">
 	<meta name="author" content="Francisco Razzitte">
 	<link rel="stylesheet" href="/styles.css">
 	<link rel="stylesheet" href="/css/styles.css">
@@ -28,9 +28,9 @@
 				<div class="row">
 					<div class="col-md-4 d-flex justify-content-left justify-content-md-start mb-md-0 navDiv1" style="padding: 0px;">
 						<button class="btn" id="menuOpenButton" style="font-size: 25px;"><i class='bx bx-menu'></i></button>
-						<a href="https://alfajoreslabarraca.com.ar/" class="d-inline-block align-text-center">
-							<img src="/imagenes/logo.png" width="55">
-							Alfajores la Barraca
+						<a href="https://alfajoreslabarraca.com.ar/" class="d-inline-block align-text-center logoMenuSup">
+							<img src="./imagenes/logo.png" width="55">
+							<span>Alfajores La Barraca</span>
 						</a>
 					</div>
 					<div class="col-md-4 navDiv2" id="navDiv2">
@@ -60,7 +60,7 @@
         <h4>ERROR 404</h4>
       </div>
       <div class="px-4">
-        <p>La página a la que intentas acceder no existe.</p>
+        <p>Opps, la página a la que intentas acceder no existe :c</p>
       </div>
     </div>
   </main>
@@ -100,13 +100,31 @@
 const sidebar = document.createElement('div');
 sidebar.id = 'sidebar';
 sidebar.innerHTML = `
-    <div class="d-flex btn-group-vertical">
-        <a class="btnNav bx" id="menuCloseButton"><i class='bx bx-left-arrow-alt'></i> Salir</a>
-        <hr class="hr">
-        <a class="btnNav bx" href="https://alfajoreslabarraca.com.ar/"><i class='bx bxs-home'></i> Inicio</a>
-        <a class="btnNav bx" href="/nosotros"><i class='bx bxs-info-circle'></i> Nosotros</a>
-        <a class="btnNav bx" href="/preguntas"><i class='bx bx-question-mark'></i> Preguntas Frecuentes</a>
-        
+    <div>
+        <div class="d-flex align-items-center justify-content-center">
+			<img src="./imagenes/logo.png" width="100" style="padding: 5px; padding-top: 15px;">
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+        <p style="font-family: 'pristinastd'; font-size: 26px; margin: 0px">Alfajores La Barraca</p>
+        </div>
+        <hr class="hr hr-blurry" />
+        <div class="list-group list-group-light d-flex h-100 w-100" >
+        <button type="button" id="menuCloseButton" class="list-group-item list-group-item-action px-3 border-0" style="padding-bottom: 20px;">
+        <i class='bx bx-left-arrow-alt'></i> Salir
+        </button>
+        <a href="https://alfajoreslabarraca.com.ar/" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bxs-home'></i> Inicio
+        </a>
+        <a href="./nosotros" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bxs-info-circle'></i> Nosotros
+        </a>
+        <a href="./preguntas" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bx-question-mark'></i> Preguntas Frecuentes
+        </a>
+        <button type="button" id="btnCompartir" class="list-group-item list-group-item-action px-3 border-0">
+        <i class='bx bx-share-alt'></i> Compartir
+        </button>
+        </div>
     </div>
 `;
 
