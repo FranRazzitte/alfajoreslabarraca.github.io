@@ -63,7 +63,7 @@
             <p style="color: black;">
 				<span class="fw-bold">¡Hola a todos!</span>
 				<br><br>
-				Somos <span class="fw-bold">Flavia y Gastón</span>, y hace 5 años que comenzamos este emocionante proyecto llamado <span class="fw-bold" style="color: #485206;">Alfajores La Barraca</span>. Nos apasiona la elaboración de alfajores artesanales de alta calidad.
+				Somos <span class="fw-bold">Flavia y Gastón</span>, y hace <span id="fecha"></span> años que comenzamos este emocionante proyecto llamado <span class="fw-bold" style="color: #485206;">Alfajores La Barraca</span>. Nos apasiona la elaboración de alfajores artesanales de alta calidad.
 				<br><br>
 				En nuestra selección, encontrarás una amplia variedad de sabores exquisitos. Desde los clásicos como el <span class="fw-bold">chocolate intenso, suave, blanco y leche</span>, hasta los de <span class="fw-bold">maicena</span>, presentados con un delicado baño de <span class="fw-bold">chocolate blanco o negro</span>. También te deleitarás con nuestra opción de <span class="fw-bold">merengue</span> con relleno de <span class="fw-bold">dulce de leche o membrillo</span>, y, por supuesto, no pueden faltar los deliciosos <span class="fw-bold">frutales de membrillo y frutos rojos</span>. Si prefieres una opción más saludable, te invitamos a probar nuestros alfajores de <span class="fw-bold">avena</span> cubiertos con <span class="fw-bold">chocolate semiamargo</span>, y también contamos con la versión de <span class="fw-bold">coco rayado o frutal de membrillo</span>. Además, para aquellos que buscan una opción <span class="fw-bold">integral</span>, tenemos alfajores con relleno de <span class="fw-bold">dulce de leche</span> y baño en <span class="fw-bold">chocolate semiamargo</span>.
 				<br><br>
@@ -174,3 +174,11 @@ function toggleMenuButton() {
 toggleMenuButton();
 window.addEventListener('resize', toggleMenuButton);
 	</script>
+<script>
+    var currentDate = new Date();
+
+    var startDate = new Date('2018-01-01');
+
+    var fechaDif = currentDate.getFullYear() - startDate.getFullYear();
+    document.getElementById("fecha").textContent = fechaDif;
+  </script>
