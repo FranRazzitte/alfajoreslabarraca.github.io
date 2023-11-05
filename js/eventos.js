@@ -10,6 +10,7 @@ const proximosEventos = [
   { dia: 27, mes: 8, horaI: '15', horaF: '18', ubicacion: 'Herrera 799, Barracas,', organizador: 'Polideportivo Don Pepe' },
   { dia: 9, mes: 9, horaI: '15', horaF: '19', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' },
   { dia: 7, mes: 10, horaI: '15', horaF: '19', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' },
+  { dia: 25, mes: 11, horaI: '16', horaF: '20', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' },
   { dia: 16, mes: 12, horaI: '16', horaF: '20', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' },
   { dia: 23, mes: 12, horaI: '16', horaF: '20', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' }
 ];
