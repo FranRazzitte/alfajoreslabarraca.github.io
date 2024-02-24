@@ -1,4 +1,4 @@
-const preciosDesactualizados = false;
+const preciosDesactualizados = true;
 
 const noti = document.getElementById('noti');
 const diaSpan = document.getElementById('dia');
