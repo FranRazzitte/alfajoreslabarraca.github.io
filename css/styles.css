@@ -61,6 +61,7 @@
 	left: -300px;
 	width: 300px;
 	height: 100vh;
+  overflow-y: scroll;
 	background-color: #f8f8f8;
 	transition: left 0.3s ease;
 	z-index: 9999;
@@ -207,7 +208,19 @@
   display: none;
 }
 
+.busquedaMovil {
+  width: 100%;
+  background-color: white;
+  border-color: #cccccc00;
+  border-radius: 0px;
+  display: none;
+}
+
 .busqueda.mostrar {
+  display: block;
+}
+
+.busquedaMovil.mostrar {
   display: block;
 }
 
@@ -220,6 +233,14 @@
 .resultado img {
   width: 45px;
   height: 45px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.resultadoMovil img {
+  min-width: 55px;
+  height: 55px;
+  margin: 0%;
   border-radius: 10px;
   object-fit: cover;
 }
@@ -265,6 +286,17 @@
   transition: 0.3s;
   opacity: 1;
   cursor: pointer;
+}
+
+.icon_pago {
+  border: 1px solid #00000012;
+  border-radius: 5px;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.05);
+  margin-right: 10px;
+}
+
+.icon_pago g {
+  transform: translate(15%, 15%)
 }
 
 @media screen and (min-width: 600px) {
