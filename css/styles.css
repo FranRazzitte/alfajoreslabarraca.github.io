@@ -313,6 +313,9 @@
   /*.etiquetaSup span {
     display: block;
   }*/
+  .text_error_404 a {
+    width: 15%;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -356,6 +359,9 @@
     height: auto;
     width: auto;
   }
+  .text_error_404 a {
+    width: 100%;
+  }
 }
 @media screen and (max-height: 600px) {
   .navDiv1 {
@@ -384,5 +390,8 @@
   }
   .btn_flotante:hover {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.527);
+  }
+  .text_error_404 a {
+    width: 100%;
   }
 }

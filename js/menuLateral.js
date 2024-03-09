@@ -46,6 +46,12 @@ sidebar.innerHTML = `
 
 document.body.insertBefore(sidebar, document.body.firstChild);
 
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('#sidebar') && !event.target.closest('#menuOpenButton') && sidebar.classList.contains('open')) {
+        sidebar.classList.remove('open');
+    }
+});
+
 menuOpenButton.addEventListener('click', function() {
     sidebar.classList.add('open');
 });
