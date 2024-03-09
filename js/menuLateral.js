@@ -7,7 +7,7 @@ sidebar.id = 'sidebar';
 sidebar.innerHTML = `
     <div>
         <div class="d-flex align-items-center justify-content-center">
-        <img src="./imagenes/logo.png" width="100" style="padding: 5px; padding-top: 15px;">
+        <img src="./imagenes/logo.png" id="logoMenuLateralMovil" width="100" style="padding: 5px; padding-top: 15px;">
         </div>
         <div class="d-flex align-items-center justify-content-center">
         <p style="font-family: 'pristinastd'; font-size: 26px; margin: 0px">Alfajores La Barraca</p>
@@ -65,9 +65,16 @@ if (menuCloseButton) {
 }
 
 const menuBuscar = document.getElementById('navDiv2Movil');
+const logoLateralMovil = document.getElementById('logoMenuLateralMovil')
 
 if (document.title != "Alfajores La Barraca") {
-    menuBuscar.classList.add('d-none');
+    if (document.title == 'ERROR 404 | Alfajores La Barraca') {
+        menuBuscar.classList.add('d-none');
+        logoLateralMovil.setAttribute("src", "/imagenes/logo.png")
+    } else {
+        menuBuscar.classList.add('d-none');
+        logoLateralMovil.setAttribute("src", "./imagenes/logo.png")
+    }
 }
 
 function toggleMenuButton() {
