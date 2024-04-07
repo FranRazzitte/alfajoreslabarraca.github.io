@@ -325,7 +325,6 @@
   .navDiv2,
   .navDiv3 {
     display: none;
-    margin-top: 3%;
   }
   .logoMenuSup span {
     font-size: 24px;
@@ -355,7 +354,7 @@
     display: none;
     position: sticky;
     top: 0;
-    z-index: 1020;
+    z-index: 0;
     height: auto;
     width: auto;
   }

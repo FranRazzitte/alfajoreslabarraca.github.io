@@ -9,6 +9,7 @@ const conPrecio = document.getElementById('conPrecio');
 const sinStock = document.getElementById('sinStock');
 const imgProducto = document.getElementById('imgProducto');
 const linkProducto = document.getElementById('linkProducto');
+const divBotones = document.getElementById('btnFlexProducto')
 
 document.addEventListener('DOMContentLoaded', function() {
     mostrarProducto();
@@ -17,9 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('hashchange', mostrarProducto);
 
 document.getElementById('cerrar-ventana').addEventListener('click', function() {
-  ventanaEmergente.style.display = 'none';
-    //pagPrincipal.style.display = 'block';
-  body.style.overflow = 'auto';
+    if (window.innerWidth >= 768) {
+        ventanaEmergente.style.display = 'none';
+        body.style.overflow = 'auto';
+    } else {
+        ventanaEmergente.style.display = 'none';
+        pagPrincipal.style.display = 'block';
+    }
+  
 
   document.title = "Alfajores La Barraca";
 
@@ -30,9 +36,13 @@ document.getElementById('cerrar-ventana').addEventListener('click', function() {
 });
 
 function closeVentanaEmergente() {
-    ventanaEmergente.style.display = 'none';
-    //pagPrincipal.style.display = 'block';
-    body.style.overflow = 'auto';
+    if (window.innerWidth >= 768) {
+        ventanaEmergente.style.display = 'none';
+        body.style.overflow = 'auto';
+    } else {
+        ventanaEmergente.style.display = 'none';
+        pagPrincipal.style.display = 'block';
+    }
 
     document.title = "Alfajores La Barraca";
 
@@ -97,9 +107,23 @@ function mostrarProducto() {
             linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
-        ventanaEmergente.style.display = 'block';
-        //pagPrincipal.style.display = 'none';
-        //body.style.overflow = 'hidden';
+        if (window.innerWidth >= 768) {
+            ventanaEmergente.style.display = 'block';
+            ventanaEmergente.classList = 'modal fade show';
+            divBotones.classList = 'd-flex'
+            body.style.overflow = 'hidden';
+            linkProducto.style.marginRight = '10px';
+        } else {
+            ventanaEmergente.style.display = 'block';
+            ventanaEmergente.classList = 'fade show';
+            divBotones.classList = '';
+            pagPrincipal.style.display = 'none';
+            linkProducto.style.marginRight = '0px';
+            window.scrollTo({
+                top: 0,
+              });
+        }
+        
 
         history.pushState({ ventanaEmergenteOpen: true }, '');
 
@@ -109,7 +133,9 @@ function mostrarProducto() {
         window.addEventListener('hashchange', closeVentanaEmergente);
     } else {
         console.log("No se encontro #")
-        //pagPrincipal.style.display = 'block';
+        if (window.innerWidth <= 768) {
+            pagPrincipal.style.display = 'block';
+        }
     }
 }
     
@@ -147,9 +173,22 @@ for (let i = 0; i < elementosTarjeta.length; i++) {
             linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
-        ventanaEmergente.style.display = 'block';
-        //pagPrincipal.style.display = 'none';
-        //body.style.overflow = 'hidden';
+        if (window.innerWidth >= 768) {
+            ventanaEmergente.style.display = 'block';
+            ventanaEmergente.classList = 'modal fade show';
+            divBotones.classList = 'd-flex'
+            body.style.overflow = 'hidden';
+            linkProducto.style.marginRight = '10px';
+        } else {
+            ventanaEmergente.style.display = 'block';
+            ventanaEmergente.classList = 'fade show';
+            divBotones.classList = '';
+            pagPrincipal.style.display = 'none';
+            linkProducto.style.marginRight = '0px';
+            window.scrollTo({
+                top: 0,
+              });
+        }
 
         history.pushState({ ventanaEmergenteOpen: true }, '');
         history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
@@ -162,9 +201,13 @@ for (let i = 0; i < elementosTarjeta.length; i++) {
 }
 
 document.getElementById('cerrar-ventana').addEventListener('click', function() {
-    ventanaEmergente.style.display = 'none';
-    //pagPrincipal.style.display = 'block';
-    body.style.overflow = 'auto';
+    if (window.innerWidth >= 768) {
+        ventanaEmergente.style.display = 'none';
+        body.style.overflow = 'auto';
+    } else {
+        ventanaEmergente.style.display = 'none';
+        pagPrincipal.style.display = 'block';
+    }
 
     document.title = "Alfajores La Barraca";
 
@@ -175,9 +218,13 @@ document.getElementById('cerrar-ventana').addEventListener('click', function() {
 });
 
 function closeVentanaEmergente() {
-    ventanaEmergente.style.display = 'none';
-    //pagPrincipal.style.display = 'block';
-    body.style.overflow = 'auto';
+    if (window.innerWidth >= 768) {
+        ventanaEmergente.style.display = 'none';
+        body.style.overflow = 'auto';
+    } else {
+        ventanaEmergente.style.display = 'none';
+        pagPrincipal.style.display = 'block';
+    }
 
     document.title = "Alfajores La Barraca";
 
