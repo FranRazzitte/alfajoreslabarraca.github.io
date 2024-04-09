@@ -43,10 +43,7 @@
   margin-bottom: 1rem;
 }
 
-.navDiv2 {
-  display: block;
-}
-
+.navDiv2,
 .navDiv3 {
   display: flex;
 }
@@ -195,6 +192,15 @@
   align-items: center; /* Centra verticalmente */
 }
 
+.footercopy {
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: 0.5rem !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
 /* Buscador */
 .busqueda {
   position: absolute;
@@ -202,7 +208,7 @@
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: transparent;
   border-color: #ccc;
   border-radius: 10px;
   display: none;
@@ -349,6 +355,14 @@
   .corazon i.eslogan {
     display: none;
   }
+  .footercopy {
+    display: block;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0.5rem !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
   #noti {
     padding: 25px;
     display: none;
@@ -389,6 +403,14 @@
   }
   .btn_flotante:hover {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.527);
+  }
+  .footercopy {
+    display: block;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 0.5rem !important;
+    align-items: center !important;
+    justify-content: space-between !important;
   }
   .text_error_404 a {
     width: 100%;

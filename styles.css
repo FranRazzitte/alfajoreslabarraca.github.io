@@ -2995,7 +2995,7 @@ textarea.form-control-lg {
 }
 .btn:hover {
   color: var(--bs-btn-hover-color);
-  fill: var(--bs-btn-hover-fill);
+  fill: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
@@ -3174,7 +3174,6 @@ textarea.form-control-lg {
   --bs-btn-border-color: #485206;
   --bs-btn-hover-color: #fff;
   --bs-btn-hover-bg: #485206;
-  --bs-btn-hover-fill: #fff;
   --bs-btn-hover-border-color: #485206;
   --bs-btn-focus-shadow-rgb: 13, 110, 253;
   --bs-btn-active-color: #fff;

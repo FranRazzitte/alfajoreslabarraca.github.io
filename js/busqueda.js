@@ -77,10 +77,27 @@ if (window.innerWidth >= 768) {
           linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
-        ventanaEmergente.style.display = 'block';
-        body.style.overflow = 'hidden';
+        if (window.innerWidth >= 768) {
+          ventanaEmergente.style.display = 'block';
+          ventanaEmergente.classList = 'modal fade show';
+          divBotones.classList = 'd-flex'
+          body.style.overflow = 'hidden';
+          linkProducto.style.marginRight = '10px';
+      } else {
+          ventanaEmergente.style.display = 'block';
+          ventanaEmergente.classList = 'fade show';
+          divBotones.classList = '';
+          pagPrincipal.style.display = 'none';
+          linkProducto.style.marginRight = '0px';
+          window.scrollTo({
+              top: 0,
+            });
+      }
 
-        history.pushState({ ventanaEmergenteOpen: true }, '');
+      history.pushState({ ventanaEmergenteOpen: true }, '');
+      history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+
+      document.title = titulo + " - Alfajores La Barraca";
 
         window.addEventListener('popstate', closeVentanaEmergente);
         window.addEventListener('hashchange', closeVentanaEmergente);
@@ -97,12 +114,19 @@ if (window.innerWidth >= 768) {
   }
 
   function closeVentanaEmergente() {
-    document.getElementById('ventana').style.display = 'none';
-    document.body.style.overflow = 'auto';
+    if (window.innerWidth >= 768) {
+        ventanaEmergente.style.display = 'none';
+        body.style.overflow = 'auto';
+    } else {
+        ventanaEmergente.style.display = 'none';
+        pagPrincipal.style.display = 'block';
+    }
+
+    document.title = "Alfajores La Barraca";
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);
-  }
+}
 
   document.addEventListener('click', function(event) {
     const target = event.target;
@@ -182,11 +206,29 @@ if (window.innerWidth >= 768) {
           linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
-        ventanaEmergente.style.display = 'block';
-        body.style.overflow = 'hidden';
-        sidebar.classList.remove('open');
+        if (window.innerWidth >= 768) {
+          ventanaEmergente.style.display = 'block';
+          ventanaEmergente.classList = 'modal fade show';
+          divBotones.classList = 'd-flex'
+          body.style.overflow = 'hidden';
+          linkProducto.style.marginRight = '10px';
+      } else {
+          ventanaEmergente.style.display = 'block';
+          ventanaEmergente.classList = 'fade show';
+          divBotones.classList = '';
+          pagPrincipal.style.display = 'none';
+          linkProducto.style.marginRight = '0px';
+          window.scrollTo({
+              top: 0,
+            });
+      }
 
-        history.pushState({ ventanaEmergenteOpen: true }, '');
+      history.pushState({ ventanaEmergenteOpen: true }, '');
+      history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+
+      document.title = titulo + " - Alfajores La Barraca";
+
+        sidebar.classList.remove('open');
 
         window.addEventListener('popstate', closeVentanaEmergente);
         window.addEventListener('hashchange', closeVentanaEmergente);
@@ -203,8 +245,15 @@ if (window.innerWidth >= 768) {
   }
 
   function closeVentanaEmergente() {
-    document.getElementById('ventana').style.display = 'none';
-    document.body.style.overflow = 'auto';
+    if (window.innerWidth >= 768) {
+        ventanaEmergente.style.display = 'none';
+        body.style.overflow = 'auto';
+    } else {
+        ventanaEmergente.style.display = 'none';
+        pagPrincipal.style.display = 'block';
+    }
+
+    document.title = "Alfajores La Barraca";
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);
