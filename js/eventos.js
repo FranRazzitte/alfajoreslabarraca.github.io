@@ -1,5 +1,3 @@
-const preciosDesactualizados = false;
-
 const noti = document.getElementById('noti');
 const diaSpan = document.getElementById('dia');
 const mesSpan = document.getElementById('mes');
@@ -45,11 +43,4 @@ function obtenerNombreMes(numeroMes) {
     'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
   ];
   return meses[numeroMes - 1];
-}
-
-const preciosElement = document.getElementById('precios');
-if (preciosDesactualizados) {
-  preciosElement.style.display = 'block';
-} else {
-  preciosElement.style.display = 'none';
 }

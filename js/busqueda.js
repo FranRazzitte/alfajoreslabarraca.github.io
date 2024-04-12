@@ -7,6 +7,21 @@ const resultadosMovil = document.getElementById('busquedaMovil').querySelector('
 const divNav2 = document.querySelector('.navDiv2');
 const divNav2Movil = document.querySelector('.navDiv2Movil');
 
+document.getElementById('formSearch').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var valorSearch = document.getElementById('buscar').value;
+  history.pushState(null, null, '#' + valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+  mostrarProducto()
+});
+
+document.getElementById('formSearchMovil').addEventListener('submit', function(event) {
+  event.preventDefault();
+  var valorSearch = document.getElementById('buscarMovil').value;
+  history.pushState(null, null, '#' + valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+  sidebar.classList.remove('open');
+  mostrarProducto()
+});
+
 if (window.innerWidth >= 768) {
   searchInput.addEventListener('input', function() {
     const searchTerm = searchInput.value.toLowerCase();

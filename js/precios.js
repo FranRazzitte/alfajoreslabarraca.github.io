@@ -1,5 +1,7 @@
 // "SIN" == Sin Stock | "" == Consultar precio
 
+const preciosDesactualizados = false;
+
 const productosPrecios = [
     {nombre: "Chocolate Intenso", precio: "$1000"},
     {nombre: "Chocolate Suave", precio: "$1000"},
@@ -29,4 +31,13 @@ for (let j = 0; j < preciosTarjeta.length; j++) {
     const productosPreciosFind = productosPrecios.find(sabor => sabor.nombre === tituloTarjeta);
     const valorTarjeta = preciosTarjeta[j].querySelector('.precio');
     valorTarjeta.textContent = productosPreciosFind.precio
+}
+
+
+const preciosElement = document.getElementById('precios');
+
+if (preciosDesactualizados) {
+  preciosElement.style.display = 'block';
+} else {
+  preciosElement.style.display = 'none';
 }

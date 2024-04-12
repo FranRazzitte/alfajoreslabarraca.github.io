@@ -15,7 +15,7 @@ sidebar.innerHTML = `
         <hr class="hr hr-blurry"/>
         <div style="margin-bottom: 25px">
             <div class="col-md-4 navDiv2Movil" id="navDiv2Movil">
-                <form class="d-flex h-100 input-group w-auto my-auto mb-3 mb-md-0 form-control rounded" style="margin-right: 10px; margin-left: 10px;">
+                <form class="d-flex h-100 input-group w-auto my-auto mb-3 mb-md-0 form-control rounded" style="margin-right: 10px; margin-left: 10px;" id="formSearchMovil">
                     <input id="buscarMovil" autocomplete="off" class="flex-grow-1" style="background-color: transparent; border-color: transparent" placeholder="Buscar...">
                     <span style="background-color: transparent; font-size: 22px;" class="input-group-text border-0 p-0"><i class='bx bx-search-alt-2'></i></span>
                 </form>
