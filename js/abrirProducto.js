@@ -1,5 +1,6 @@
 const body = document.body;
 const ventanaEmergente = document.getElementById('ventana');
+const intVentanaEmergente = document.getElementById('interfazVentanaEmergente')
 const pagPrincipal = document.getElementById('pagPrincipal')
 const tituloProducto = document.getElementById('tituloProducto');
 const descProducto = document.getElementById('descProducto');
@@ -110,6 +111,7 @@ function mostrarProducto() {
         if (window.innerWidth >= 768) {
             ventanaEmergente.style.display = 'block';
             ventanaEmergente.classList = 'modal fade show';
+            intVentanaEmergente.classList.add('slide-down');
             divBotones.classList = 'd-flex'
             body.style.overflow = 'hidden';
             linkProducto.style.marginRight = '10px';
@@ -143,7 +145,6 @@ function mostrarProducto() {
 const elementosTarjeta = document.getElementsByClassName('tarjeta');
 for (let i = 0; i < elementosTarjeta.length; i++) {
     elementosTarjeta[i].addEventListener('click', function() {
-        console.log(elementosTarjeta)
         const titulo = elementosTarjeta[i].querySelector('.titulo').textContent;
         const descripcion = elementosTarjeta[i].querySelector('.descripcion').innerHTML;
         const precio = elementosTarjeta[i].querySelector('.precio').textContent;
@@ -176,6 +177,7 @@ for (let i = 0; i < elementosTarjeta.length; i++) {
         if (window.innerWidth >= 768) {
             ventanaEmergente.style.display = 'block';
             ventanaEmergente.classList = 'modal fade show';
+            intVentanaEmergente.classList.add('slide-down');
             divBotones.classList = 'd-flex'
             body.style.overflow = 'hidden';
             linkProducto.style.marginRight = '10px';
