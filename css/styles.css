@@ -66,6 +66,54 @@
     background-color: #aa4700;
   }
 
+  .btn-cambiar-tema {
+    border-width: 1px;
+    border-color: var(--clr-general);
+    margin-left: 10px;
+    position: relative;
+  }
+
+  .btn-cambiar-tema:hover {
+    border-color: var(--clr-general);
+  }
+
+  .btn-cambiar-tema span {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 10px);
+    transform: translateY(-50%);
+    color: var(--clr-general);
+    padding: 5px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .btn-cambiar-tema:hover span {
+    opacity: 1;
+  }
+
+  .btn-cambiar-tema svg,
+  .btn-cambiar-tema-movil svg {
+    display: none;
+  }
+
+  .btn-cambiar-tema.light #light-icon,
+  .btn-cambiar-tema-movil.light #light-icon {
+    display: inline !important;
+  }
+
+  .btn-cambiar-tema.dark #dark-icon,
+  .btn-cambiar-tema-movil.dark #dark-icon {
+    display: inline !important;
+  }
+
+  .btn-cambiar-tema.auto #auto-icon,
+  .btn-cambiar-tema-movil.auto #auto-icon {
+    display: inline !important;
+  }
+
   body {
     overflow-x: hidden;
   }
@@ -285,7 +333,6 @@
 
 .busquedaMovil {
   width: 100%;
-  background-color: white;
   border-color: #cccccc00;
   border-radius: 0px;
   display: none;
