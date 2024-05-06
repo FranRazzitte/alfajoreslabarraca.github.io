@@ -66,6 +66,17 @@
     background-color: #aa4700;
   }
 
+  .dark-mode .btn-primary,
+  .dark-mode .btn-outline-primary:hover {
+    color: black;
+    fill: black;
+  }
+
+  .dark-mode .btn-primary:hover {
+    color: white;
+    fill: white;
+  }
+
   .btn-cambiar-tema {
     border-width: 1px;
     border-color: var(--clr-general);
@@ -261,11 +272,7 @@
   max-height: 25px;
 }
 
-.descripcion {
-  height: 100px;
-}
-
-.descripcion,
+.descDisplay,
 .titulo {
   overflow: hidden;
   border-bottom-color: white;
@@ -423,7 +430,46 @@
   transform: translate(15%, 15%)
 }
 
-@media screen and (min-width: 600px) {
+.tarjeta {
+  height: 210px !important;
+}
+
+/* Línea de tiempo */
+.timeline {
+  margin: 50px auto;
+  width: 80%;
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--clr-general);
+}
+
+.event {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px; /* Ancho del punto de evento */
+  height: 10px; /* Alto del punto de evento */
+  background-color: var(--clr-general); /* Color del punto de evento */
+  border-radius: 50%; /* Hace que el punto de evento sea redondo */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Sombra para el punto de evento */
+}
+
+.event-date {
+  position: absolute;
+  top: calc(100% + 10px); /* Posiciona la fecha por debajo de la línea */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #555; /* Color del texto de la fecha */
+}
+
+@media screen and (min-width: 600px) { /* Estilos para Computadoras */
   #noti {
   padding: 25px;
   display: none;
@@ -434,6 +480,10 @@
   left: 20px;
   z-index: 9999;
   }
+  .card-style img {
+    height: 210px;
+    width: 180px !important;
+  }
   /*.etiquetaSup span {
     display: block;
   }*/
@@ -442,7 +492,7 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) { /* Estilos para Dispositivos Moviles Vertical */
   .dark-mode .modal-content {
     background-color: transparent !important;
   }
@@ -502,8 +552,11 @@
   .text_error_404 a {
     width: 100%;
   }
+  .tarjeta {
+    height: 250px !important;
+  }
 }
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 600px) { /* Estilos para Dispositivos Moviles Horizontal */
   .navDiv1 {
     margin-bottom: 0px;
   }

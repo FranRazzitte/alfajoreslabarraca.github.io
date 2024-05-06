@@ -108,7 +108,7 @@
 	<main>
 		<!-- Ventana -->
 		<section>
-			<div class="modal fade show" id="ventana">
+			<div class="modal fade show" id="ventana" style="backdrop-filter: blur(5px);">
 			  <div class="modal-dialog modal-lg modal-dialog-centered">
 				<div class="modal-content" id="interfazVentanaEmergente">
 				  <div class="modal-body p-4">
@@ -194,7 +194,7 @@
 			  </div>			  
 			<hr class="hr">
 			<div id="sabores" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/intenso.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -202,8 +202,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate Intenso</h5>
-						<p class="card-text descripcion">Exquisito alfajor de chocolate negro donde predomina el cacao amargo en la galletita, haciéndolo especial por su intenso sabor a chocolate.  Relleno con dulce de leche.  <br>Peso neto 70grs.</p>
-						<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+						<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 						<a href="https://wa.me/p/2943239592391020/5491120518253" class="linkCatalogo"></a>
 						<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -212,7 +213,7 @@
 					</div>
 					</div>
 				</div>	
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/suave.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -220,8 +221,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate Suave</h5>
-						<p class="card-text descripcion">Alfajor negro bañado con chocolate semiamargo, relleno con mucho dulce de leche. La característica principal de este alfajor esta en la galletita donde tiene una delicada cantidad de cacao amargo. <br>Peso neto 70grs.</p>
-						<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+						<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 						<a href="https://wa.me/p/3772179199521813/5491120518253" class="linkCatalogo"></a>
 						<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -230,7 +232,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/blanco.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -238,8 +240,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate Blanco</h5>
-						<p class="card-text descripcion">Riquísimo alfajor, con un excelente baño de chocolate blanco con dos galletita con un especial sabor a vainilla relleno con dulce de leche. <br>Peso neto 70grs.</p>
-						<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+						<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 						<a href="https://wa.me/p/2648568928598208/5491120518253" class="linkCatalogo"></a>
 						<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -248,7 +251,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 					<img class="img-fluid rounded-start img" src="./imagenes/sabores/leche.png" alt="Chocolate con Leche">
@@ -256,8 +259,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate con Leche</h5>
-					<p class="card-text descripcion">El chocolate con leche al tener menos cacao en su composición, se diferencia por ser más dulce que el chocolate negro. Su relleno de dulce de leche le da un sabor especial a éste riquísimo alfajor. <br>Peso neto 70grs.</p>
-					<p class="precio"></p>
+					<p class="descripcion d-none"></p>
+					<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 					<a href="https://wa.me/p/2867341769987819/5491120518253" class="linkCatalogo"></a>
 					<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -266,7 +270,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena.png" alt="Maicena">
@@ -274,7 +278,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Maicena</h5>
-				  <p class="card-text descripcion">Clásico alfajor de Maicena. Relleno con mucho dulce de leche y decorado con coco rayado. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3188162611217945/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -284,7 +289,7 @@
 					</div>
 					</div>
 			  </div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada.png" alt="Maicena Bañada Blanco">
@@ -292,7 +297,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Maicena Bañada Blanco</h5>
-				  <p class="card-text descripcion">Éste alfajor es la combinación perfecta del clásico alfajor de maicena con el agregado especial de un baño de chocolate blanco. Relleno con dulce de leche. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/4946660275375824/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -302,7 +308,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada_negro.png" alt="Maicena Bañada Negro">
@@ -310,7 +316,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Maicena Bañada Negro</h5>
-				  <p class="card-text descripcion">Éste alfajor es la combinación perfecta del clásico alfajor de maicena con el agregado especial de un baño de chocolate semiamargo. Relleno con dulce de leche. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3522782987738668/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -320,7 +327,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena.png" alt="Avena">
@@ -328,7 +335,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Avena</h5>
-				  <p class="card-text descripcion">Deliciosooooooo!!!!! Cuando pruebes éste alfajor será un antes y un después!!! Seguramente lo vas a recomendar. Bañado con chocolate semiamargo y relleno con mucho dulce de leche. La avena en su interior lo hace, más saludable y le aporta un crocantito que lo hace especial!!!! <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3174337869283824/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -338,7 +346,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_nevada.png" alt="Avena Nevada">
@@ -346,7 +354,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Avena Nevada</h5>
-				  <p class="card-text descripcion">Alfajor de avena, en éste caso el baño de chocolate no está presente. Dos galletita de avena con cacao, relleno con dulce de leche y coco rayado decorando en su exterior. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3040309089365303/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -356,7 +365,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_frutal.png" alt="Avena Frutal">
@@ -364,7 +373,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Avena Frutal</h5>
-				  <p class="card-text descripcion">Para los que quieren disfrutar de un alfajor distinto, te presentamos una alternativa sin cobertura de chocolate. Dos galletita de avena con cacao y relleno con dulce de membrillo. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3584773164969219/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -374,7 +384,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/frutos_rojos.png" alt="Frutos Rojos">
@@ -382,8 +392,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Frutos Rojos</h5>
-				  <p class="card-text descripcion">Alfajor de Frutos Rojos (frutilla, arándanos, mora, frambuesa), es una mezcla de gustos y sensaciones increíbles!!!! El baño de chocolate semiamargo, las suaves galletitas sabor a vainilla con un toque de cacao les da a éste alfajor una combinación perfecta. <br>Peso neto 70grs.</p>
-				  <p class="precio">$1200</p>
+				  <p class="descripcion d-none">Alfajor de Frutos Rojos (frutilla, arándanos, mora, frambuesa), es una mezcla de gustos y sensaciones increíbles!!!! El baño de chocolate semiamargo, las suaves galletitas sabor a vainilla con un toque de cacao les da a éste alfajor una combinación perfecta. <br>Peso neto 70grs.</p>
+				  <p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5304282312977837/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -392,7 +403,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_negro.png" alt="Membrillo Negro">
@@ -400,7 +411,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Membrillo Negro</h5>
-				  <p class="card-text descripcion">Excelente alfajor de fruta. Para los más exigente, éste alfajor se destaca por su gran cantidad de dulce de membrillo, bañado con chocolate semiamargo. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none">Excelente alfajor de fruta. Para los más exigente, éste alfajor se destaca por su gran cantidad de dulce de membrillo, bañado con chocolate semiamargo. <br>Peso neto 70grs.</p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5071317579609956/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -410,7 +422,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_blanco.png" alt="Membrillo Blanco">
@@ -418,7 +430,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Membrillo Blanco</h5>
-				  <p class="card-text descripcion">Excelente alfajor de fruta. Otra alternativa de éste alfajor de membrillo, es que la diferencia en este caso es con chocolate blanco. Su increíble sabor deja una sensación suave en el paladar. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none">Excelente alfajor de fruta. Otra alternativa de éste alfajor de membrillo, es que la diferencia en este caso es con chocolate blanco. Su increíble sabor deja una sensación suave en el paladar. <br>Peso neto 70grs.</p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5307116175973129/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -428,7 +441,7 @@
 					</div>
 					</div>
 			  </div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				<img class="img-fluid rounded-start img" src="./imagenes/sabores/dulce_de_leche.png" alt="Dulce de Leche">
@@ -436,8 +449,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Merengue con Dulce de Leche</h5>
-				<p class="card-text descripcion">2 Galletitas de vainilla rellenas con dulce de leche y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
-				<p class="precio"></p>
+				<p class="descripcion d-none"></p>
+				<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 				<a href="https://wa.me/p/4661400207319943/5491120518253" class="linkCatalogo"></a>
 				<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -446,7 +460,7 @@
 				</div>
 				</div>
 		   </div>
-			<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				<img class="img-fluid rounded-start img" src="./imagenes/sabores/merengue.png" alt="Merengue">
@@ -454,8 +468,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Merengue con Membrillo</h5>
-				<p class="card-text descripcion">2 galletitas de vainilla rellenas con dulce de membrillo y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
-				<p class="precio"></p>
+				<p class="descripcion d-none"></p>
+				<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 				<a href="https://wa.me/p/7920957281255043/5491120518253" class="linkCatalogo"></a>
 				<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -464,7 +479,7 @@
 					</div>
 					</div>
 			</div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/integral.png" alt="Integral">
@@ -472,7 +487,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Integral</h5>
-				  <p class="card-text descripcion">100% Integral!!!! Dos galletitas con harina integral y cacao amargo, relleno con dulce de leche bañado con chocolate semiamargo. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5425917737421250/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -490,7 +506,7 @@
 			</div>
 			</div>
 			<div id="chocolates" class="container d-flex justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/intenso.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -498,8 +514,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate Intenso</h5>
-						<p class="card-text descripcion">Exquisito alfajor de chocolate negro donde predomina el cacao amargo en la galletita, haciéndolo especial por su intenso sabor a chocolate.  Relleno con dulce de leche.  <br>Peso neto 70grs.</p>
-						<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+						<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 						<a href="https://wa.me/p/2943239592391020/5491120518253" class="linkCatalogo"></a>
 						<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -508,7 +525,7 @@
 					</div>
 					</div>
 				</div>	
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/suave.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -516,8 +533,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate Suave</h5>
-						<p class="card-text descripcion">Alfajor negro bañado con chocolate semiamargo, relleno con mucho dulce de leche. La característica principal de este alfajor esta en la galletita donde tiene una delicada cantidad de cacao amargo. <br>Peso neto 70grs.</p>
-						<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+						<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 						<a href="https://wa.me/p/3772179199521813/5491120518253" class="linkCatalogo"></a>
 						<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -526,7 +544,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 						<img src="./imagenes/sabores/blanco.png" alt="Alfajor" class="img-fluid rounded-start img">
@@ -534,8 +552,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate Blanco</h5>
-						<p class="card-text descripcion">Riquísimo alfajor, con un excelente baño de chocolate blanco con dos galletita con un especial sabor a vainilla relleno con dulce de leche. <br>Peso neto 70grs.</p>
-						<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+						<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 						<a href="https://wa.me/p/2648568928598208/5491120518253" class="linkCatalogo"></a>
 						<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -544,7 +563,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 					<img class="img-fluid rounded-start img" src="./imagenes/sabores/leche.png" alt="Chocolate con Leche">
@@ -552,8 +571,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Chocolate con Leche</h5>
-					<p class="card-text descripcion">El chocolate con leche al tener menos cacao en su composición, se diferencia por ser más dulce que el chocolate negro. Su relleno de dulce de leche le da un sabor especial a éste riquísimo alfajor. <br>Peso neto 70grs.</p>
-					<p class="precio"></p>
+					<p class="descripcion d-none"></p>
+					<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 					<a href="https://wa.me/p/2867341769987819/5491120518253" class="linkCatalogo"></a>
 					<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -564,7 +584,7 @@
 				</div>
 			</div>
 			<div id="maicena" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena.png" alt="Maicena">
@@ -572,7 +592,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Maicena</h5>
-				  <p class="card-text descripcion">Clásico alfajor de Maicena. Relleno con mucho dulce de leche y decorado con coco rayado. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3188162611217945/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -582,7 +603,7 @@
 					</div>
 					</div>
 			  </div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada.png" alt="Maicena Bañada Blanco">
@@ -590,7 +611,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Maicena Bañada Blanco</h5>
-				  <p class="card-text descripcion">Éste alfajor es la combinación perfecta del clásico alfajor de maicena con el agregado especial de un baño de chocolate blanco. Relleno con dulce de leche. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/4946660275375824/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -600,7 +622,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/maicena_bañada_negro.png" alt="Maicena Bañada Negro">
@@ -608,7 +630,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Maicena Bañada Negro</h5>
-				  <p class="card-text descripcion">Éste alfajor es la combinación perfecta del clásico alfajor de maicena con el agregado especial de un baño de chocolate semiamargo. Relleno con dulce de leche. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3522782987738668/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -620,7 +643,7 @@
 			  </div>
 			</div>
 			<div id="avena" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena.png" alt="Avena">
@@ -628,7 +651,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Avena</h5>
-				  <p class="card-text descripcion">Deliciosooooooo!!!!! Cuando pruebes éste alfajor será un antes y un después!!! Seguramente lo vas a recomendar. Bañado con chocolate semiamargo y relleno con mucho dulce de leche. La avena en su interior lo hace, más saludable y le aporta un crocantito que lo hace especial!!!! <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3174337869283824/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -638,7 +662,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_nevada.png" alt="Avena Nevada">
@@ -646,7 +670,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Avena Nevada</h5>
-				  <p class="card-text descripcion">Alfajor de avena, en éste caso el baño de chocolate no está presente. Dos galletita de avena con cacao, relleno con dulce de leche y coco rayado decorando en su exterior. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3040309089365303/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -656,7 +681,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/avena_frutal.png" alt="Avena Frutal">
@@ -664,7 +689,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Avena Frutal</h5>
-				  <p class="card-text descripcion">Para los que quieren disfrutar de un alfajor distinto, te presentamos una alternativa sin cobertura de chocolate. Dos galletita de avena con cacao y relleno con dulce de membrillo. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/3584773164969219/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -676,7 +702,7 @@
 			  </div>
 			</div>
 			<div id="frutales" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/frutos_rojos.png" alt="Frutos Rojos">
@@ -684,7 +710,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Frutos Rojos</h5>
-				  <p class="card-text descripcion">Alfajor de Frutos Rojos (frutilla, arándanos, mora, frambuesa), es una mezcla de gustos y sensaciones increíbles!!!! El baño de chocolate semiamargo, las suaves galletitas sabor a vainilla con un toque de cacao les da a éste alfajor una combinación perfecta. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none">Alfajor de Frutos Rojos (frutilla, arándanos, mora, frambuesa), es una mezcla de gustos y sensaciones increíbles!!!! El baño de chocolate semiamargo, las suaves galletitas sabor a vainilla con un toque de cacao les da a éste alfajor una combinación perfecta. <br>Peso neto 70grs.</p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5304282312977837/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -694,7 +721,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_negro.png" alt="Membrillo Negro">
@@ -702,7 +729,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Membrillo Negro</h5>
-				  <p class="card-text descripcion">Excelente alfajor de fruta. Para los más exigente, éste alfajor se destaca por su gran cantidad de dulce de membrillo, bañado con chocolate semiamargo. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none">Excelente alfajor de fruta. Para los más exigente, éste alfajor se destaca por su gran cantidad de dulce de membrillo, bañado con chocolate semiamargo. <br>Peso neto 70grs.</p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5071317579609956/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -712,7 +740,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/membrillo_blanco.png" alt="Membrillo Blanco">
@@ -720,7 +748,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Membrillo Blanco</h5>
-				  <p class="card-text descripcion">Excelente alfajor de fruta. Otra alternativa de éste alfajor de membrillo, es que la diferencia en este caso es con chocolate blanco. Su increíble sabor deja una sensación suave en el paladar. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none">Excelente alfajor de fruta. Otra alternativa de éste alfajor de membrillo, es que la diferencia en este caso es con chocolate blanco. Su increíble sabor deja una sensación suave en el paladar. <br>Peso neto 70grs.</p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5307116175973129/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -730,7 +759,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/merengue.png" alt="Merengue">
@@ -738,7 +767,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Merengue con Membrillo</h5>
-				  <p class="card-text descripcion">2 galletitas de vainilla rellenas con dulce de membrillo y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/7920957281255043/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -756,8 +786,9 @@
 				<div class="col-md-8">
 					<div class="card-body">
 					<h5 class="card-title titulo">Avena Frutal</h5>
-			  <p class="card-text descripcion">Para los que quieren disfrutar de un alfajor distinto, te presentamos una alternativa sin cobertura de chocolate. Dos galletita de avena con cacao y relleno con dulce de membrillo. <br>Peso neto 70grs.</p>
-			  <p class="precio"></p>
+			  <p class="descripcion d-none"></p>
+			  <p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 			  <a href="https://wa.me/p/3584773164969219/5491120518253" class="linkCatalogo"></a>
 			  <p class="card-text">
 						<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -768,7 +799,7 @@
 		  </div>
 			</div>
 			<div id="merengue" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/dulce_de_leche.png" alt="Dulce de Leche">
@@ -776,7 +807,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Merengue con Dulce de Leche</h5>
-				  <p class="card-text descripcion">2 Galletitas de vainilla rellenas con dulce de leche y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/4661400207319943/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -786,7 +818,7 @@
 					</div>
 					</div>
 			  </div>
-			  <div class="card mb-3 card-style tarjeta" style="height: 230px;">
+			  <div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/merengue.png" alt="Merengue">
@@ -794,7 +826,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Merengue con Membrillo</h5>
-				  <p class="card-text descripcion">2 galletitas de vainilla rellenas con dulce de membrillo y con una exquisita cobertura de merengue italiano.<br>Peso 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/7920957281255043/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -806,7 +839,7 @@
 			  </div>
 			</div>
 			<div id="integrales" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/integral.png" alt="Integral">
@@ -814,7 +847,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Integral</h5>
-				  <p class="card-text descripcion">100% Integral!!!! Dos galletitas con harina integral y cacao amargo, relleno con dulce de leche bañado con chocolate semiamargo. <br>Peso neto 70grs.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/5425917737421250/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -826,7 +860,7 @@
 			  </div>
 			</div>
 			<div id="cajas" class="container d-none justify-content-center flex-wrap">
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				  <img class="img-fluid rounded-start img" src="./imagenes/sabores/minialfajores.png" alt="minialfajores">
@@ -834,7 +868,8 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Mini Alfajores</h5>
-				  <p class="card-text descripcion">Tenes una fiesta, cumple, comunión o un evento especial donde queres agasajar a tus invitados??? Nosotros tenemos una buena opción para tú mesa dulce!!!!! Te presentamos nuestros exquisitos mini alfajores: Maicena, Chocolate Suave y Chocolate Blanco. Podes elegir la combinación que más te guste!!!<br><br>Presentación en caja de 12 unidades.</p>
+				  <p class="descripcion d-none"></p>
+				  <p class="card-text descDisplay"></p>
 				  <p class="precio"></p>
 				  <a href="https://wa.me/p/4590362054365924/5491120518253" class="linkCatalogo"></a>
 				  <p class="card-text">
@@ -844,7 +879,7 @@
 					</div>
 					</div>
 			  </div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				<img class="img-fluid rounded-start img" src="./imagenes/sabores/caja6.png" alt="Caja6">
@@ -852,16 +887,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Caja por 6 alfajores</h5>
-				<p class="card-text descripcion">Podes elegir los siguientes sabores:<br>
-					Chocolate Intenso, Suave, Blanco, Leche.<br>
-					Avena, Avena Nevada, Avena Frutal.<br>
-					Maicena, Maicena Bañada Negro o Blanco.<br>						
-					Dulce de Leche Merengue.<br>
-					Membrillo Merengue.<br>
-					Membrillo Negro o Blanco.<br>
-					Integral.<br><br>
-					*Opcional: Frutos Rojos $100 adicional por unidad.</p>
-				<p class="precio"></p>
+				<p class="descripcion d-none"></p>
+				<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 				<a href="https://wa.me/p/3049398341773716/5491120518253" class="linkCatalogo"></a>
 				<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -870,7 +898,7 @@
 					</div>
 					</div>
 			</div>
-				<div class="card mb-3 card-style tarjeta" style="height: 230px;">
+				<div class="card mb-3 card-style tarjeta">
 					<div class="row g-0">
 					<div class="col-md-4">
 				<img class="img-fluid rounded-start img" src="./imagenes/sabores/caja12.png" alt="Caja12">
@@ -878,16 +906,9 @@
 					<div class="col-md-8">
 						<div class="card-body">
 						<h5 class="card-title titulo">Caja por 12 alfajores</h5>
-						<p class="card-text descripcion">Podes elegir los siguientes sabores:<br>
-							Chocolate Intenso, Suave, Blanco, Leche.<br>
-							Avena, Avena Nevada, Avena Frutal.<br>
-							Maicena, Maicena Bañada Negro o Blanco.<br>						
-							Dulce de Leche Merengue.<br>
-							Membrillo Merengue.<br>
-							Membrillo Negro o Blanco.<br>
-							Integral.<br><br>
-							*Opcional: Frutos Rojos $100 adicional por unidad.</p>
-				<p class="precio"></p>
+						<p class="descripcion d-none"></p>
+				<p class="card-text descDisplay"></p>
+				  <p class="precio"></p>
 				<a href="https://wa.me/p/3306268116107321/5491120518253" class="linkCatalogo"></a>
 				<p class="card-text">
 							<small class="text-muted text-decoration-underline">Presiona para leer más</small>
@@ -966,7 +987,7 @@
 		</div>
 	</footer>
 	<!-- Scripts -->
-	<script src="./js/precios.js"></script>
+	<script src="./js/alfajores.js"></script>
 	<script src="./js/abrirProducto.js"></script>
 	<script src="./js/menuLateral.js"></script>
 	<script src="./js/desplazamientoInicio.js"></script>
