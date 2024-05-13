@@ -7,7 +7,7 @@ sidebar.id = 'sidebar';
 sidebar.innerHTML = `
     <div>
         <div class="d-flex align-items-center justify-content-center">
-        <img src="./imagenes/logo.png" id="logoMenuLateralMovil" width="100" style="padding: 5px; padding-top: 15px;">
+        <img id="logoM" src="./imagenes/logo.png" id="logoMenuLateralMovil" width="100" style="padding: 5px; padding-top: 15px;">
         </div>
         <div class="d-flex align-items-center justify-content-center">
         <p style="font-family: 'pristinastd'; font-size: 26px; margin: 0px">Alfajores La Barraca</p>
