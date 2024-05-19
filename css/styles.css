@@ -48,10 +48,6 @@
     background-color: #1c1f23;
   }
 
-  .dark-mode .list-group-item:hover {
-    background-color: #0e0f11;
-  }
-
   .dark-mode .modal-content {
     background-color: #272b30 !important;
   }
