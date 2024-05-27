@@ -1,6 +1,6 @@
 // "SIN" == Sin Stock | "" == Consultar precio
 
-const preciosDesactualizados = true;
+const preciosDesactualizados = false;
 
 const productosPrecios = [
     {nombre: "Chocolate Intenso", precio: "$1200", desc: "Exquisito alfajor de chocolate negro donde predomina el cacao amargo en la galletita, haciéndolo especial por su intenso sabor a chocolate. Relleno con dulce de leche.<br>Peso neto 70grs."},
