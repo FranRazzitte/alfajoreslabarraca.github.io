@@ -10,7 +10,8 @@ const conPrecio = document.getElementById('conPrecio');
 const sinStock = document.getElementById('sinStock');
 const imgProducto = document.getElementById('imgProducto');
 const linkProducto = document.getElementById('linkProducto');
-const divBotones = document.getElementById('btnFlexProducto')
+const divBotones = document.getElementById('btnFlexProducto');
+const preciosElementDisplay = document.getElementById('precios').style.display;
 
 document.addEventListener('DOMContentLoaded', function() {
     mostrarProducto();
@@ -91,20 +92,27 @@ function mostrarProducto() {
         imgProducto.src = imagen;
         linkProducto.href = link;
 
-        if (precio == "") {
+        if (preciosElementDisplay == "none") {
+            if (precio == "") {
+                conPrecio.style.display = 'none';
+                sinStock.style.display = 'none';
+                sinPrecio.style.display = 'block';
+                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+            } else if (precio == "SIN") {
+                sinStock.style.display = 'block';
+                conPrecio.style.display = 'none';
+                sinPrecio.style.display = 'none';
+                linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+            } else {
+                conPrecio.style.display = 'block';
+                sinStock.style.display = 'none';
+                sinPrecio.style.display = 'none';
+                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+            }
+        } else {
             conPrecio.style.display = 'none';
             sinStock.style.display = 'none';
             sinPrecio.style.display = 'block';
-            linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-        } else if (precio == "SIN") {
-            sinStock.style.display = 'block';
-            conPrecio.style.display = 'none';
-            sinPrecio.style.display = 'none';
-            linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
-        } else {
-            conPrecio.style.display = 'block';
-            sinStock.style.display = 'none';
-            sinPrecio.style.display = 'none';
             linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
@@ -157,20 +165,27 @@ for (let i = 0; i < elementosTarjeta.length; i++) {
         imgProducto.src = imagen;
         linkProducto.href = link;
 
-        if (precio == "") {
+        if (preciosElementDisplay == "none") {
+            if (precio == "") {
+                conPrecio.style.display = 'none';
+                sinStock.style.display = 'none';
+                sinPrecio.style.display = 'block';
+                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+            } else if (precio == "SIN") {
+                sinStock.style.display = 'block';
+                conPrecio.style.display = 'none';
+                sinPrecio.style.display = 'none';
+                linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+            } else {
+                conPrecio.style.display = 'block';
+                sinStock.style.display = 'none';
+                sinPrecio.style.display = 'none';
+                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+            }
+        } else {
             conPrecio.style.display = 'none';
             sinStock.style.display = 'none';
             sinPrecio.style.display = 'block';
-            linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-        } else if (precio == "SIN") {
-            sinStock.style.display = 'block';
-            conPrecio.style.display = 'none';
-            sinPrecio.style.display = 'none';
-            linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
-        } else {
-            conPrecio.style.display = 'block';
-            sinStock.style.display = 'none';
-            sinPrecio.style.display = 'none';
             linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
