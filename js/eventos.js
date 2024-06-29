@@ -10,7 +10,8 @@ if (document.title != "Nosotros · Alfajores La Barraca" && document.title != "P
   const organizadorSpan = document.getElementById('organizador');
 
   const proximosEventos = [
-    { dia: 11, mes: 5, horaI: '16', horaF: '20', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' }
+    { dia: 11, mes: 5, horaI: '16', horaF: '20', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' },
+    { dia: 13, mes: 7, horaI: '12', horaF: '18', ubicacion: 'Jovellanos entre Suarez y Olavarria, Barracas,', organizador: 'Ecoferia Barracas' }
   ];
 
   const eventosCumplenCondicion = proximosEventos.filter(evento => {
