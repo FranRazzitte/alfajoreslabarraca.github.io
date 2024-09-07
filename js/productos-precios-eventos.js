@@ -1,3 +1,5 @@
+var paginaHabilitada = false
+
 var tituloEvento_text = "Fiesta Provincial del Alfajor Artesanal"
 var imgEvento_src = "./imagenes/FiestaProvincialAlfajorRawson.png"
 var descEvento_text = "¡Este 7 y 8 de septiembre se llevará a cabo la Fiesta provincial del alfajor en Rawson! Vení a probar y conocer una gran variedad de alfajores de la mano de los mejores alfajoreros."
@@ -120,42 +122,50 @@ const productosPrecios = [
     },
   ];
 
-  const container = document.getElementById('productos-evento-container');
-  const imgEvento = document.getElementById('evento-alfajorero-img');
-  const tituloEvento = document.getElementById('evento-alfajorero-titulo');
-  const descEvento = document.getElementById('evento-alfajorero-desc');
-  const linkEvento = document.getElementById('evento-alfajorero-link');
+  function redirigirPagina() {
+    window.location.href = "https://alfajoreslabarraca.com.ar/";
+  }
 
-  productosPrecios.forEach(producto => {
-    if (producto.nuevo == false) {
-        var badge_new = "d-none"
-    }
-    const productoHTML = `
-      <div class="mb-4">
-        <div class="card">
-        <span class="badge w-100 ${badge_new}" style="background-color: darkgreen; border-top-left-radius: 0.527rem !important; border-top-right-radius: 0.527rem !important; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">Nuevo</span>
-          <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center">
-                <div class="ms-3">
-                  <p class="fw-bold mb-1">${producto.nombre}</p>
-                  <p class="mb-0 small">${producto.desc}</p>
+  if (paginaHabilitada) {
+    const container = document.getElementById('productos-evento-container');
+    const imgEvento = document.getElementById('evento-alfajorero-img');
+    const tituloEvento = document.getElementById('evento-alfajorero-titulo');
+    const descEvento = document.getElementById('evento-alfajorero-desc');
+    const linkEvento = document.getElementById('evento-alfajorero-link');
+
+    productosPrecios.forEach(producto => {
+      if (producto.nuevo == false) {
+          var badge_new = "d-none"
+      }
+      const productoHTML = `
+        <div class="mb-4">
+          <div class="card">
+          <span class="badge w-100 ${badge_new}" style="background-color: darkgreen; border-top-left-radius: 0.527rem !important; border-top-right-radius: 0.527rem !important; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;">Nuevo</span>
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                  <div class="ms-3">
+                    <p class="fw-bold mb-1">${producto.nombre}</p>
+                    <p class="mb-0 small">${producto.desc}</p>
+                  </div>
                 </div>
+                <span class="badge rounded-pill badge-success" style="background-color: var(--clr-general)">${producto.precio}</span>
               </div>
-              <span class="badge rounded-pill badge-success" style="background-color: var(--clr-general)">${producto.precio}</span>
+            </div>
+            <div class="card-footer border-0 bg-body-tertiary p-2 d-flex justify-content-around">
+              <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="${producto.linkPagina}" role="button" data-ripple-color="primary">Ver en página web</a>
+              <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="${producto.linkCatalogo}" role="button" data-ripple-color="primary">Ver en catálogo</a>
             </div>
           </div>
-          <div class="card-footer border-0 bg-body-tertiary p-2 d-flex justify-content-around">
-            <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="${producto.linkPagina}" role="button" data-ripple-color="primary">Ver en página web</a>
-            <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="${producto.linkCatalogo}" role="button" data-ripple-color="primary">Ver en catálogo</a>
-          </div>
-        </div>
-      </div>`;
-      
-    container.innerHTML += productoHTML;
+        </div>`;
+        
+      container.innerHTML += productoHTML;
 
-    tituloEvento.textContent = tituloEvento_text;
-    imgEvento.src = imgEvento_src;
-    descEvento.textContent = descEvento_text;
-    linkEvento.href = linkEvento_url;
-  });
+      tituloEvento.textContent = tituloEvento_text;
+      imgEvento.src = imgEvento_src;
+      descEvento.textContent = descEvento_text;
+      linkEvento.href = linkEvento_url;
+    });
+  } else {
+    redirigirPagina()
+  }
