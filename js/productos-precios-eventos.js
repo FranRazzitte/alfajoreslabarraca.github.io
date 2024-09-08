@@ -11,7 +11,7 @@ const productosPrecios = [
     {
         nombre: "DDL Sin Azúcar",
         nuevo: true, 
-        precio: "$2200",
+        precio: "$2000",
         desc: "Alfajor endulzado con stevia, relleno con dulce de leche sin azúcar y bañado con chocolate amargo.<br>Peso neto 70grs.",
         linkPagina: "https://alfajoreslabarraca.com.ar/#sin-azucar",
         linkCatalogo: "https://wa.me/p/123456789/5491120518253"
