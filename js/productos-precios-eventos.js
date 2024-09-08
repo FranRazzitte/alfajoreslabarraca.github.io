@@ -20,7 +20,7 @@ const productosPrecios = [
         nombre: "Corazón de Frutos Rojos",
         nuevo: true, 
         precio: "$1200",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de leche y dulce de frutos rojos en el centro. Bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de leche y un dulce de frutos rojos artesanal en el centro. Bañado con chocolate semiamargo.<br>Peso neto 70grs.",
         linkPagina: "https://alfajoreslabarraca.com.ar/#corazon-de-frutos-rojos",
         linkCatalogo: "https://wa.me/p/123456789/5491120518253"
     },
@@ -100,15 +100,23 @@ const productosPrecios = [
         nombre: "Frutos Rojos",
         nuevo: false, 
         precio: "$1200",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de frutos rojos (frutilla, arándanos, mora, frambuesa) y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con un dulce de frutos rojos artesanal (frutilla, arándanos, mora, frambuesa) y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
         linkPagina: "https://alfajoreslabarraca.com.ar/#frutos-rojos",
         linkCatalogo: "https://wa.me/p/5304282312977837/5491120518253"
+    },
+    {
+      nombre: "Manzana",
+      nuevo: false, 
+      precio: "$1200",
+      desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de manzana artesanal y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+      linkPagina: "https://alfajoreslabarraca.com.ar/#manzana",
+      linkCatalogo: "https://wa.me/p/3562345450537997/5491120518253"
     },
     {
         nombre: "Membrillo Negro",
         nuevo: false, 
         precio: "$1200",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de membrillo y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de membrillo y bañado con chocolate blanco.<br>Peso neto 70grs.",
         linkPagina: "https://alfajoreslabarraca.com.ar/#membrillo-negro",
         linkCatalogo: "https://wa.me/p/5071317579609956/5491120518253"
     },
