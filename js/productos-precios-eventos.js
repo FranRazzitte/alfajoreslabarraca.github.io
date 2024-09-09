@@ -1,4 +1,4 @@
-var paginaHabilitada = true
+var paginaHabilitada = false
 
 var tituloEvento_text = "Fiesta Provincial del Alfajor Artesanal"
 var imgEvento_src = "./imagenes/FiestaProvincialAlfajorRawson.png"
