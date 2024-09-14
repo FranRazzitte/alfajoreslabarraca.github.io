@@ -53,38 +53,17 @@ function closeVentanaEmergente() {
 }
 
 function mostrarProducto() {
-    const productosList = [
-        {nombre: "chocolate-intenso", id: 0},
-        {nombre: "chocolate-suave", id: 1},
-        {nombre: "chocolate-blanco", id: 2},
-        {nombre: "chocolate-con-leche", id: 3},
-        {nombre: "maicena", id: 4},
-        {nombre: "maicena-banada-blanco", id: 5},
-        {nombre: "maicena-banada-negro", id: 6},
-        {nombre: "avena", id: 7},
-        {nombre: "avena-nevada", id: 8},
-        {nombre: "avena-frutal", id: 9},
-        {nombre: "frutos-rojos", id: 10},
-        {nombre: "membrillo-negro", id: 11},
-        {nombre: "membrillo-blanco", id: 12},
-        {nombre: "merengue-con-dulce-de-leche", id: 13},
-        {nombre: "merengue-con-membrillo", id: 14},
-        {nombre: "integral", id: 15},
-        {nombre: "mini-alfajores", id: 34},
-        {nombre: "caja-por-6-alfajores", id: 35},
-        {nombre: "caja-por-12-alfajores", id: 36},
-    ]
     var hashUrl = window.location.hash.substring(1);
-    const productosListFind = productosList.find(sabor => sabor.nombre === hashUrl);
+    var imgID = document.querySelector('img[src="./imagenes/sabores/' + hashUrl + '.png"]');
 
-    if (productosListFind) {
-        var numSaborHashUrl = productosListFind.id
-        const elementosTarjeta = document.getElementsByClassName('tarjeta');
-        const titulo = elementosTarjeta[numSaborHashUrl].querySelector('.titulo').textContent;
-        const descripcion = elementosTarjeta[numSaborHashUrl].querySelector('.descripcion').innerHTML;
-        const precio = elementosTarjeta[numSaborHashUrl].querySelector('.precio').textContent;
-        const imagen = elementosTarjeta[numSaborHashUrl].querySelector('.img').src;
-        const link = elementosTarjeta[numSaborHashUrl].querySelector('.linkCatalogo').href;
+    if (imgID) {
+        imgID = imgID.id
+        const productosListFind = alfajores.find(sabor => sabor.nombre === imgID);
+        const titulo = productosListFind.nombre
+        const descripcion = productosListFind.desc;
+        const precio = productosListFind.precioPagina;
+        const imagen = './imagenes/sabores/' + hashUrl + '.png';
+        const link = productosListFind.linkCatalogo;
 
         tituloProducto.textContent = titulo;
         descProducto.innerHTML = descripcion;
@@ -208,7 +187,7 @@ for (let i = 0; i < elementosTarjeta.length; i++) {
         }
 
         history.pushState({ ventanaEmergenteOpen: true }, '');
-        history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+        history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u'));
 
         document.title = titulo + " - Alfajores La Barraca";
 

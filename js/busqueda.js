@@ -10,14 +10,14 @@ const divNav2Movil = document.querySelector('.navDiv2Movil');
 document.getElementById('formSearch').addEventListener('submit', function(event) {
   event.preventDefault();
   var valorSearch = document.getElementById('buscar').value;
-  history.pushState(null, null, '#' + valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+  history.pushState(null, null, '#' + valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u'));
   mostrarProducto()
 });
 
 document.getElementById('formSearchMovil').addEventListener('submit', function(event) {
   event.preventDefault();
   var valorSearch = document.getElementById('buscarMovil').value;
-  history.pushState(null, null, '#' + valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+  history.pushState(null, null, '#' + valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u'));
   sidebar.classList.remove('open');
   mostrarProducto()
 });
@@ -75,21 +75,28 @@ if (window.innerWidth >= 768) {
         imgProducto.src = imagen;
         linkProducto.href = link;
 
-        if (precio == "") {
-          conPrecio.style.display = 'none';
-          sinStock.style.display = 'none';
-          sinPrecio.style.display = 'block';
-          linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-        } else if (precio == "SIN") {
-          sinStock.style.display = 'block';
-          conPrecio.style.display = 'none';
-          sinPrecio.style.display = 'none';
-          linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+        if (preciosElementDisplay == "none") {
+          if (precio == "") {
+              conPrecio.style.display = 'none';
+              sinStock.style.display = 'none';
+              sinPrecio.style.display = 'block';
+              linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+          } else if (precio == "SIN") {
+              sinStock.style.display = 'block';
+              conPrecio.style.display = 'none';
+              sinPrecio.style.display = 'none';
+              linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+          } else {
+              conPrecio.style.display = 'block';
+              sinStock.style.display = 'none';
+              sinPrecio.style.display = 'none';
+              linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+          }
         } else {
-          conPrecio.style.display = 'block';
-          sinStock.style.display = 'none';
-          sinPrecio.style.display = 'none';
-          linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+            conPrecio.style.display = 'none';
+            sinStock.style.display = 'none';
+            sinPrecio.style.display = 'block';
+            linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
         if (window.innerWidth >= 768) {
@@ -110,7 +117,7 @@ if (window.innerWidth >= 768) {
       }
 
       history.pushState({ ventanaEmergenteOpen: true }, '');
-      history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+      history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u'));
 
       document.title = titulo + " - Alfajores La Barraca";
 
@@ -204,21 +211,28 @@ if (window.innerWidth >= 768) {
         imgProducto.src = imagen;
         linkProducto.href = link;
 
-        if (precio == "") {
-          conPrecio.style.display = 'none';
-          sinStock.style.display = 'none';
-          sinPrecio.style.display = 'block';
-          linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-        } else if (precio == "SIN") {
-          sinStock.style.display = 'block';
-          conPrecio.style.display = 'none';
-          sinPrecio.style.display = 'none';
-          linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+        if (preciosElementDisplay == "none") {
+          if (precio == "") {
+              conPrecio.style.display = 'none';
+              sinStock.style.display = 'none';
+              sinPrecio.style.display = 'block';
+              linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+          } else if (precio == "SIN") {
+              sinStock.style.display = 'block';
+              conPrecio.style.display = 'none';
+              sinPrecio.style.display = 'none';
+              linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+          } else {
+              conPrecio.style.display = 'block';
+              sinStock.style.display = 'none';
+              sinPrecio.style.display = 'none';
+              linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+          }
         } else {
-          conPrecio.style.display = 'block';
-          sinStock.style.display = 'none';
-          sinPrecio.style.display = 'none';
-          linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+            conPrecio.style.display = 'none';
+            sinStock.style.display = 'none';
+            sinPrecio.style.display = 'block';
+            linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
         }
 
         if (window.innerWidth >= 768) {
@@ -239,7 +253,7 @@ if (window.innerWidth >= 768) {
       }
 
       history.pushState({ ventanaEmergenteOpen: true }, '');
-      history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n'));
+      history.pushState(null, null, '#' + titulo.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u'));
 
       document.title = titulo + " - Alfajores La Barraca";
 

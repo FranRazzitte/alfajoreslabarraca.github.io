@@ -12,7 +12,7 @@ const productosPrecios = [
         nombre: "DDL Sin Azúcar",
         nuevo: true, 
         precio: "$1800",
-        desc: "Alfajor endulzado con stevia, relleno con dulce de leche sin azúcar y bañado con chocolate amargo.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#sin-azucar",
         linkCatalogo: "https://wa.me/p/123456789/5491120518253"
     },
@@ -20,7 +20,7 @@ const productosPrecios = [
         nombre: "Corazón de Frutos Rojos",
         nuevo: true, 
         precio: "$1600",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de leche y un dulce de frutos rojos artesanal en el centro. Bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#corazon-de-frutos-rojos",
         linkCatalogo: "https://wa.me/p/123456789/5491120518253"
     },
@@ -28,7 +28,7 @@ const productosPrecios = [
         nombre: "Tentación de Maní",
         nuevo: true, 
         precio: "$1600",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con pasta de maní, dulce de leche y chocolate. Bañado con chocolate de leche.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#tentacion-de-mani",
         linkCatalogo: "https://wa.me/p/123456789/5491120518253"
     },
@@ -76,15 +76,15 @@ const productosPrecios = [
         nombre: "Maicena Bañada Negro",
         nuevo: false, 
         precio: "$1400",
-        desc: "Alfajor de maicena, relleno con dulce de leche y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#maicena-banada-negro",
-        linkCatalogo: "https://wa.me/p/3522782987738668/5491120518253"
+        linkCatalogo: ""
     },
     {
         nombre: "Avena",
         nuevo: false, 
         precio: "$1400",
-        desc: "Alfajor de cacao y avena, relleno con dulce de leche y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#avena",
         linkCatalogo: "https://wa.me/p/3174337869283824/5491120518253"
     },
@@ -92,7 +92,7 @@ const productosPrecios = [
         nombre: "Avena Frutal",
         nuevo: false, 
         precio: "$1400",
-        desc: "Alfajor de cacao y avena, relleno con dulce de membrillo.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#avena",
         linkCatalogo: "https://wa.me/p/3584773164969219/5491120518253"
     },
@@ -100,7 +100,7 @@ const productosPrecios = [
         nombre: "Frutos Rojos",
         nuevo: false, 
         precio: "$1600",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con un dulce de frutos rojos artesanal (frutilla, arándanos, mora, frambuesa) y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#frutos-rojos",
         linkCatalogo: "https://wa.me/p/5304282312977837/5491120518253"
     },
@@ -108,15 +108,15 @@ const productosPrecios = [
       nombre: "Manzana",
       nuevo: false, 
       precio: "$1600",
-      desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de manzana artesanal y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
-      linkPagina: "https://alfajoreslabarraca.com.ar/#manzana",
-      linkCatalogo: "https://wa.me/p/3562345450537997/5491120518253"
+      desc: "",
+      linkPagina: "https://.chhhhom.ar/a",
+      linkCatalogo: ""
     },
     {
         nombre: "Membrillo Negro",
         nuevo: false, 
         precio: "$1400",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de membrillo y bañado con chocolate blanco.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#membrillo-negro",
         linkCatalogo: "https://wa.me/p/5071317579609956/5491120518253"
     },
@@ -124,7 +124,7 @@ const productosPrecios = [
         nombre: "Merengue con Dulce de Leche",
         nuevo: false, 
         precio: "$1400",
-        desc: "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de leche y bañado con merengue italiano.<br>Peso neto 70grs.",
+        desc: "",
         linkPagina: "https://alfajoreslabarraca.com.ar/#merengue-con-dulce-de-leche",
         linkCatalogo: "https://wa.me/p/4661400207319943/5491120518253"
     },
@@ -145,6 +145,7 @@ const productosPrecios = [
       if (producto.nuevo == false) {
           var badge_new = "d-none"
       }
+      var linkPagina = '#' + producto.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')
       const productoHTML = `
         <div class="mb-4">
           <div class="card">
@@ -161,7 +162,7 @@ const productosPrecios = [
               </div>
             </div>
             <div class="card-footer border-0 bg-body-tertiary p-2 d-flex justify-content-around">
-              <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="${producto.linkPagina}" role="button" data-ripple-color="primary">Ver en página web</a>
+              <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="https://alfajoreslabarraca.com.ar/${linkPagina}" role="button" data-ripple-color="primary">Ver en página web</a>
               <a class="btn btn-link m-0 text-reset" style="color: var(--clr-general) !important" href="${producto.linkCatalogo}" role="button" data-ripple-color="primary">Ver en catálogo</a>
             </div>
           </div>
