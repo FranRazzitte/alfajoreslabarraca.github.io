@@ -56,7 +56,7 @@ const alfajores = [
     "categoria": ['todos', 'chocolates'],
     "nuevo": true,
     "visible": true,
-    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
+    "linkCatalogo": "https://wa.me/p/27732963276290779/5491120518253"
   },
   {
     "nombre": "Maicena",
@@ -144,7 +144,7 @@ const alfajores = [
     "categoria": ['todos', 'frutales'],
     "nuevo": true,
     "visible": true,
-    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
+    "linkCatalogo": "https://wa.me/p/8431388843604552/5491120518253"
   },
   {
     "nombre": "Manzana",
@@ -153,7 +153,6 @@ const alfajores = [
     "desc": "Este alfajor nos trae el exquisito sabor a manzana. La producción de este dulce, es elaborado artesanalmente sin químicos ni conservantes. Viene con un elegante baño de chocolate blanco, que le da una excelente combinación de sensaciones a nuestro paladar.<br>Peso neto 70grs.",
     "descResumen": "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de manzana artesanal y bañado con chocolate semiamargo.<br>Peso neto 70grs.",
     "categoria": ['todos', 'frutales'],
-    // Este alfajor se caracteriza por no contener azúcar // Alfajor de dulce de leche con Stevia.<br>Las tapas están compuestan con  // 
     "nuevo": false,
     "visible": true,
     "linkCatalogo": "https://wa.me/p/3562345450537997/5491120518253"
@@ -167,7 +166,7 @@ const alfajores = [
     "categoria": ['todos', 'saludables'],
     "nuevo": true,
     "visible": true,
-    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
+    "linkCatalogo": "https://wa.me/p/7712145038887687/5491120518253"
   },
   {
     "nombre": "Membrillo Negro",
