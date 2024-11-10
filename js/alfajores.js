@@ -44,7 +44,7 @@ const alfajores = [
     "descResumen": "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de leche y bañado con chocolate de leche.<br>Peso neto 70grs.",
     "categoria": ['todos', 'chocolates'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/2867341769987819/5491120518253"
   },
   {
@@ -222,6 +222,28 @@ const alfajores = [
     "nuevo": false,
     "visible": false,
     "linkCatalogo": "https://wa.me/p/5425917737421250/5491120518253"
+  },
+  {
+    "nombre": "Cacao & Ron",
+    "precioPagina": "$1200",
+    "precioEvento": "$1400",
+    "desc": "Alfajor con relleno de dulce de leche y un toque de Ron. Cubierto con una exquisita cobertura de chocolate amargo al 70%.<br>Peso neto 70grs.",
+    "descResumen": "",
+    "categoria": ['todos', 'chocolates'],
+    "nuevo": false,
+    "visible": true,
+    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
+  },
+  {
+    "nombre": "Nuez",
+    "precioPagina": "$1200",
+    "precioEvento": "$1400",
+    "desc": "Exquisito alfajor de vainilla con trocitos de nuez y relleno de dulce de leche. Cubierto con una exquisita cobertura de chocolate blanco.<br>Peso neto 70grs.",
+    "descResumen": "",
+    "categoria": ['todos', 'chocolates'],
+    "nuevo": false,
+    "visible": true,
+    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
   },
   {
     "nombre": "Caja por 6 alfajores",
