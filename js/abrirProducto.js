@@ -121,9 +121,9 @@ function mostrarProducto() {
         window.addEventListener('popstate', closeVentanaEmergente);
         window.addEventListener('hashchange', closeVentanaEmergente);
     } else {
-        console.log("No se encontro #")
-        if (window.innerWidth <= 768) {
-            pagPrincipal.style.display = 'block';
+        if (hashUrl) {
+            history.replaceState(null, '', window.location.pathname);
+            window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?=#' + hashUrl;
         }
     }
 }
