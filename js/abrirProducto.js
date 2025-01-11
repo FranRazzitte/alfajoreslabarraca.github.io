@@ -30,6 +30,7 @@ document.getElementById('cerrar-ventana').addEventListener('click', function() {
   
 
   document.title = "Alfajores La Barraca";
+  imgProducto.src = "";
 
   history.pushState({ ventanaEmergenteOpen: false }, '');
   history.pushState(null, null, window.location.pathname);
@@ -47,6 +48,7 @@ function closeVentanaEmergente() {
     }
 
     document.title = "Alfajores La Barraca";
+    imgProducto.src = "";
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);
@@ -55,6 +57,9 @@ function closeVentanaEmergente() {
 function mostrarProducto() {
     var hashUrl = window.location.hash.substring(1);
     var imgID = document.querySelector('img[src="./imagenes/sabores/' + hashUrl + '.png"]');
+
+    console.log(hashUrl)
+    console.log(imgID)
 
     if (imgID) {
         imgID = imgID.id
@@ -206,6 +211,7 @@ document.getElementById('cerrar-ventana').addEventListener('click', function() {
     }
 
     document.title = "Alfajores La Barraca";
+    imgProducto.src = "";
 
     history.pushState({ ventanaEmergenteOpen: false }, '');
     history.pushState(null, null, window.location.pathname);
@@ -223,6 +229,7 @@ function closeVentanaEmergente() {
     }
 
     document.title = "Alfajores La Barraca";
+    imgProducto.src = "";
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);

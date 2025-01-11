@@ -6209,9 +6209,10 @@ textarea.form-control-lg {
   margin-right: -100%;
   backface-visibility: hidden;
   flex: 0 0 100%;
-  height: 480px;
+  /* height: 480px; */
   object-fit: cover;
 }
+
 /*@media (prefers-reduced-motion: reduce) {
   .carousel-item {
     transition: none;

@@ -145,6 +145,7 @@ if (window.innerWidth >= 768) {
     }
 
     document.title = "Alfajores La Barraca";
+    imgProducto.src = "";
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);
@@ -283,6 +284,7 @@ if (window.innerWidth >= 768) {
     }
 
     document.title = "Alfajores La Barraca";
+    imgProducto.src = "";
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);

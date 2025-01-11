@@ -487,6 +487,10 @@
   color: #555; /* Color del texto de la fecha */
 }
 
+.carousel {
+  width: 70%;
+}
+
 @media screen and (min-width: 600px) { /* Estilos para Computadoras */
   #noti {
   padding: 25px;
@@ -525,7 +529,7 @@
     font-size: 24px;
   }
   .carousel {
-    margin: 1rem;
+    width: 100%;
   }
   .carousel img {
     border-radius: 10px;
