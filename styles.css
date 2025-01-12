@@ -6219,17 +6219,17 @@ textarea.form-control-lg {
   }
 }*/
 @media screen and (max-width: 600px) {
-  .carousel-item {
+  /* .carousel-item {
     height: 140px;
-  }
+  } */
   .carousel-item img {
     height: 100%;
   }
 }
 @media screen and (max-height: 600px) {
-  .carousel-item {
+  /* .carousel-item {
     height: 200px;
-  }
+  } */
   .carousel-item img {
     height: 100%;
   }
