@@ -1,6 +1,6 @@
 const carouselItems = document.querySelectorAll('.carousel-item');
 let currentSlide = 0;
-const intervalDuration = 8000;
+const intervalDuration = 10000;
 let intervalCarousel;
 
 function showSlide(index) {

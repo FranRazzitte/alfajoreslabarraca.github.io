@@ -3837,7 +3837,7 @@ textarea.form-control-lg {
   padding: var(--bs-dropdown-header-padding-y) var(--bs-dropdown-header-padding-x);
   margin-bottom: 0;
   font-size: 0.875rem;
-  color: var(--bs-dropdown-header-color);
+  color: var(--bs-dropdown-header-color) !important;
   white-space: nowrap;
 }
 
@@ -4996,7 +4996,8 @@ textarea.form-control-lg {
   --bs-badge-padding-y: 0.35em;
   --bs-badge-font-size: 0.75em;
   --bs-badge-font-weight: 700;
-  --bs-badge-color: #fff;
+  --bs-badge-color: #41b318;
+  --bs-badge-background-color: #acfbcd;
   --bs-badge-border-radius: var(--bs-border-radius);
   display: inline-block;
   padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
@@ -5004,6 +5005,7 @@ textarea.form-control-lg {
   font-weight: var(--bs-badge-font-weight);
   line-height: 1;
   color: var(--bs-badge-color);
+  background-color: var(--bs-badge-background-color);
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
