@@ -3823,7 +3823,7 @@ textarea.form-control-lg {
   background-color: var(--bs-dropdown-link-active-bg);
 }
 .dropdown-item.disabled, .dropdown-item:disabled {
-  color: var(--bs-dropdown-link-disabled-color);
+  color: var(--bs-dropdown-link-disabled-color) !important;
   pointer-events: none;
   background-color: transparent;
 }
@@ -5675,6 +5675,10 @@ textarea.form-control-lg {
   pointer-events: none;
 }
 .modal.fade .modal-dialog {
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
   transition: transform 0.3s ease-out;
   transform: translate(0, -50px);
 }

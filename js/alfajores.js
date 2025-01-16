@@ -88,7 +88,7 @@ const alfajores = [
     "descResumen": "",
     "categoria": ['todos', 'maicena'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/4946660275375824/5491120518253"
   },
   {
@@ -110,7 +110,7 @@ const alfajores = [
     "descResumen": "",
     "categoria": ['todos', 'avena'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/3040309089365303/5491120518253"
   },
   {
@@ -121,7 +121,7 @@ const alfajores = [
     "descResumen": "Alfajor de cacao y avena, relleno con dulce de membrillo.<br>Peso neto 70grs.",
     "categoria": ['todos', 'avena', 'frutales'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/3584773164969219/5491120518253"
   },
   {
@@ -187,7 +187,7 @@ const alfajores = [
     "descResumen": "",
     "categoria": ['todos', 'frutales'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/5307116175973129/5491120518253"
   },
   {
@@ -198,7 +198,7 @@ const alfajores = [
     "descResumen": "Alfajor con una delicada cantidad de cacao amargo, relleno con dulce de leche y bañado con merengue italiano.<br>Peso neto 70grs.",
     "categoria": ['todos', 'merengue'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/4661400207319943/5491120518253"
   },
   {
@@ -209,7 +209,7 @@ const alfajores = [
     "descResumen": "",
     "categoria": ['todos', 'merengue'],
     "nuevo": false,
-    "visible": true,
+    "visible": false,
     "linkCatalogo": "https://wa.me/p/7920957281255043/5491120518253"
   },
   {
@@ -232,7 +232,7 @@ const alfajores = [
     "categoria": ['todos', 'chocolates'],
     "nuevo": false,
     "visible": true,
-    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
+    "linkCatalogo": "https://wa.me/p/9007280292672901/5491120518253"
   },
   {
     "nombre": "Nuez",
@@ -243,7 +243,7 @@ const alfajores = [
     "categoria": ['todos', 'chocolates'],
     "nuevo": false,
     "visible": true,
-    "linkCatalogo": "https://wa.me/p/123456789/5491120518253"
+    "linkCatalogo": "https://wa.me/p/8705545032888826/5491120518253"
   },
   {
     "nombre": "Caja por 6 alfajores",

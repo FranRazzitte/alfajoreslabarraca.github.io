@@ -28,8 +28,10 @@
 	<title>Alfajores La Barraca</title>
 </head>
 <body>
-    <head class="mb-7" style="box-shadow: 15px black;">
-		<div class="navbar-sticky-top-responsive p-3 text-center bg-white border-bottom">
+	<!-- Header -->
+    <header id="header" class="navbar-sticky-top-responsive p-3 text-center bg-white border-bottom">
+		<!-- Navbar -->
+		<nav>
 			<div class="etiquetaSup">
 				<span>Envíos sin cargo a Barracas, La Boca y San Telmo. Medios de pago: Efectivo, Transferencia Bancaría o Mercado Pago. Los pedidos se realizan mediante WhatsApp.</span>
 	    	</div>
@@ -80,7 +82,11 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</nav>
+	</header>
+	<!-- Main -->
+	<main>
+		<!-- Carrusel -->
 		<div class="d-flex justify-content-center m-3">
 			<div class="carousel slide carousel-fade">
 				<div id="carousel" class="carousel-inner" style="border-radius: 10px;">
@@ -110,12 +116,11 @@
 				</button>
 			</div>
 		</div>
-	</head>
-	<main>
-		<!-- Ventana -->
+		<!-- ##### Sección 1 ##### -->
 		<section>
+			<!-- Ventana: Detalles Sabor Ind. -->
 			<div class="modal fade show" id="ventana" style="backdrop-filter: blur(5px);">
-			  <div class="modal-dialog modal-lg modal-dialog-centered">
+			  <div class="modal-dialog modal-lg modal-dialog-centered" style="position: relative !important;">
 				<div class="modal-content" id="interfazVentanaEmergente">
 				  <div class="modal-body p-4">
 					<div class="row">
@@ -157,8 +162,24 @@
 				</div>
 			  </div>
 			</div>
-		  </section>
-		  <section class="container" id="pagPrincipal">
+		</section>
+		<!-- ##### Sección 2 ##### -->
+		<section class="container" id="pagPrincipal">
+			<!-- Notificación: Cookies -->
+			<div class="modal fade show" id="cookiesModal">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title">Política sobre cookies</h5>
+					</div>
+					<div class="modal-body">Utilizamos cookies únicamente para recordar tus preferencias de configuración. No utilizamos cookies de terceros ni recopilamos información personal. Al continuar navegando, aceptas el uso de estas cookies.</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-primary" id="cookiesAceptar">ACEPTAR</button>
+					</div>
+				  </div>
+				</div>
+			</div>
+			<!-- Notificación: Próximo Evento -->
 			<div>
 				<div id="noti">
 					<div class="card evento">
@@ -185,6 +206,7 @@
 				</div>
 				</div>
 			</div>
+			<!-- Ventana: Próximo Evento -->
 			<div class="modal fade show" style="backdrop-filter: blur(5px); display: none;">
 				<div class="modal-dialog modal-lg modal-dialog-centered">
 					<div class="modal-content">
@@ -220,7 +242,7 @@
 					  </div>
 				</div>
 			</div>
-			<!-- Productos -->
+			<!-- Sección Productos -->
 			<h4 class="text-center" style="padding-top: 20px;">Nuestros Productos</h4>
 			<div class="text-center">
 				<button id="btnChocolate" type="button" class="btn btn-nuestros-productos btn-outline-chocolate active mb-2">Chocolates</button>
@@ -228,7 +250,7 @@
 				<button id="btnAvena" type="button" class="btn btn-nuestros-productos btn-outline-avena mb-2">Avena</button>
 				<button id="btnFrutal" type="button" class="btn btn-nuestros-productos btn-outline-frutales mb-2">Frutales</button>
 				<button id="btnSaludables" type="button" class="btn btn-nuestros-productos btn-outline-saludables mb-2">Saludables</button>
-				<button id="btnMerengue" type="button" class="btn btn-nuestros-productos btn-outline-merengue mb-2">Merengue</button>
+				<button id="btnMerengue" type="button" class="btn btn-nuestros-productos btn-outline-merengue mb-2 d-none">Merengue</button>
 				<button id="btnIntegral" type="button" class="btn btn-nuestros-productos btn-outline-integral mb-2 d-none">Integral</button>
 				<button id="btnCajas" type="button" class="btn btn-nuestros-productos btn-outline-cajas mb-2">Cajas</button>
 				<button id="btnSabores" type="button" class="btn btn-nuestros-productos btn-outline-sabores mb-2">Todos</button>
@@ -276,7 +298,9 @@
 		</section>
 		<!-- Btn flotante -->
 		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
+		<!-- ##### Sección 3 ##### -->
 		<section class="container" style="padding: 16px; padding-bottom: 0%;">
+			<!-- Redes y más info -->
 			<div class="hstack gap-3 w-100 p-1">
 				<div class="w-100"><hr class="hr"></div>
 				<div><h5>¡Seguinos!</h5></div>
@@ -303,7 +327,9 @@
 				</div>
 		</section>
 	</main>
+	<!-- Footer -->
 	<footer class="text-lg-start bg-light">
+		<!-- ##### Sección 4 ##### -->
 		<section>
 		<div class="container text-md-start mt-5">
 			<div class="row mt-3">
@@ -344,8 +370,9 @@
 	<!-- Scripts -->
 	<script src="./js/alfajores.js"></script>
 	<script src="./js/alfajoresPagPrincipal.js"></script>
-	<script src="./js/abrirProducto.js"></script>
+	<script src="./js/cookies.js"></script>
 	<script src="./js/menuLateral.js"></script>
+	<script src="./js/abrirProducto.js"></script>
 	<script src="./js/desplazamientoInicio.js"></script>
 	<script src="./js/eventos.js"></script>
 	<script src="./js/filtrar.js"></script>
@@ -354,7 +381,6 @@
 	<script src="./js/compartir.js"></script>
 	<script src="./js/carousel.js"></script>
 	<script src="./js/tema.js"></script>
-	<script src="./js/dropdown.js"></script>
 	<script src="./js/dropdown.js"></script>
 </body>
 </html>

@@ -56,8 +56,9 @@ function aplicarTema(tema) {
 }
 
 function cambiarTema(tema) {
-    console.log(tema)
-    localStorage.setItem('tema', tema);
+    if (cookies) {
+        localStorage.setItem('tema', tema);
+    }
     aplicarTema(tema);
 }
 
@@ -68,7 +69,9 @@ btnModoOscuro.addEventListener('click', () => {
     cambiarTema('dark');
   });
 btnIgualarSistema.addEventListener('click', () => {
-    cambiarTema('auto');
+    if (cookies) {
+        cambiarTema('auto');
+    }
   });
 
 btnModoClaroMovil.addEventListener('click', () => {
@@ -78,15 +81,15 @@ btnModoOscuroMovil.addEventListener('click', () => {
     cambiarTema('dark');
   });
 btnIgualarSistemaMovil.addEventListener('click', () => {
-    cambiarTema('auto');
+    if (cookies) {
+        cambiarTema('auto');
+    }
   });
 
 function recargarTema() {
     var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-    
 
     function aplicarTemaSegunPreferencias() {
-        console.log(isDarkMode);
         if (localStorage.getItem('tema') == 'auto') {
             if (isDarkMode.matches ? 'dark' : 'light' === "dark") {
                 document.body.classList.add('dark-mode');
@@ -103,15 +106,22 @@ function recargarTema() {
 }
 
 window.onload = function() {
-    var temaGuardado = localStorage.getItem('tema')
-    if (temaGuardado == null) {
-        localStorage.setItem('tema', 'auto')
-        aplicarTema('auto');
-    } else if (temaGuardado == 'dark') {
-        aplicarTema('dark');
-    } else if (temaGuardado == 'light') {
-        aplicarTema('light');
+    if (cookies) {
+        var temaGuardado = localStorage.getItem('tema')
+        if (temaGuardado == null) {
+            localStorage.setItem('tema', 'auto')
+            aplicarTema('auto');
+        } else if (temaGuardado == 'dark') {
+            aplicarTema('dark');
+        } else if (temaGuardado == 'light') {
+            aplicarTema('light');
+        } else {
+            aplicarTema('auto');
+        } 
     } else {
-        aplicarTema('auto');
+        aplicarTema('light');
+        btnIgualarSistema.classList.add('disabled');
+        btnIgualarSistemaMovil.classList.add('disabled');
     }
+    
 };

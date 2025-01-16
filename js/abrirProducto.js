@@ -58,9 +58,6 @@ function mostrarProducto() {
     var hashUrl = window.location.hash.substring(1);
     var imgID = document.querySelector('img[src="./imagenes/sabores/' + hashUrl + '.png"]');
 
-    console.log(hashUrl)
-    console.log(imgID)
-
     if (imgID) {
         imgID = imgID.id
         const productosListFind = alfajores.find(sabor => sabor.nombre === imgID);
