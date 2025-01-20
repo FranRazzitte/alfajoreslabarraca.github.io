@@ -28,61 +28,42 @@
 	<title>Nosotros · Alfajores La Barraca</title>
 </head>
 <body>
-    <head class="mb-7" style="box-shadow: 15px black;">
-		<div class="navbar-sticky-top-responsive p-3 text-center bg-white border-bottom">
-			<div class="etiquetaSup">
-				<span>Envíos sin cargo a Barracas, La Boca y San Telmo. Medios de pago: Efectivo, Transferencia Bancaría o Mercado Pago. Los pedidos se realizan mediante WhatsApp.</span>
-	    	</div>
+	<!-- Header -->
+    <header id="header" class="navbar-sticky-top-responsive p-3 text-center bg-white border-bottom">
+		<!-- Navbar -->
+		<nav id="navbar"></nav>
+		<nav id="navbarBeforeLoad">
+			<noscript>
+				<div class="notiAlerta">
+					<div class="icon-container d-flex align-items-center">
+						<i class='bx bxs-error'></i> 
+						<p>Esta página requiere JavaScript para funcionar correctamente. Por favor, habilítalo en tu navegador. <b><a href="./preguntas">Más información</a></b></p>
+					</div>
+				</div>
+			</noscript>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 d-flex justify-content-left justify-content-md-start mb-md-0 navDiv1" style="padding: 0px;">
-						<button class="btn" id="menuOpenButton"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></button>
+						<button class="btn menuLateral d-none"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></button>
 						<a href="https://alfajoreslabarraca.com.ar/" class="d-inline-block align-text-center logoMenuSup">
 							<img id="logoH" src="./imagenes/logo.png" width="45">
 							<span>Alfajores La Barraca</span>
 						</a>
 					</div>
-					<div class="col-md-4 justify-content-left justify-content-md-start mb-md-0 navDiv2" id="navDiv2">
-						<form class="input-group w-100 my-auto d-none" id="formSearch">
-							<input
-							  autocomplete="off"
-							  id="buscar"
-							  class="form-control rounded"
-							  placeholder="Buscar"
-							  style="min-width: 125px;"
-							/>
-							<span class="input-group-text border-0 d-none d-lg-flex" style="background-color: transparent;">
-								<svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path></svg>
-							</span>
-							<div class="busqueda" id="busqueda">
-								<ul class="list-group list-group-light resultado" id="resultado" style="background-color: white;"></ul>	
-							</div>
-						</form>
-					</div>
+					<div class="col-md-4 justify-content-left justify-content-md-start mb-md-0 navDiv2" id="navDiv2"></div>
 					<div class="col-md-4 justify-content-center justify-content-md-end align-items-center navDiv3" style="height: auto;">
 						<div class="d-flex justify-content-center align-items-center">
 							<a href="https://alfajoreslabarraca.com.ar/"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general)"><path d="m21.743 12.331-9-10c-.379-.422-1.107-.422-1.486 0l-9 10a.998.998 0 0 0-.17 1.076c.16.361.518.593.913.593h2v7a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-4h4v4a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-7h2a.998.998 0 0 0 .743-1.669z"></path></svg></a>
 							<a style="margin-left: 20px; margin-right: 20px;" href="./nosotros"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general)"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg></a>
 							<a href="./preguntas"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M12 4C9.243 4 7 6.243 7 9h2c0-1.654 1.346-3 3-3s3 1.346 3 3c0 1.069-.454 1.465-1.481 2.255-.382.294-.813.626-1.226 1.038C10.981 13.604 10.995 14.897 11 15v2h2v-2.009c0-.024.023-.601.707-1.284.32-.32.682-.598 1.031-.867C15.798 12.024 17 11.1 17 9c0-2.757-2.243-5-5-5zm-1 14h2v2h-2z"></path></svg></a>
-                            <div class="dropdown">
-								<button class="btn btn-cambiar-tema auto" id="btn-cambiar-tema">
-									<svg id="light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M6.995 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007-2.246-5.007-5.007-5.007S6.995 9.239 6.995 12zM11 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2H2zm17 0h3v2h-3zM5.637 19.778l-1.414-1.414 2.121-2.121 1.414 1.414zM16.242 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.344 7.759 4.223 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z"></path></svg>
-									<svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" style="fill: var(--clr-general);"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-									<svg id="auto-icon" xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" style="fill: var(--clr-general);"><path d="M440-120q-134 0-227-93t-93-227q0-134 93-227t227-93q5 0 10 .5t10 .5q-29 32-44.5 73T400-600q0 100 70 170t170 70q31 0 60.5-7.5T756-390q-18 118-108 194t-208 76Zm112-400 128-360h80l128 360h-76l-28-80H656l-28 80h-76Zm122-134h92l-46-146-46 146Z"/></svg>
-								</button>
-								<ul class="dropdown-menu" id="dropdownMenu">
-								  	<li><button class="dropdown-item" id="light-mode">Modo Claro</button></li>
-								  	<li><button class="dropdown-item" id="dark-mode">Modo Oscuro</button></li>
-								  	<li><button class="dropdown-item selected" id="auto-mode">Igualar al Sistema</button></li>
-								</ul>
-							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</head>
-    <main>
+		</nav>
+	</header>
+	<!-- Main -->
+	<main>
 		<!-- Notificación: Cookies -->
 		<div class="modal fade show" id="cookiesModal">
 			<div class="modal-dialog">
@@ -106,7 +87,7 @@
             <p style="color: black;">
 				<span class="fw-bold">¡Hola a todos!</span>
 				<br><br>
-				Somos <span class="fw-bold">Flavia y Gastón</span>, y hace <span id="fecha"></span> años que comenzamos este hermoso proyecto llamado <span class="fw-bold" style="color: var(--clr-general);">Alfajores La Barraca</span>. Nos dedicamos a la elaboración de alfajores artesanales.
+				Somos <span class="fw-bold">Flavia y Gastón</span>, y hace <span id="fecha"><span class="placeholder-glow"><span class="placeholder">N/A</span></span></span> años que comenzamos este hermoso proyecto llamado <span class="fw-bold" style="color: var(--clr-general);">Alfajores La Barraca</span>. Nos dedicamos a la elaboración de alfajores artesanales.
 				<br><br>
 				Somos del barrio porteño de <span class="fw-bold" style="color: var(--clr-general);">Barracas</span>, un lugar lleno de historia y donde vivimos hace ya varios años. Mientras buscábamos un nombre apropiado para nuestro emprendimiento e inspirados por el barrio que forma parte esencial de nuestras vidas, decidimos llamarlo <span class="fw-bold" style="color: var(--clr-general);">“Alfajores La Barraca”</span>. Instantáneamente, sentimos que ese nombre era perfecto por el <span class="fw-bold">profundo cariño</span> que le tenemos al mismo. Así, <span class="fw-bold">nuestros alfajores llevan consigo la esencia del barrio de Barracas</span> en ellos.
 				<br><br>
@@ -134,7 +115,9 @@
 		</div>
 		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
     </main>
-    <footer class="text-lg-start bg-light">
+	<!-- Footer -->
+	<footer id="footer"></footer>
+	<footer id="footerBeforeLoad" class="text-lg-start bg-light">
 		<section>
 		<div class="container text-md-start mt-5">
 			<div class="row mt-3">
@@ -148,74 +131,18 @@
 					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"></path></svg><a href="./nosotros" class="text-reset text-decoration-none"> Nosotros</a></p>
 					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M12 4C9.243 4 7 6.243 7 9h2c0-1.654 1.346-3 3-3s3 1.346 3 3c0 1.069-.454 1.465-1.481 2.255-.382.294-.813.626-1.226 1.038C10.981 13.604 10.995 14.897 11 15v2h2v-2.009c0-.024.023-.601.707-1.284.32-.32.682-.598 1.031-.867C15.798 12.024 17 11.1 17 9c0-2.757-2.243-5-5-5zm-1 14h2v2h-2z"></path></svg><a href="./preguntas" class="text-reset text-decoration-none"> Preguntas Frecuentes</a></p>
 				</div>
-				<div class="col-md-3 col-lg-2 col-xl-3 mx-auto mb-4 btnIcon">
-					<h6 class="text-uppercase text-center fw-bold mb-4">Medios de pago</h6>
-					<p><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" class="icon_pago" viewBox="0 0 34 34" style="fill: rgba(0, 0, 0, 1);"><g><path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 11a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3V9a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v6z"></path><path d="M12 8c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path></g></svg>Efectivo</p>
-					<p><svg xmlns="http://www.w3.org/2000/svg" height="27" width="27" class="icon_pago" viewBox="0 0 34 34" style="fill: rgba(0, 0, 0, 1);"><g><path d="M2 8v4.001h1V18H2v3h16l3 .001V21h1v-3h-1v-5.999h1V8L12 2 2 8zm4 10v-5.999h2V18H6zm5 0v-5.999h2V18h-2zm7 0h-2v-5.999h2V18zM14 8a2 2 0 1 1-4.001-.001A2 2 0 0 1 14 8z"></path></g></svg>Transferencia Bancaria</p>
-					<p><img src="./imagenes/mercadopago.jpg" alt="Mercado Pago" height="27" width="27" class="icon_pago">Mercado Pago</p>
-				</div>
-				<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 btnIcon">
-					<h6 class="text-uppercase text-center fw-bold mb-4">Contactos</h6>
-					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10c1.466 0 2.961-.371 4.442-1.104l-.885-1.793C14.353 19.698 13.156 20 12 20c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8v1c0 .692-.313 2-1.5 2-1.396 0-1.494-1.819-1.5-2V8h-2v.025A4.954 4.954 0 0 0 12 7c-2.757 0-5 2.243-5 5s2.243 5 5 5c1.45 0 2.748-.631 3.662-1.621.524.89 1.408 1.621 2.838 1.621 2.273 0 3.5-2.061 3.5-4v-1c0-5.514-4.486-10-10-10zm0 13c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z"></path></svg> alfajoreslabarraca@gmail.com</p>
-					<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg><a href="https://wa.me/5491120518253" class="text-reset text-decoration-none"> +54 9 11 2051-8253</a></p>
-					<p><a href="https://www.instagram.com/alfajoreslabarraca1/" class="text-reset text-decoration-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M11.999 7.377a4.623 4.623 0 1 0 0 9.248 4.623 4.623 0 0 0 0-9.248zm0 7.627a3.004 3.004 0 1 1 0-6.008 3.004 3.004 0 0 1 0 6.008z"></path><circle cx="16.806" cy="7.207" r="1.078"></circle><path d="M20.533 6.111A4.605 4.605 0 0 0 17.9 3.479a6.606 6.606 0 0 0-2.186-.42c-.963-.042-1.268-.054-3.71-.054s-2.755 0-3.71.054a6.554 6.554 0 0 0-2.184.42 4.6 4.6 0 0 0-2.633 2.632 6.585 6.585 0 0 0-.419 2.186c-.043.962-.056 1.267-.056 3.71 0 2.442 0 2.753.056 3.71.015.748.156 1.486.419 2.187a4.61 4.61 0 0 0 2.634 2.632 6.584 6.584 0 0 0 2.185.45c.963.042 1.268.055 3.71.055s2.755 0 3.71-.055a6.615 6.615 0 0 0 2.186-.419 4.613 4.613 0 0 0 2.633-2.633c.263-.7.404-1.438.419-2.186.043-.962.056-1.267.056-3.71s0-2.753-.056-3.71a6.581 6.581 0 0 0-.421-2.217zm-1.218 9.532a5.043 5.043 0 0 1-.311 1.688 2.987 2.987 0 0 1-1.712 1.711 4.985 4.985 0 0 1-1.67.311c-.95.044-1.218.055-3.654.055-2.438 0-2.687 0-3.655-.055a4.96 4.96 0 0 1-1.669-.311 2.985 2.985 0 0 1-1.719-1.711 5.08 5.08 0 0 1-.311-1.669c-.043-.95-.053-1.218-.053-3.654 0-2.437 0-2.686.053-3.655a5.038 5.038 0 0 1 .311-1.687c.305-.789.93-1.41 1.719-1.712a5.01 5.01 0 0 1 1.669-.311c.951-.043 1.218-.055 3.655-.055s2.687 0 3.654.055a4.96 4.96 0 0 1 1.67.311 2.991 2.991 0 0 1 1.712 1.712 5.08 5.08 0 0 1 .311 1.669c.043.951.054 1.218.054 3.655 0 2.436 0 2.698-.043 3.654h-.011z"></path></svg> @alfajoreslabarraca1</a></p>
-					<p><a href="https://www.facebook.com/alfajoreslabarraca1" class="text-reset text-decoration-none"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: var(--clr-general);"><path d="M13.397 20.997v-8.196h2.765l.411-3.209h-3.176V7.548c0-.926.258-1.56 1.587-1.56h1.684V3.127A22.336 22.336 0 0 0 14.201 3c-2.444 0-4.122 1.492-4.122 4.231v2.355H7.332v3.209h2.753v8.202h3.312z"></path></svg> @alfajoreslabarraca1</a></p>
-				</div>
 			</div>
 		</div>
 		</section>
-		<div class="footercopy text-center">
-			<div>
-				<p style="font-size: 14px; margin: 0%;"><i class='bx bxs-heart eslogan' style="color: red;"></i> Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor <i class='bx bxs-heart eslogan' style="color: red;"></i></p>
-				<p style="font-size: 12px; margin: 0%;">© 2021 - 2025, Alfajores La Barraca. Todos los derechos reservados. Buenos Aires, Argentina.</p>
-			</div>
-			<div class="justify-content-center">
-				<p style="font-size: 14px; margin: 0%;">Creado por <a href="https://www.instagram.com/franrazzitte/" class="text-reset">@franrazzitte</a></p>
-			</div>
-		</div>
 	</footer>
+	<!-- Scripts -->
+	<script src="./js/navbar.js"></script>
+	<script src="./js/footer.js"></script>
     <script src="./js/cookies.js"></script>
 	<script src="./js/menuLateral.js"></script>
 	<script src="./js/desplazamientoInicio.js"></script>
-	<script>
-    var currentDate = new Date();
-
-    var startDate = new Date('2018-05-05');
-
-    var fechaDif = currentDate.getFullYear() - startDate.getFullYear();
-    document.getElementById("fecha").textContent = fechaDif;
-  	</script>
-	<!--<script>
-		var iframe = document.getElementById('embedLinea');
-		const body = document.querySelector('body');
-
-		const observer = new MutationObserver(function(mutationsList, observer) {
-			for(let mutation of mutationsList) {
-				if (mutation.type === 'attributes') {
-					if (mutation.attributeName === 'data-bs-theme') {
-						const valorDelAtributo = mutation.target.getAttribute('data-bs-theme')
-						iframe.contentWindow.postMessage(valorDelAtributo, '*');
-					}
-				}
-			}
-		});
-
-		const config = { attributes: true };
-		observer.observe(body, config);
-
-		function ajustarAlturaIframe() {
-			iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-		}
-
-		iframe.onload = function() {
-			ajustarAlturaIframe();
-		};
-
-		setInterval(ajustarAlturaIframe, 1000);
-	</script>-->
 	<script src="./js/compartir.js"></script>
 	<script src="./js/tema.js"></script>
-	<script src="./js/dropdown.js"></script>
 	<script src="./js/eventos.js"></script>
 </body>
 </html>

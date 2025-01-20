@@ -86,14 +86,3 @@ if (document.title != "Alfajores La Barraca") {
         logoLateralMovil.setAttribute("src", "./imagenes/logo.png");
     }
 }
-
-function toggleMenuButton() {
-    if (window.innerWidth <= 768) {
-        menuOpenButton.style.display = 'block';
-    } else {
-        menuOpenButton.style.display = 'none';
-    }
-}
-
-toggleMenuButton();
-window.addEventListener('resize', toggleMenuButton);

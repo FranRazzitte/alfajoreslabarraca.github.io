@@ -1,3 +1,5 @@
+// PROXIMO EVENTO
+
 const fechaActual = new Date();
 
 if (document.title != "Nosotros · Alfajores La Barraca" && document.title != "Preguntas Frecuentes · Alfajores La Barraca" && document.title != "Página no encontrada · Alfajores La Barraca") {
@@ -43,6 +45,8 @@ if (document.title != "Nosotros · Alfajores La Barraca" && document.title != "P
   }
 }
 
+// LOGO SEGÚN FECHA
+
 const logoH = document.getElementById('logoH');
 const logoF = document.getElementById('logoF');
 const logoM = document.getElementById('logoM');
@@ -82,4 +86,29 @@ if (mesActual === 6 && diaActual === 9) {
     logoF.src = "./imagenes/logoArg.png";
     logoM.src = "./imagenes/logoArg.png";
   }
+}
+
+// CANT. AÑOS (NOSOTROS.HTML)
+
+if (document.title == 'Nosotros · Alfajores La Barraca') {
+  var currentDate = new Date();
+
+  var startDate = new Date('2018-05-05');
+
+  var fechaDif = currentDate.getFullYear() - startDate.getFullYear();
+  document.getElementById("fecha").textContent = fechaDif;
+}
+
+// CANT. ALFAJORES VISIBLES (PREGUNTAS.HTML)
+
+if (document.title == 'Preguntas Frecuentes · Alfajores La Barraca') {
+  const cantAlfajores = document.getElementById('numAlfajores');
+  var numAlfajores = 0
+
+  alfajores.forEach(sabor => {
+    if (sabor.visible && sabor.categoria.includes('todos')) {
+      numAlfajores += 1;
+    }
+  })
+  cantAlfajores.textContent = numAlfajores;
 }

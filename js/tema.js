@@ -6,6 +6,8 @@ var btnCambiarTemaMovil = document.getElementById('btn-cambiar-tema-movil');
 var btnModoClaroMovil = document.getElementById('light-mode-movil');
 var btnModoOscuroMovil = document.getElementById('dark-mode-movil');
 var btnIgualarSistemaMovil = document.getElementById('auto-mode-movil');
+const dropdownButton = document.getElementById('btn-cambiar-tema');
+const dropdownMenu = document.getElementById('dropdownMenu');
 
 function aplicarTema(tema) {
     if (tema === "dark") {
@@ -105,7 +107,7 @@ function recargarTema() {
     isDarkMode.addEventListener('change', aplicarTemaSegunPreferencias);
 }
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', () => {
     if (cookies) {
         var temaGuardado = localStorage.getItem('tema')
         if (temaGuardado == null) {
@@ -124,4 +126,27 @@ window.onload = function() {
         btnIgualarSistemaMovil.classList.add('disabled');
     }
     
-};
+});
+
+dropdownButton.addEventListener('click', () => {
+  dropdownMenu.classList.toggle('show-drop');
+});
+
+document.addEventListener('click', (event) => {
+  if (!dropdownButton.contains(event.target)) {
+    dropdownMenu.classList.remove('show-drop');
+  }
+});
+
+const dropdownButton_movil = document.getElementById('btn-cambiar-tema-movil');
+const dropdownMenu_movil = document.getElementById('dropdownMenu-movil');
+
+dropdownButton_movil.addEventListener('click', () => {
+  dropdownMenu_movil.classList.toggle('show-drop');
+});
+
+document.addEventListener('click', (event) => {
+  if (!dropdownButton_movil.contains(event.target)) {
+    dropdownMenu_movil.classList.remove('show-drop');
+  }
+});

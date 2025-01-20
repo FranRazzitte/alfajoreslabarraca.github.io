@@ -226,7 +226,7 @@ function closeVentanaEmergente() {
     }
 
     document.title = "Alfajores La Barraca";
-    imgProducto.src = "";
+    imgProducto.src = ""; 
 
     window.removeEventListener('popstate', closeVentanaEmergente);
     window.removeEventListener('hashchange', closeVentanaEmergente);

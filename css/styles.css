@@ -312,6 +312,7 @@
 
 .notiAlerta {
   padding: 5px;
+  margin-bottom: 10px;
   background-color: #f8d7da;
   color: #721c24;
   border: 1px solid #000000;
@@ -330,6 +331,10 @@
 .notiAlerta p {
   margin: 0px;
   font-size: 15px;
+}
+
+.notiAlerta a {
+  color: #420007;
 }
 
 .evento {
@@ -556,6 +561,9 @@
   .navDiv1 {
     margin-bottom: 0px;
   }
+  .menuLateral {
+    display: block !important;
+  }
   .navDiv2,
   .navDiv3 {
     display: none;
@@ -622,6 +630,9 @@
 @media screen and (max-height: 600px) { /* Estilos para Dispositivos Moviles Horizontal */
   .navDiv1 {
     margin-bottom: 0px;
+  }
+  .menuLateral {
+    display: block !important;
   }
   .navDiv2,
   .navDiv3 {

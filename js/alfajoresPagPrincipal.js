@@ -1,3 +1,4 @@
+const contenedor_example = document.getElementById('categoriaBeforeLoad');
 const contenedor_todos = document.getElementById('sabores-container');
 const contenedor_chocolates = document.getElementById('chocolates-container');
 const contenedor_maicena = document.getElementById('maicena-container');
@@ -7,6 +8,8 @@ const contenedor_saludables = document.getElementById('saludables-container');
 const contenedor_merengue = document.getElementById('merengue-container');
 const contenedor_integrales = document.getElementById('integrales-container');
 const contenedor_cajas = document.getElementById('cajas-container');
+
+contenedor_example.remove();
 
 alfajores.forEach(sabor => {
   descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(Number= 0, Number= 120) + "...";
