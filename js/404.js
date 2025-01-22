@@ -2,14 +2,15 @@ var svg_ghost = document.getElementById('ghost');
 var svg_sad = document.getElementById('sad');
 var text = document.getElementById('text');
 
-function hashnotfound() {
-    var hashUrl = window.location.hash.substring(1);
-    
-    if (hashUrl) {
+function notfound() {
+    const notfound = new URLSearchParams(window.location.search);
+    const notfoundValor = notfound.get('q');
+
+    if (notfoundValor) {
         svg_ghost.style.display = 'none';
         svg_sad.style.display = '';
         text.textContent = 'El producto que intentas consultar no está disponible.'
-        console.error('Invalid Hash: «' + hashUrl + '»')
+        console.error('Element Not Found: «' + notfoundValor + '»')
     } else {
         svg_ghost.style.display = '';
         svg_sad.style.display = 'none';
@@ -17,7 +18,7 @@ function hashnotfound() {
     }
 }
 
-hashnotfound();
+notfound();
 
 const elements = document.querySelectorAll('[src], [href]');
 

@@ -308,6 +308,7 @@
   overflow: hidden;
   border-bottom-color: white;
   text-overflow: ellipsis;
+  color: black;
 }
 
 .notiAlerta {
@@ -588,6 +589,11 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    height: 250px !important;
+  }
+  .descDisplay,
+  .titulo {
+    color: white;
   }
   .btn_flotante {
     width: 40px;
@@ -623,9 +629,6 @@
   .text_error_404 a {
     width: 100%;
   }
-  .tarjeta {
-    height: 250px !important;
-  }
 }
 @media screen and (max-height: 600px) { /* Estilos para Dispositivos Moviles Horizontal */
   .navDiv1 {
@@ -646,6 +649,10 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
+  }
+  .descDisplay,
+  .titulo {
+    color: white;
   }
   .btn_flotante {
     width: 40px;
