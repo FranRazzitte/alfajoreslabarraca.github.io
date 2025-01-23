@@ -297,25 +297,6 @@ if (window.innerWidth >= 768) {
   })
 }
 
-// Desplazamiento Inicio
-
-const botonFlotante = document.getElementById('btn_flotante');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 200) {
-    botonFlotante.classList.add('mostrar');
-  } else {
-    botonFlotante.classList.remove('mostrar');
-  }
-});
-
-botonFlotante.addEventListener('click', () => {
-  window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-  });
-});
-
 // Carrusel
 
 const carouselItems = document.querySelectorAll('.carousel-item');

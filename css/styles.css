@@ -591,8 +591,8 @@
     overflow: hidden;
     height: 250px !important;
   }
-  .descDisplay,
-  .titulo {
+  .card-style .descDisplay,
+  .card-style .titulo {
     color: white;
   }
   .btn_flotante {
@@ -650,8 +650,8 @@
     align-items: center;
     overflow: hidden;
   }
-  .descDisplay,
-  .titulo {
+  .card-style .descDisplay,
+  .card-style .titulo {
     color: white;
   }
   .btn_flotante {

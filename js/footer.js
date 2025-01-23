@@ -4,6 +4,8 @@ const footerContent = document.createElement('div');
 footerContent.id = 'footer';
 footerContent.innerHTML = `
     <div class="text-lg-start bg-light">
+		<!-- Btn Flotante -->
+		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
 		<!-- ##### Sección 4 ##### -->
 		<section>
 		<div class="container text-md-start mt-5">
@@ -56,3 +58,22 @@ if (document.title == 'Nosotros · Alfajores La Barraca' || document.title == "P
     igFooter.classList.remove('d-none');
     fbFooter.classList.remove('d-none');
 }
+
+// Desplazamiento Inicio
+
+const botonFlotante = document.getElementById('btn_flotante');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 200) {
+    botonFlotante.classList.add('mostrar');
+  } else {
+    botonFlotante.classList.remove('mostrar');
+  }
+});
+
+botonFlotante.addEventListener('click', () => {
+  window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+  });
+});
