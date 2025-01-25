@@ -58,9 +58,6 @@ navbarContent.innerHTML = `
 navbarBeforeLoad.remove();
 navbarContainer.appendChild(navbarContent);
 
-if (document.title == 'Nosotros · Alfajores La Barraca'||
-    document.title == "Preguntas Frecuentes · Alfajores La Barraca" ||
-    document.title == "Página no encontrada · Alfajores La Barraca" ||
-    document.title == "Buscar - Alfajores La Barraca") {
+if (document.title != 'Alfajores La Barraca') {
     document.getElementById('formSearch').remove();
 }

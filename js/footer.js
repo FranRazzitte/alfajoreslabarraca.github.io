@@ -1,7 +1,7 @@
 const footerBeforeLoad = document.getElementById('footerBeforeLoad');
 const footerContainer = document.getElementById('footer');
 const footerContent = document.createElement('div');
-footerContent.id = 'footer';
+footerContent.id = 'footerContent';
 footerContent.innerHTML = `
     <div class="text-lg-start bg-light">
 		<!-- Btn Flotante -->
@@ -54,7 +54,7 @@ footerContainer.appendChild(footerContent);
 const igFooter = document.getElementById('igFooter');
 const fbFooter = document.getElementById('fbFooter');
 
-if (document.title == 'Nosotros · Alfajores La Barraca' || document.title == "Preguntas Frecuentes · Alfajores La Barraca" || document.title == "Página no encontrada · Alfajores La Barraca") {
+if (document.title != 'Alfajores La Barraca') {
     igFooter.classList.remove('d-none');
     fbFooter.classList.remove('d-none');
 }

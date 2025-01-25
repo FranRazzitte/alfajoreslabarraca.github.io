@@ -68,7 +68,7 @@
 		<div class="d-flex justify-content-center m-3">
 			<div class="carousel slide carousel-fade">
 				<div id="carousel" class="carousel-inner" style="border-radius: 10px;">
-					<a class="carousel-item active" href="./?producto=ddl-sin-azucar">
+					<a class="carousel-item active" href="./productos/?p=ddl-sin-azucar">
 						<img src="./imagenes/carrusel/carrusel4.png" class="d-block w-100"/>
 						<!-- <div class="carousel-caption d-none d-md-block">
 						</div> -->
@@ -95,53 +95,6 @@
 			</div>
 		</div>
 		<!-- ##### Sección 1 ##### -->
-		<section>
-			<!-- Ventana: Detalles Sabor Ind. -->
-			<div class="modal fade show" id="ventana" style="backdrop-filter: blur(5px);">
-			  <div class="modal-dialog modal-lg modal-dialog-centered" style="position: relative !important;">
-				<div class="modal-content" id="interfazVentanaEmergente">
-				  <div class="modal-body p-4">
-					<div class="row">
-					  <div class="col-xl-5 col-lg-6 mb-4 mb-lg-0 modal-dialog-centered">
-						<figure>
-							<blockquote class="blockquote">
-							  <img class="w-100 rounded-3 shadow-4 mb-1" id="imgProducto" src="">
-							</blockquote>
-							<figcaption class="blockquote-footer" style="font-size: 10px;">
-								La imagen es ilustrativa y puede no coincidir con la composición o presentación actual del producto.<br>Consúltenos a nuestro <span><a href="https://wa.me/5491120518253" class="text-decoration-underline">WhatsApp</a></span> para obtener información detallada.
-							</figcaption>
-						</figure>
-					  </div>
-					  <div class="col-xl-7 col-lg-6">
-						<div class="d-flex justify-content-between align-items-center mb-3">
-						  <h4 class="fw-bold mb-0" id="tituloProducto"></h4>
-						  <button type="button" class="btn" id="cerrar-ventana"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></button>
-						</div>
-						<p class="mb-4" id="conPrecio"><span class="lead fw-normal" style="font-size: 24px;" id="precio"></span><span class="lead fw-normal" style="font-size: 24px;">.-</span> <span class="small">ARS</span></p>
-						<p class="mb-4" style="display: none;" id="sinPrecio"><span class="small text-uppercase">CONSULTAR PRECIO</span></p>
-						<p class="mb-4" style="display: none;" id="sinStock"><span class="text-uppercase small" style="color: red;">SIN STOCK</span></p>
-						<p class="fw-bold">Descripción</p>
-						<p class="mb-4 justify-text-center" id="descProducto"></p>
-						<p class="mb-4 small">Hace tú pedido con 72hrs de anticipación.<br>Podés retirar tu pedido personalmente con previo aviso.<br>Envíos sin cargo a Barracas, La Boca y San Telmo.<br>Medios de pago: Efectivo, Transferencia Bancaria o Mercado Pago.<br>Los pedidos se realizan mediante WhatsApp.</p>
-						<div id="btnFlexProducto" class="d-flex">
-							<a href="" id="linkProducto" class="btn btn-block btn-primary mb-3 w-100" style="margin-right: 15px;">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="me-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
-								Hace tu pedido
-							</a>
-							<button type="button" id="btnCompartirProducto" class="btn btn-block btn-outline-primary mb-3 w-100">
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="me-2"><path d="M3 12c0 1.654 1.346 3 3 3 .794 0 1.512-.315 2.049-.82l5.991 3.424c-.018.13-.04.26-.04.396 0 1.654 1.346 3 3 3s3-1.346 3-3-1.346-3-3-3c-.794 0-1.512.315-2.049.82L8.96 12.397c.018-.131.04-.261.04-.397s-.022-.266-.04-.397l5.991-3.423c.537.505 1.255.82 2.049.82 1.654 0 3-1.346 3-3s-1.346-3-3-3-3 1.346-3 3c0 .136.022.266.04.397L8.049 9.82A2.982 2.982 0 0 0 6 9c-1.654 0-3 1.346-3 3z"></path></svg>
-								Compartir
-							</button>
-						</div>
-						
-					  </div>
-					</div>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		</section>
-		<!-- ##### Sección 2 ##### -->
 		<section class="container" id="pagPrincipal">
 			<!-- Notificación: Cookies -->
 			<div class="modal fade show" id="cookiesModal">
@@ -394,7 +347,7 @@
 				<div id="cajas-container" class="container d-flex justify-content-center flex-wrap"></div>
 			</div>
 		</section>
-		<!-- ##### Sección 3 ##### -->
+		<!-- ##### Sección 2 ##### -->
 		<section class="container" style="padding: 16px; padding-bottom: 0%;">
 			<!-- Redes y más info -->
 			<div class="hstack gap-3 w-100 p-1">

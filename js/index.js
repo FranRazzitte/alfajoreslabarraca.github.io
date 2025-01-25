@@ -15,12 +15,12 @@ contenedor_example.remove();
 
 alfajores.forEach(sabor => {
   descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(Number= 0, Number= 120) + "...";
-  var imgSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')
-  var urlSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and')
+  var imgSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
+  var urlSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
   if (sabor.visible) {
     const productoHTML = `
       <div class="card mb-3 card-style">
-        <a href="./?producto=${urlSabor}" title="${sabor.nombre}">
+        <a href="./productos/?p=${urlSabor}" title="${sabor.nombre}">
           <div class="row g-0">
             <div class="col-md-4">
               <img src="./imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img">
@@ -71,130 +71,13 @@ alfajores.forEach(sabor => {
   }
 })
 
-const preciosElement = document.getElementById('precios');
+// REDIRECCIONAR
 
-if (preciosDesactualizados) {
-  preciosElement.style.display = 'block';
-} else {
-  preciosElement.style.display = 'none';
+var hashUrl = window.location.hash.substring(1);
+if (window.location.hash != '') {
+  window.location.href = './productos/?p=' + hashUrl;
 }
-
-// ABRIR PRODUCTO
-
-const ventanaEmergente = document.getElementById('ventana');
-const intVentanaEmergente = document.getElementById('interfazVentanaEmergente')
-const pagPrincipal = document.getElementById('pagPrincipal')
-const tituloProducto = document.getElementById('tituloProducto');
-const descProducto = document.getElementById('descProducto');
-const precioProducto = document.getElementById('precio');
-const sinPrecio = document.getElementById('sinPrecio');
-const conPrecio = document.getElementById('conPrecio');
-const sinStock = document.getElementById('sinStock');
-const imgProducto = document.getElementById('imgProducto');
-const linkProducto = document.getElementById('linkProducto');
-const divBotones = document.getElementById('btnFlexProducto');
-const cerrarVentana = document.getElementById('cerrar-ventana');
-const preciosElementDisplay = document.getElementById('precios').style.display;
-
-document.addEventListener('DOMContentLoaded', function() {
-  abrirProducto();
-});
-
-cerrarVentana.addEventListener('click', () => {
-  closeVentanaEmergente()
-})
-
-function closeVentanaEmergente() {
-  if (window.innerWidth >= 768) {
-      ventanaEmergente.style.display = 'none';
-      document.body.style.overflow = 'auto';
-  } else {
-      ventanaEmergente.style.display = 'none';
-      pagPrincipal.style.display = 'block';
-  }
-
-  document.title = "Alfajores La Barraca";
-  imgProducto.src = "";
-  window.history.replaceState({}, '', window.location.pathname);
-}
-
-function abrirProducto() {
-  if (window.location.hash == '') {
-    const parametro = new URLSearchParams(window.location.search);
-    if (parametro.size != 0) {
-      const parametroValor = parametro.get('producto').replace('and', '&');
-      var imgID = document.querySelector('img[src="./imagenes/sabores/' + parametroValor + '.png"]');
-      console.log(parametro.get('producto'));
-
-      if (imgID) {
-        imgID = imgID.id
-        const productosListFind = alfajores.find(sabor => sabor.nombre === imgID);
-        const titulo = productosListFind.nombre
-        const descripcion = productosListFind.desc;
-        const precio = productosListFind.precioPagina;
-        const imagen = './imagenes/sabores/' + parametroValor + '.png';
-        const link = productosListFind.linkCatalogo;
-
-        tituloProducto.textContent = titulo;
-        descProducto.innerHTML = descripcion;
-        precioProducto.textContent = precio;
-        imgProducto.src = imagen;
-        linkProducto.href = link;
-
-        if (preciosElementDisplay == "none") {
-            if (precio == "") {
-                conPrecio.style.display = 'none';
-                sinStock.style.display = 'none';
-                sinPrecio.style.display = 'block';
-                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-            } else if (precio == "SIN") {
-                sinStock.style.display = 'block';
-                conPrecio.style.display = 'none';
-                sinPrecio.style.display = 'none';
-                linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
-            } else {
-                conPrecio.style.display = 'block';
-                sinStock.style.display = 'none';
-                sinPrecio.style.display = 'none';
-                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-            }
-        } else {
-            conPrecio.style.display = 'none';
-            sinStock.style.display = 'none';
-            sinPrecio.style.display = 'block';
-            linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-        }
-
-        if (window.innerWidth >= 768) {
-            ventanaEmergente.style.display = 'block';
-            ventanaEmergente.classList = 'modal fade show';
-            intVentanaEmergente.classList.add('slide-down');
-            divBotones.classList = 'd-flex'
-            document.body.style.overflow = 'hidden';
-            linkProducto.style.marginRight = '10px';
-        } else {
-            ventanaEmergente.style.display = 'block';
-            ventanaEmergente.classList = 'fade show';
-            divBotones.classList = '';
-            pagPrincipal.style.display = 'none';
-            linkProducto.style.marginRight = '0px';
-            window.scrollTo({
-                top: 0,
-              });
-        }
-        document.title = titulo + " - Alfajores La Barraca";
-      } else {
-          if (parametroValor) {
-              history.replaceState(null, '', window.location.pathname);
-              window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
-          }
-      }
-    }
-  } else {
-    var hashUrlToURLSearchParams = window.location.hash.substring(1);
-    window.location.href = './?producto=' + hashUrlToURLSearchParams;
-  }
-}
+console.log(hashUrl);
 
 // BUSQUEDA
 
@@ -245,7 +128,7 @@ function generarResultados(resultadosHTML, searchTerm, searchStyle) {
     if (productoNombreLowercase.includes(searchTerm) && productoBuscar.visible) {
       resultadosHTML += `
         <li class="list-group-item" ${searchStyle}>
-          <a class="d-flex justify-content-between align-items-center" href="./?producto=${urlSabor}" title="${productoNombre}">
+          <a class="d-flex justify-content-between align-items-center" href="./productos/?p=${urlSabor}" title="${productoNombre}">
             <div class="d-flex align-items-center">
               <img src="./imagenes/sabores/${imgSabor}.png" class="img-fluid img">
               <div class="ms-3">
