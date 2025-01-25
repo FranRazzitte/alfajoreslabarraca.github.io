@@ -174,12 +174,12 @@ function cargarProducto() {
                     relacionadosBeforeLoad.remove();
                     
                 } else {
-                    // history.replaceState(null, '', window.location.pathname);
-                    // window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
+                    history.replaceState(null, '', window.location.pathname);
+                    window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
                 }
             } else {
-                // history.replaceState(null, '', window.location.pathname);
-                // window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
+                history.replaceState(null, '', window.location.pathname);
+                window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
             }
         } else {
             window.location.href = 'https://alfajoreslabarraca.com.ar/'
