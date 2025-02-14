@@ -1,4 +1,4 @@
-// "SIN" == Sin Stock | "" == Consultar precio
+// "SIN" == Sin Stock | "" == Consultar precio.
 
 const preciosDesactualizados = true
 
