@@ -33,7 +33,7 @@ alfajores.forEach(sabor => {
                 <p class="precio">${sabor.precioPagina}</p>
                 <p class="linkCatalogo">${sabor.linkCatalogo}</p>
                 <p class="card-text">
-                  <small data-lang="lb-text-main-section:card-link" class="text-muted text-decoration-underline">Presiona para leer más</small>
+                  <small lang="lb-text-main-section:card-link" class="text-muted text-decoration-underline">Presiona para leer más</small>
                 </p>
               </div>
             </div>

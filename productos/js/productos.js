@@ -114,76 +114,81 @@ function reemplazar(string) {
 }
 
 function cargarProducto() {
-  if (window.location.hash == '') {
-    const parametro = new URLSearchParams(window.location.search);
-    if (parametro.size != 0) {
-        const parametroValor = parametro.get('p').replace('and', '&');
-        const relacionadosBeforeLoad = document.getElementById('relacionadosBeforeLoad');
-        const tituloRelacionados = document.getElementById('tituloRelacionados');
-        if (parametroValor) {
-            const productosListFind = alfajores.find(sabor => reemplazar(sabor.nombre) === parametroValor);
-            if (productosListFind) {
-                if (productosListFind.visible) {
-                    const titulo = productosListFind.nombre
-                    const descripcion = productosListFind.desc;
-                    const precio = productosListFind.precioPagina;
-                    const imagen = '../imagenes/sabores/' + parametroValor + '.png';
-                    const link = productosListFind.linkCatalogo;
-                    const categoriaArray = productosListFind.categoria;
+    if (window.location.hash == '') {
+        console.log(window.location.hash == '', window.location.hash)
+        const parametro = new URLSearchParams(window.location.search);
+        if (parametro.size != 0) {
+            const parametroValor = parametro.get('p').replace('and', '&');
+            const relacionadosBeforeLoad = document.getElementById('relacionadosBeforeLoad');
+            const tituloRelacionados = document.getElementById('tituloRelacionados');
+            if (parametroValor) {
+                const productosListFind = alfajores.find(sabor => reemplazar(sabor.nombre) === parametroValor);
+                if (productosListFind) {
+                    if (productosListFind.visible) {
+                        const titulo = productosListFind.nombre
+                        const descripcion = productosListFind.desc;
+                        const precio = productosListFind.precioPagina;
+                        const imagen = '../imagenes/sabores/' + parametroValor + '.png';
+                        const link = productosListFind.linkCatalogo;
+                        const categoriaArray = productosListFind.categoria;
 
-                    tituloProducto.textContent = titulo;
-                    descProducto.innerHTML = descripcion;
-                    precioProducto.textContent = precio;
-                    imgProducto.src = imagen;
-                    linkProducto.href = link;
+                        tituloProducto.textContent = titulo;
+                        descProducto.innerHTML = descripcion;
+                        precioProducto.textContent = precio;
+                        imgProducto.src = imagen;
+                        linkProducto.href = link;
 
-                    imgProducto.classList = 'w-100 rounded-3 shadow-4 mb-1'
+                        imgProducto.classList = 'w-100 rounded-3 shadow-4 mb-1'
 
-                    document.title = titulo + " - Alfajores La Barraca";
+                        document.title = titulo + " - Alfajores La Barraca";
 
-                    if (preciosDesactualizados) {
-                        conPrecio.style.display = 'none';
-                        sinStock.style.display = 'none';
-                        sinPrecio.style.display = 'block';
-                        linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-                    } else {
-                        if (precio == "") {
+                        if (preciosDesactualizados) {
                             conPrecio.style.display = 'none';
                             sinStock.style.display = 'none';
                             sinPrecio.style.display = 'block';
                             linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-                        } else if (precio == "SIN") {
-                            sinStock.style.display = 'block';
-                            conPrecio.style.display = 'none';
-                            sinPrecio.style.display = 'none';
-                            linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
                         } else {
-                            conPrecio.style.display = 'block';
-                            sinStock.style.display = 'none';
-                            sinPrecio.style.display = 'none';
-                            linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
-                        }   
+                            if (precio == "") {
+                                conPrecio.style.display = 'none';
+                                sinStock.style.display = 'none';
+                                sinPrecio.style.display = 'block';
+                                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+                            } else if (precio == "SIN") {
+                                sinStock.style.display = 'block';
+                                conPrecio.style.display = 'none';
+                                sinPrecio.style.display = 'none';
+                                linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
+                            } else {
+                                conPrecio.style.display = 'block';
+                                sinStock.style.display = 'none';
+                                sinPrecio.style.display = 'none';
+                                linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'
+                            }   
+                        }
+                        
+                        const categoria = categoriaArray.find(sabor => sabor != 'todos').toString();
+                        var numeroRelacionados = productosRelacionados(categoria, titulo);
+                        if (numeroRelacionados == 0) {
+                            productosRelacionados('chocolates', titulo)
+                            tituloRelacionados.textContent = 'Productos recomendados';
+                        }
+                        relacionadosBeforeLoad.remove();
+                        
+                    } else {
+                        history.replaceState(null, '', window.location.pathname);
+                        window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
                     }
-                    
-                    const categoria = categoriaArray.find(sabor => sabor != 'todos').toString();
-                    var numeroRelacionados = productosRelacionados(categoria, titulo);
-                    if (numeroRelacionados == 0) {
-                        productosRelacionados('chocolates', titulo)
-                        tituloRelacionados.textContent = 'Productos recomendados';
-                    }
-                    relacionadosBeforeLoad.remove();
-                    
                 } else {
                     history.replaceState(null, '', window.location.pathname);
                     window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
                 }
             } else {
-                history.replaceState(null, '', window.location.pathname);
-                window.location.href = 'https://alfajoreslabarraca.com.ar/notfound?q=' + parametroValor;
+                window.location.href = 'https://alfajoreslabarraca.com.ar/';
             }
         } else {
-            window.location.href = 'https://alfajoreslabarraca.com.ar/'
+            window.location.href = 'https://alfajoreslabarraca.com.ar/';
         }
+    } else {
+        window.location.href = 'https://alfajoreslabarraca.com.ar/';
     }
-  }
 }
