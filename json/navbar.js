@@ -8,30 +8,14 @@ navbarContent.innerHTML = `
     </div>
     <div class="container">
         <div class="row">
+            
             <div class="col-md-4 d-flex justify-content-left justify-content-md-start mb-md-0 navDiv1" style="padding: 0px;">
                 <button class="btn menuLateral" id="menuOpenButton"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></button>
-                <a href="https://alfajoreslabarraca.com.ar/" class="d-inline-block align-text-center logoMenuSup">
-                    <img id="logoH" src="./imagenes/logo.png" width="45">
-                    <span>Alfajores La Barraca</span>
+                <a href="https://alfajoreslabarraca.com.ar/" class="d-inline-block align-text-center logoMenuSup w-100">
+                    <img id="logoH" src="./imagenes/logo.png" width="90">
+                    <!--<span>Alfajores La Barraca</span>-->
                 </a>
-            </div>
-            <div class="col-md-4 justify-content-left justify-content-md-start mb-md-0 navDiv2" id="navDiv2">
-                <form class="input-group w-100 my-auto d-none d-sm-flex" id="formSearch">
-                    <input
-                        lang="lb-placeholder-navbar-section:search"
-                        autocomplete="off"
-                        id="buscar"
-                        class="form-control rounded"
-                        placeholder="Buscar"
-                        style="min-width: 125px;"
-                    />
-                    <span class="input-group-text border-0 d-none d-lg-flex" style="background-color: transparent;">
-                        <svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path></svg>
-                    </span>
-                    <div class="busqueda" id="busqueda">
-                        <ul class="list-group list-group-light resultado" id="resultado" style="background-color: white;"></ul>	
-                    </div>
-                </form>
+                <div class="btn"><svg class="theme-style" width="24" height="24" viewBox="0 0 24 24"></svg></div>
             </div>
             <div class="col-md-4 justify-content-center justify-content-md-end align-items-center navDiv3" style="height: auto;">
                 <div class="d-flex justify-content-center align-items-center">
@@ -54,6 +38,27 @@ navbarContent.innerHTML = `
             </div>
         </div>
     </div>
+    <div classs="row">
+        <div class="col-md-4 justify-content-center justify-content-md-end align-items-center"></div>
+        <div class="col-md-4 justify-content-center justify-content-md-end align-items-center navDiv2">
+            <form class="input-group w-100 my-auto d-none d-sm-flex" id="formSearch">
+                <input
+                    lang="lb-placeholder-navbar-section:search"
+                    autocomplete="off"
+                    id="buscar"
+                    class="form-control rounded"
+                    placeholder="Buscar"
+                    style="min-width: 125px;"
+                />
+                <span class="input-group-text border-0 d-none d-lg-flex" style="background-color: transparent;">
+                    <svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z"></path></svg>
+                </span>
+                <div class="busqueda" id="busqueda">
+                    <ul class="list-group list-group-light resultado" id="resultado" style="background-color: white;"></ul>	
+                </div>
+            </form>
+        </div>
+    <div>
 `;
 
 navbarBeforeLoad.remove();
