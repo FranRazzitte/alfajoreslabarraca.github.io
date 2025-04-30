@@ -1,4 +1,6 @@
-// "SIN" == Sin Stock | "" == Consultar precio.
+// "SIN" == Sin Stock | "" == Consultar precio
+
+// Update on April 8. V20250408.A
 
 const preciosDesactualizados = false
 
