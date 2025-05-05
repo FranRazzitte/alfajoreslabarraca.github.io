@@ -115,7 +115,6 @@ function reemplazar(string) {
 
 function cargarProducto() {
     if (window.location.hash == '') {
-        console.log(window.location.hash == '', window.location.hash)
         const parametro = new URLSearchParams(window.location.search);
         if (parametro.size != 0) {
             const parametroValor = parametro.get('p').replace('and', '&');
@@ -160,6 +159,7 @@ function cargarProducto() {
                                 linkProducto.classList = 'btn btn-block disabled mb-3 w-100'
                             } else {
                                 conPrecio.style.display = 'block';
+                                conPrecio.classList = 'mb-4';
                                 sinStock.style.display = 'none';
                                 sinPrecio.style.display = 'none';
                                 linkProducto.classList = 'btn btn-block btn-primary mb-3 w-100'

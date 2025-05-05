@@ -279,5 +279,16 @@ const alfajores = [
     "nuevo": false,
     "visible": true,
     "linkCatalogo": "https://wa.me/p/4590362054365924/5491120518253"
+  },
+  {
+    "nombre": "Semana del Alfajor",
+    "precioPagina": "15000",
+    "precioEvento": "$1400",
+    "desc": "¡Promo genial por la Semana del Alfajor!<br>Del 1 al 7 de mayo, celebramos con la mejor excusa: alfajores para todos.<br><br>Pedí tu caja de 6 o 12 unidades y disfrutá la dulzura en su máxima expresión.<br>Stock limitado, ¡no te quedes sin la tuya!<br><br>Envío gratis en CABA<br>Hace tú pedido a nuestro WhatsApp (112051-8253) únicamente mensajes.",
+    "descResumen": "",
+    "categoria": ['cajas'],
+    "nuevo": false,
+    "visible": true,
+    "linkCatalogo": "https://wa.me/p/10075701199158782/5491120518253"
   }
 ]
