@@ -273,3 +273,60 @@ mostrarMasBtn.addEventListener('click', () => {
   mostrarMas = !mostrarMas;
   mostrarOcultarProductos();
 });
+
+// VENTANA EMERGENTE
+
+const fechaActual = new Date();
+const ventana = document.getElementById('ventana-emergente');
+const tituloVentana = document.getElementById('titulo-ventana');
+const iframeVentana = document.getElementById('iframe-ventana');
+const fechaVentana = document.getElementById('fecha-ventana');
+const horaVentana = document.getElementById('hora-ventana');
+const ubicacionVentana = document.getElementById('ubicacion-ventana');
+const descVentana = document.getElementById('desc-ventana');
+const entradaVentana = document.getElementById('entrada-ventana');
+
+document.getElementById('cerrar-ventana').addEventListener('click', function() {
+  ventana.style.display = 'none';
+});
+
+const proximosEventos = [
+  { titulo: 'Campeonato Argentino del Alfajor', dia1: 20, dia2: 22, mes: 6, año: 2025, horaI: '12', horaF: '20', ubicacion: 'Parque La Estación, Güemes 700, Avellaneda', desc: '¡Nos emociona anunciar que estaremos nuevamente presentes en el Campeonato Argentino del Alfajor en el Parque La Estación, Avellaneda! Expondremos varios de nuestros sabores más exquisitos y algunas sorpresas especiales. Los invitamos a que disfruten de nuestras delicias artesanales y vivan una experiencia única llena de sabor y tradición.', entrada: 'ENTRADA LIBRE Y GRATUITA', iframe: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13124.711883189852!2d-58.3626242!3d-34.6754575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33311617aba41%3A0x180bd9cabe2e852e!2sLa%20Estaci%C3%B3n%20-%20Parque%20Municipal%20Multiprop%C3%B3sito!5e0!3m2!1ses-419!2sar!4v1717558761912!5m2!1ses-419!2sar' },
+  { titulo: 'Campeonato Mundial del Alfajor', dia1: 22, dia2: 25, mes: 3, año: 2025, horaI: '12', horaF: '20', ubicacion: 'Costa Salguero, Pabellón 6, Av. Costanera Rafael Obligado 1221, Ciudad de Buenos Aires', desc: '¡Nos emociona anunciar que vamos a estar nuevamente presentes en el Campeonato Mundial del Alfajor, pero esta vez en Costa Salguero, Ciudad de Buenos Aires! Los invitamos a que disfruten de nuestras delicias artesanales y vivan una experiencia única llena de sabor y tradición.', entrada: '', iframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.3403565786506!2d-58.39880380779504!3d-34.56972030412223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb50061ea0ff7%3A0x86629f006abf71bc!2sCentro%20Costa%20Salguero%20Pabell%C3%B3n%206!5e0!3m2!1ses-419!2sar!4v1742837578429!5m2!1ses-419!2sar' }
+  ];
+
+const eventosCumplenCondicion = proximosEventos.filter(evento => {
+  const fechaEvento = new Date(fechaActual.getFullYear(), evento.mes - 1, evento.dia2);
+  const diferenciaDias = Math.floor((fechaEvento - fechaActual) / (1000 * 60 * 60 * 24));
+  return diferenciaDias >= 0 && diferenciaDias <= 10;
+});
+
+if (eventosCumplenCondicion.length > 0) {
+  const primerEvento = eventosCumplenCondicion[0];
+  tituloVentana.textContent = primerEvento.titulo;
+  iframeVentana.src = primerEvento.iframe;
+  fechaVentana.textContent = formatoRangoFechas({ dia1: primerEvento.dia1, dia2: primerEvento.dia2, mes: primerEvento.mes, año: primerEvento.año });
+  horaVentana.textContent = 'De ' + primerEvento.horaI + ' a ' + primerEvento.horaF + ' horas';
+  ubicacionVentana.textContent = primerEvento.ubicacion;
+  descVentana.textContent = primerEvento.desc;
+  entradaVentana.textContent = primerEvento.entrada;
+  ventana.style.display = 'block';
+}
+
+function formatoRangoFechas({ dia1, dia2, mes, año }) {
+  let fecha1 = new Date(año, mes - 1, dia1);
+  let fecha2 = new Date(año, mes - 1, dia2);
+
+  let formatoDia = new Intl.DateTimeFormat("es-ES", { weekday: "long" });
+  let formatoMes = new Intl.DateTimeFormat("es-ES", { month: "long" });
+
+  let diaSemana1 = formatoDia.format(fecha1);
+  let diaSemana2 = formatoDia.format(fecha2);
+  let nombreMes = formatoMes.format(fecha1);
+
+  diaSemana1 = diaSemana1.charAt(0).toUpperCase() + diaSemana1.slice(1);
+  diaSemana2 = diaSemana2.charAt(0).toUpperCase() + diaSemana2.slice(1);
+  nombreMes = nombreMes.charAt(0).toLowerCase() + nombreMes.slice(1);
+
+  return `${diaSemana1} ${dia1} al ${diaSemana2} ${dia2} de ${nombreMes}`;
+}

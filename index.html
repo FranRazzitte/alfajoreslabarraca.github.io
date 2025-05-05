@@ -138,26 +138,33 @@
 				</div>
 			</div>
 			<!-- Ventana: Próximo Evento -->
-			<div class="modal fade show" style="backdrop-filter: blur(5px); display: none;">
+			<div id="ventana-emergente" class="modal show" style="backdrop-filter: blur(5px); display: none;">
 				<div class="modal-dialog modal-lg modal-dialog-centered">
 					<div class="modal-content">
 						<div class="modal-body p-4">
 						  <div class="row">
-							<div class="col-xl-5 col-lg-6 mb-4 mb-lg-0 modal-dialog-centered">
-							  <!--<img class="w-100 rounded-3 shadow-4 mb-4" src="./imagenes/LogoGrande.png">-->
-							  <iframe class="w-100 rounded-3 shadow-4 mb-4" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13124.711883189852!2d-58.3626242!3d-34.6754575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33311617aba41%3A0x180bd9cabe2e852e!2sLa%20Estaci%C3%B3n%20-%20Parque%20Municipal%20Multiprop%C3%B3sito!5e0!3m2!1ses-419!2sar!4v1717558761912!5m2!1ses-419!2sar" width="600" height="450" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+							<div class="col-xl-5 col-lg-6 mb-lg-0 modal-dialog-centered">
+								<figure>
+									<blockquote class="blockquote placeholder-glow">
+										<iframe id="iframe-ventana" class="w-100 rounded-3 shadow-4 mb-4" src="" width="600" height="450" allowfullscreen="false" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+									</blockquote>
+									<figcaption class="blockquote-footer" style="font-size: 10px;">
+										Powered by Google.
+									</figcaption>
+								</figure>
+							  
 							</div>
 							<div class="col-xl-7 col-lg-6">
 							  <div class="d-flex justify-content-between align-items-center mb-3">
-								<h4 class="fw-bold mb-0">Campeonato Argentino del Alfajor</h4>
+								<h4 id="titulo-ventana" class="fw-bold mb-0">Campeonato Argentino del Alfajor</h4>
 								<button type="button" class="btn" id="cerrar-ventana"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg></button>
 							  </div>
-							  <p><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"></path></svg><span class="small" style="margin-left: 5px;">Viernes 21 al Domingo 23 de junio</span></p>
-							  <p><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg><span class="small" style="margin-left: 5px;">De 12 a 20 horas</span></p>
-							  <p class="mb-4"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg><span class="small" style="margin-left: 5px;">Parque La Estación, Güemes 700, Avellaneda</span></p>
-							  <p class="mb-4 justify-text-center">¡Nos emociona anunciar que estaremos presentes en el Campeonato Argentino del Alfajor en el Parque La Estación, Avellaneda! Expondremos varios de nuestros sabores más exquisitos y algunas sorpresas especiales. Los invitamos a que disfruten de nuestras delicias artesanales y vivan una experiencia única llena de sabor y tradición.</p>
-							  <p class="mb-4 small">ENTRADA LIBRE Y GRATUITA</p>
-							  <div class="d-none">
+							  <p><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M21 20V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2zM9 18H7v-2h2v2zm0-4H7v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm4 4h-2v-2h2v2zm0-4h-2v-2h2v2zm2-5H5V7h14v2z"></path></svg><span id="fecha-ventana" class="small" style="margin-left: 5px;">Viernes 21 al Domingo 23 de junio</span></p>
+							  <p><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M13 7h-2v6h6v-2h-4z"></path></svg><span id="hora-ventana" class="small" style="margin-left: 5px;">De 12 a 20 horas</span></p>
+							  <p class="mb-4"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M12 2C7.589 2 4 5.589 4 9.995 3.971 16.44 11.696 21.784 12 22c0 0 8.029-5.56 8-12 0-4.411-3.589-8-8-8zm0 12c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"></path></svg><span id="ubicacion-ventana" class="small" style="margin-left: 5px;">Parque La Estación, Güemes 700, Avellaneda</span></p>
+							  <p id="desc-ventana" class="mb-4 justify-text-center">¡Nos emociona anunciar que estaremos presentes en el Campeonato Argentino del Alfajor en el Parque La Estación, Avellaneda! Expondremos varios de nuestros sabores más exquisitos y algunas sorpresas especiales. Los invitamos a que disfruten de nuestras delicias artesanales y vivan una experiencia única llena de sabor y tradición.</p>
+							  <p id="entrada-ventana" class="mb-4 small">ENTRADA LIBRE Y GRATUITA</p>
+							  <div>
 								  <a href="" class="btn btn-block btn-primary mb-3 w-100" style="margin-right: 15px;">
 									  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="me-2"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
 									  Hace tu pedido
