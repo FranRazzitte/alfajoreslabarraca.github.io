@@ -17,13 +17,12 @@ function compartirEnlace(btn) {
   });
 }
 
-if (document.title == 'Alfajores La Barraca' || document.title == 'Nosotros · Alfajores La Barraca' || document.title == "Preguntas Frecuentes · Alfajores La Barraca" || document.title == "Página no encontrada · Alfajores La Barraca") {
-  const btnCompartir = document.getElementById('btnCompartir');
-  compartirEnlace(btnCompartir);
-} else {
+if (window.location.href.includes('productos')) {
   const btnCompartir = document.getElementById('btnCompartir');
   const btnCompartirProducto = document.getElementById('btnCompartirProducto');
-  
   compartirEnlace(btnCompartir);
   compartirEnlace(btnCompartirProducto);
+} else {
+  const btnCompartir = document.getElementById('btnCompartir');
+  compartirEnlace(btnCompartir);
 }

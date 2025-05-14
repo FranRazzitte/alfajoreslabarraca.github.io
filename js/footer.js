@@ -11,7 +11,7 @@ footerContent.innerHTML = `
 		<div class="container text-md-start mt-5">
 			<div class="row mt-3">
 				<div class="col-md-3 col-lg-4 col-xl-2 mx-auto mb-4">
-					<a href="https://alfajoreslabarraca.com.ar/"><img id="logoF" src="./imagenes/logo.png" alt="Alfajores la Barraca" class="rounded mx-auto d-block" style="width: 150px"></a>
+					<a href="https://alfajoreslabarraca.com.ar/"><img id="logoF" src="https://alfajoreslabarraca.com.ar/imagenes/logo.png" alt="Alfajores la Barraca" class="rounded mx-auto d-block" style="width: 150px"></a>
 				</div>
 				<div class="col-md-3 col-lg-2 col-xl-3 mx-auto mb-4 btnIcon">
 					<h6 lang="lb-text-footer-section:title-info" class="text-uppercase text-center fw-bold mb-4">Info</h6>
@@ -24,7 +24,7 @@ footerContent.innerHTML = `
 					<h6 lang="lb-text-footer-section:title-payments" class="text-uppercase text-center fw-bold mb-4">Medios de pago</h6>
 					<p lang="lb-text-footer-section:cash-payments"><svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" class="icon_pago" viewBox="0 0 34 34" style="fill: rgba(0, 0, 0, 1);"><g><path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zm-1 11a3 3 0 0 0-3 3H7a3 3 0 0 0-3-3V9a3 3 0 0 0 3-3h10a3 3 0 0 0 3 3v6z"></path><path d="M12 8c-2.206 0-4 1.794-4 4s1.794 4 4 4 4-1.794 4-4-1.794-4-4-4zm0 6c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2z"></path></g></svg>Efectivo</p>
 					<p lang="lb-text-footer-section:transfer-payments"><svg xmlns="http://www.w3.org/2000/svg" height="27" width="27" class="icon_pago" viewBox="0 0 34 34" style="fill: rgba(0, 0, 0, 1);"><g><path d="M2 8v4.001h1V18H2v3h16l3 .001V21h1v-3h-1v-5.999h1V8L12 2 2 8zm4 10v-5.999h2V18H6zm5 0v-5.999h2V18h-2zm7 0h-2v-5.999h2V18zM14 8a2 2 0 1 1-4.001-.001A2 2 0 0 1 14 8z"></path></g></svg>Transferencia Bancaria</p>
-					<p lang="lb-text-footer-section:mercado-pago-payments"><img src="./imagenes/mercadopago.jpg" alt="Mercado Pago" height="27" width="27" class="icon_pago">Mercado Pago</p>
+					<p lang="lb-text-footer-section:mercado-pago-payments"><img src="https://alfajoreslabarraca.com.ar/imagenes/mercadopago.jpg" alt="Mercado Pago" height="27" width="27" class="icon_pago">Mercado Pago</p>
 				</div>
 				<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 btnIcon">
 					<h6 lang="lb-text-footer-section:title-contact" class="text-uppercase text-center fw-bold mb-4">Contactos</h6>
