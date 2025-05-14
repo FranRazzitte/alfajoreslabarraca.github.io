@@ -71,13 +71,57 @@ alfajores.forEach(sabor => {
   }
 })
 
+// CATEGORÍAS
+
+const categorias = [
+  'Sabores',
+  'Chocolate',
+  'Maicena',
+  'Avena',
+  'Frutales',
+  'Merengue',
+  'Saludables',
+  'Integral',
+  'Cajas'
+];
+
+const botones = {};
+const secciones = {};
+
+categorias.forEach(nombre => {
+  const key = nombre.toLowerCase();
+  botones[key] = document.getElementById('btn' + nombre);
+  secciones[key] = document.getElementById(key);
+});
+
+function mostrarCategoria(activa) {
+  categorias.forEach(nombre => {
+      const key = nombre.toLowerCase();
+      if (key === activa) {
+          botones[key].classList.add('active');
+          secciones[key].classList.remove('d-none');
+          secciones[key].classList.add('d-block');
+      } else {
+          botones[key].classList.remove('active');
+          secciones[key].classList.remove('d-block');
+          secciones[key].classList.add('d-none');
+      }
+  });
+}
+
+categorias.forEach(nombre => {
+  const key = nombre.toLowerCase();
+  botones[key].addEventListener('click', () => {
+      mostrarCategoria(key);
+  });
+});
+
 // REDIRECCIONAR
 
 var hashUrl = window.location.hash.substring(1);
 if (window.location.hash != '') {
   window.location.href = './productos/?p=' + hashUrl;
 }
-console.log(hashUrl);
 
 // BUSQUEDA
 

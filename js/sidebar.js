@@ -4,7 +4,7 @@ sidebar.id = 'sidebar';
 sidebar.innerHTML = `
     <div>
         <div class="d-flex align-items-center justify-content-center">
-            <img id="logoM" src="./imagenes/logo.png" width="100" style="padding: 5px; padding-top: 15px;">
+            <img id="logoM" src="https://alfajoreslabarraca.com.ar/imagenes/logo.png" width="100" style="padding: 5px; padding-top: 15px;">
         </div>
         <div class="d-flex align-items-center justify-content-center">
             <p style="font-family: 'pristinastd'; font-size: 26px; margin: 0px">Alfajores La Barraca</p>
@@ -75,14 +75,7 @@ if (menuCloseButton) {
 }
 
 const menuBuscar = document.getElementById('navDiv2Movil');
-const logoLateralMovil = document.getElementById('logoM');
 
 if (document.title != "Alfajores La Barraca") {
-    if (document.title == 'Página no encontrada · Alfajores La Barraca') {
-        menuBuscar.classList.add('d-none');
-        logoLateralMovil.setAttribute("src", "/imagenes/logo.png");
-    } else {
-        menuBuscar.classList.add('d-none');
-        logoLateralMovil.setAttribute("src", "./imagenes/logo.png");
-    }
+    menuBuscar.classList.add('d-none');
 }

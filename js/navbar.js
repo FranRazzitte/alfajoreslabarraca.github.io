@@ -11,7 +11,7 @@ navbarContent.innerHTML = `
             <div class="col-md-4 d-flex justify-content-left justify-content-md-start mb-md-0 navDiv1" style="padding: 0px;">
                 <button class="btn menuLateral" id="menuOpenButton"><svg class="theme-style" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path></svg></button>
                 <a href="https://alfajoreslabarraca.com.ar/" class="d-inline-block align-text-center logoMenuSup">
-                    <img id="logoH" src="./imagenes/logo.png" width="45">
+                    <img id="logoH" src="https://alfajoreslabarraca.com.ar/imagenes/logo.png" width="45">
                     <span>Alfajores La Barraca</span>
                 </a>
             </div>

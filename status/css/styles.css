@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+}
+
+.grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.card-status {
+    background: rgb(243, 240, 240);
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.status-icon #ok,
+.status-icon #error,
+.status-icon #loader {
+    display: none;
+}
+
+.status-icon.ok #ok {
+    display: block;
+}
+
+.status-icon.fail #error {
+    display: block;
+}
+
+.status-icon.loading #loader {
+    display: block;
+}
+
+.small {
+    font-size: 14px;
+    color: #57606a;
+}
