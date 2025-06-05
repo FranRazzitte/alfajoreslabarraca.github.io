@@ -58,7 +58,7 @@ sidebarElements.forEach(element => {
 
 const archivos = [
     { nombre: "Products", url: "https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/alfajores.js" },
-    // { nombre: "Categories"},
+    { nombre: "Categories", url: "https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/categorias.js" },
     // { nombre: "Carousel"},
     // { nombre: "Events"},
     // { nombre: "Announcements"}

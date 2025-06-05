@@ -1,120 +1,177 @@
 // AGREGAR SABORES
 
-const contenedor_example = document.getElementById('categoriaBeforeLoad');
-const contenedor_todos = document.getElementById('sabores-container');
-const contenedor_chocolates = document.getElementById('chocolates-container');
-const contenedor_maicena = document.getElementById('maicena-container');
-const contenedor_avena = document.getElementById('avena-container');
-const contenedor_frutales = document.getElementById('frutales-container');
-const contenedor_saludables = document.getElementById('saludables-container');
-const contenedor_merengue = document.getElementById('merengue-container');
-const contenedor_integrales = document.getElementById('integrales-container');
-const contenedor_cajas = document.getElementById('cajas-container');
-
-contenedor_example.remove();
-
-alfajores.forEach(sabor => {
-  descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(Number= 0, Number= 120) + "...";
-  var imgSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
-  var urlSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
-  if (sabor.visible) {
-    const productoHTML = `
-      <div class="card mb-3 card-style">
-        <a href="./productos/?p=${urlSabor}" title="${sabor.nombre}">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <img src="./imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img">
-            </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title titulo">${sabor.nombre}</h5>
-                <p class="descripcion d-none">${sabor.desc}</p>
-                <p class="card-text descDisplay">${descDisplay}</p>
-                <p class="precio">${sabor.precioPagina}</p>
-                <p class="linkCatalogo">${sabor.linkCatalogo}</p>
-                <p class="card-text">
-                  <small lang="lb-text-main-section:card-link" class="text-muted text-decoration-underline">Presiona para leer más</small>
-                </p>
+function agregarSabores() {
+  document.getElementById('categoriaBeforeLoad').remove();
+  try {
+    alfajores.forEach(sabor => {
+      descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(Number= 0, Number= 120) + "...";
+      var imgSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
+      var urlSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
+      if (sabor.visible) {
+        const productoHTML = `
+          <div class="card mb-3 card-style" id="producto_${urlSabor}">
+            <a href="./productos/?p=${urlSabor}" title="${sabor.nombre}">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="./imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title titulo">${sabor.nombre}</h5>
+                    <p class="descripcion d-none">${sabor.desc}</p>
+                    <p class="card-text descDisplay">${descDisplay}</p>
+                    <p class="precio">${sabor.precioPagina}</p>
+                    <p class="linkCatalogo">${sabor.linkCatalogo}</p>
+                    <p class="card-text">
+                      <small lang="lb-text-main-section:card-link" class="text-muted text-decoration-underline">Presiona para leer más</small>
+                    </p>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        </a>
-      </div>`
+            </a>
+          </div>`
 
-    if (sabor.categoria.includes('todos')) {
-      contenedor_todos.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('chocolates')) {
-      contenedor_chocolates.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('maicena')) {
-      contenedor_maicena.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('avena')) {
-      contenedor_avena.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('frutales')) {
-      contenedor_frutales.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('saludables')) {
-      contenedor_saludables.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('merengue')) {
-      contenedor_merengue.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('integrales')) {
-      contenedor_integrales.innerHTML += productoHTML;
-    };
-    if (sabor.categoria.includes('cajas')) {
-      contenedor_cajas.innerHTML += productoHTML;
-    };
+        if (categoriasError) {
+          document.getElementById('todosError').classList.remove('d-none');
+          const contenedorSabores = document.getElementById('todosError-container');
+          contenedorSabores.innerHTML += productoHTML;
+          contenedorSabores.querySelector('#producto_' + urlSabor).classList.add('d-flex');
+        } else {
+            sabor.categoria.forEach(cat => {
+              const contenedorSabores = document.getElementById(cat + '-container');
+              contenedorSabores.innerHTML += productoHTML;
+              document.getElementById('btn' + cat.charAt(0).toUpperCase() + cat.slice(1)).classList.remove('d-none');
+              const productoContenedor = contenedorSabores.querySelector('#producto_' + urlSabor);
+              if (cat === catActiva && !catCeroAmpliable) {
+                productoContenedor.classList.add('d-flex');
+              } else {
+                productoContenedor.classList.remove('d-flex');
+              }
+          })
+        }
+      }
+    })
+  } catch(e) {
+    console.error('Error al cargar productos. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+    document.getElementById('errorAlfajores').classList.remove('d-none');
   }
-})
+}
 
 // CATEGORÍAS
 
-const categorias = [
-  'Sabores',
-  'Chocolate',
-  'Maicena',
-  'Avena',
-  'Frutales',
-  'Merengue',
-  'Saludables',
-  'Integral',
-  'Cajas'
-];
+const btnCategorias = document.getElementById('categorias');
+const contenedorCategorias = document.getElementById('categoriasContenedor');
+const styleSheet = document.createElement('style');
+const mostrarMasBtn = document.getElementById('mostrar-mas');
+var catActiva;
+var catCeroAmpliable;
+let categoriasError;
+document.head.appendChild(styleSheet);
 
 const botones = {};
 const secciones = {};
 
-categorias.forEach(nombre => {
-  const key = nombre.toLowerCase();
-  botones[key] = document.getElementById('btn' + nombre);
-  secciones[key] = document.getElementById(key);
-});
-
-function mostrarCategoria(activa) {
-  categorias.forEach(nombre => {
-      const key = nombre.toLowerCase();
-      if (key === activa) {
-          botones[key].classList.add('active');
-          secciones[key].classList.remove('d-none');
-          secciones[key].classList.add('d-block');
-      } else {
-          botones[key].classList.remove('active');
-          secciones[key].classList.remove('d-block');
-          secciones[key].classList.add('d-none');
+function crearCategorias() {
+  try {
+    categorias.forEach((cat, index) => {
+      const key = cat.nombre.toLowerCase();
+      botones[key] = document.getElementById('btn' + cat.nombre);
+      secciones[key] = document.getElementById(key);
+      contenedorCategorias.innerHTML += `
+        <div id="${cat.nombre.toLowerCase()}" class="d-none">
+					<div id="${cat.nombre.toLowerCase()}-container" class="container d-flex justify-content-center flex-wrap"></div>
+				</div>
+      `;
+      const boton = document.createElement('button');
+      boton.textContent = cat.nombre;
+      boton.type = 'button';
+      boton.id = 'btn' + cat.nombre;
+      boton.classList = 'btn btn-nuestros-productos btn-outline-'+ cat.nombre.toLowerCase() + ' m-1 d-none';
+      if (index === 0) {
+        boton.classList.add('active');
+        catActiva = cat.nombre.toLowerCase();
+        catCeroAmpliable = cat.ampliable;
+        document.getElementById(cat.nombre.toLowerCase()).classList.replace('d-none', 'd-block');
+        if (catCeroAmpliable) {
+          mostrarMasBtn.style.display = 'block';
+        }
       }
-  });
+      styleSheet.innerHTML += `
+        [data-bs-theme=light] {
+          --btn-${cat.nombre.toLowerCase()}: ${cat.colorLight};
+        }
+
+        [data-bs-theme=dark] {
+          --btn-${cat.nombre.toLowerCase()}: ${cat.colorDark};
+        }
+        
+        .btn-outline-${cat.nombre.toLowerCase()} {
+          --bs-btn-color: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-border-color: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-hover-color: var(--btn-general-color);
+          --bs-btn-hover-bg: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-hover-border-color: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-focus-shadow-rgb: 13, 110, 253;
+          --bs-btn-active-color: var(--btn-general-color);
+          --bs-btn-active-bg: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-active-border-color: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+          --bs-btn-disabled-color: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-btn-disabled-bg: transparent;
+          --bs-btn-disabled-border-color: var(--btn-${cat.nombre.toLowerCase()});
+          --bs-gradient: none;
+        }
+      `;
+      btnCategorias.appendChild(boton);
+    });
+  } catch(e) {
+    console.error('Error al cargar categorías. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+    categoriasError = true;
+  } finally {
+    agregarSabores();
+  }
 }
 
-categorias.forEach(nombre => {
-  const key = nombre.toLowerCase();
-  botones[key].addEventListener('click', () => {
-      mostrarCategoria(key);
+crearCategorias();
+
+function mostrarCategoria(activa) {
+  try {
+    categorias.forEach(cat => {
+      const key = cat.nombre.toLowerCase();
+      botones[key] = document.getElementById('btn' + cat.nombre);
+      secciones[key] = document.getElementById(key);
+      if (key === activa) {
+        botones[key].classList.add('active');
+        secciones[key].classList.remove('d-none');
+        secciones[key].classList.add('d-block');
+        catActiva = key;
+      } else {
+        botones[key].classList.remove('active');
+        secciones[key].classList.remove('d-block');
+        secciones[key].classList.add('d-none');
+      }
+    });
+  } catch(e) {
+    console.error('Error al mostrar categorías. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+    categoriasError = true;
+  }
+}
+
+try {
+  categorias.forEach(cat => {
+    const key = cat.nombre.toLowerCase();
+    botones[key] = document.getElementById('btn' + cat.nombre);
+    botones[key].addEventListener('click', () => {
+      if (catActiva !== key) {
+        mostrarCategoria(key);
+        comprobarVerMas();
+      }
+    });
   });
-});
+} catch(e) {
+  console.error('Error al cargar categorías. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+  categoriasError = true;
+}
 
 // REDIRECCIONAR
 
@@ -262,60 +319,56 @@ startAutoCarousel();
 
 // MOSTRAR MÁS
 
-const mostrarMasBtn = document.getElementById('mostrar-mas');
 let mostrarMas = false;
 
-const chocolates_MostrarMas = contenedor_chocolates.querySelectorAll('.card-style');
-chocolates_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-const maicena_MostrarMas = contenedor_maicena.querySelectorAll('.card-style');
-maicena_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-const avena_MostrarMas = contenedor_avena.querySelectorAll('.card-style');
-avena_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-const frutales_MostrarMas = contenedor_frutales.querySelectorAll('.card-style');
-frutales_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-const merengue_MostrarMas = contenedor_merengue.querySelectorAll('.card-style');
-merengue_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-const integrales_MostrarMas = contenedor_integrales.querySelectorAll('.card-style');
-integrales_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-const cajas_MostrarMas = contenedor_cajas.querySelectorAll('.card-style');
-cajas_MostrarMas.forEach(producto => {
-  producto.style.display = 'flex';
-});
-
-function mostrarOcultarProductos() {
-  const todos_MostrarMas = contenedor_todos.querySelectorAll('.card-style');
-  todos_MostrarMas.forEach((producto, index) => {
-    if (mostrarMas) {
-      if (index >= 4) {
-        producto.style.display = 'flex';
-      }
-    } else {
-      if (index >= 4) {
-        producto.style.display = 'none';
-      }
-    }
-  });
-
-  mostrarMasBtn.innerHTML = mostrarMas ? '<i style="font-size: 22px;" class="bx bx-chevron-up"></i> Mostrar menos' : '<i style="font-size: 22px;" class="bx bx-chevron-down"></i> Mostrar más';
+function verMasHTML(estado) {
+  if (estado) {
+    mostrarMasBtn.classList.remove('btn-outline-primary');
+    mostrarMasBtn.classList.add('btn-primary');
+    return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.65 16h10.69c.64 0 .99-.76.56-1.24l-5.35-6.11a.753.753 0 0 0-1.13 0l-5.35 6.11c-.42.48-.08 1.24.56 1.24Z"></path></svg><span style="font-size: 14px;">Ver menos</span>'
+  } else {
+    mostrarMasBtn.classList.remove('btn-primary');
+    mostrarMasBtn.classList.add('btn-outline-primary');
+    return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" ><path d="M17.35 8H6.65c-.64 0-.99.76-.56 1.24l5.35 6.11c.3.34.83.34 1.13 0l5.35-6.11C18.34 8.76 18 8 17.36 8Z"></path></svg><span style="font-size: 14px;">Ver más</span>`;
+  }
 }
 
-mostrarOcultarProductos();
+function verMas() {
+  const contenedorVerMas = document.getElementById(catActiva);
+  const productosVerMas = contenedorVerMas.querySelectorAll('.card-style');
+  productosVerMas.forEach((producto, index) => {
+    if (index >= 4) {
+      producto.style.display = mostrarMas ? 'flex' : 'none';
+    }
+  });
+  mostrarMasBtn.innerHTML = verMasHTML(mostrarMas);
+}
+
+function comprobarVerMas() {
+  const contenedorComprobarVerMas = document.getElementById(catActiva);
+  const productosComprobarVerMas = contenedorComprobarVerMas.querySelectorAll('.card-style');
+  categorias.forEach(cat => {
+    if (cat.nombre.toLowerCase() === catActiva) {
+      if (cat.ampliable) {
+        if (productosComprobarVerMas.length >= 5) {
+          mostrarMasBtn.style.display = 'block';
+          mostrarMas = false;
+          verMas();
+        } else {
+          mostrarMasBtn.style.display = 'none';
+        }
+      } else {
+        mostrarMas = true;
+        verMas();
+        mostrarMasBtn.style.display = 'none';
+      }
+    }
+  })
+}
 
 mostrarMasBtn.addEventListener('click', () => {
   mostrarMas = !mostrarMas;
-  mostrarOcultarProductos();
+  verMas();
 });
 
 // VENTANA EMERGENTE
