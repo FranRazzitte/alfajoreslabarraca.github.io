@@ -27,7 +27,7 @@
 	<link rel="icon" value="64x64" href="./logo.png">
 	<title>Alfajores La Barraca</title>
 </head>
-<body data-page="main">
+<body data-page="main" data-bs-theme="light">
 	<!-- Header -->
     <header id="header" class="navbar-sticky-top-responsive p-3 text-center bg-white border-bottom">
 		<!-- Navbar -->
@@ -182,23 +182,7 @@
 			</div>
 			<!-- Sección Productos -->
 			<h4 lang="lb-text-main-section:title" class="text-center" style="padding-top: 20px;">Nuestros Productos</h4>
-			<div class="text-center">
-				<button lang="lb-btn-main-section:chocolate" id="btnChocolate" type="button" class="btn btn-nuestros-productos btn-outline-chocolate active mb-2">Chocolates</button>
-				<button lang="lb-btn-main-section:maicena" id="btnMaicena" type="button" class="btn btn-nuestros-productos btn-outline-maicena mb-2">Maicena</button>
-				<button lang="lb-btn-main-section:avena" id="btnAvena" type="button" class="btn btn-nuestros-productos btn-outline-avena mb-2">Avena</button>
-				<button lang="lb-btn-main-section:frutas" id="btnFrutales" type="button" class="btn btn-nuestros-productos btn-outline-frutales mb-2">Frutales</button>
-				<button lang="lb-btn-main-section:saludable" id="btnSaludables" type="button" class="btn btn-nuestros-productos btn-outline-saludables mb-2">Saludables</button>
-				<button lang="lb-btn-main-section:merengue" id="btnMerengue" type="button" class="btn btn-nuestros-productos btn-outline-merengue mb-2 d-none">Merengue</button>
-				<button lang="lb-btn-main-section:integral" id="btnIntegral" type="button" class="btn btn-nuestros-productos btn-outline-integral mb-2 d-none">Integral</button>
-				<button lang="lb-btn-main-section:cajas" id="btnCajas" type="button" class="btn btn-nuestros-productos btn-outline-cajas mb-2">Cajas</button>
-				<button lang="lb-btn-main-section:todos" id="btnSabores" type="button" class="btn btn-nuestros-productos btn-outline-sabores mb-2">Todos</button>
-			</div>
-			<div id="precios"> <!-- class="notiAlertA" -->
-					<!--<div class="icon-container d-flex align-items-center">
-						<i class='bx bxs-error'></i> 
-						<p>Los precios de esta página se encuentran desactualizados.</p>
-				  	</div>-->
-			  </div>			  
+			<div class="text-center" id="categorias"></div>
 			<hr class="hr">
 			<div id="categoriaBeforeLoad">
 				<div class="container d-flex justify-content-center flex-wrap">
@@ -320,38 +304,27 @@
 					</div>
 				</div>
 			</div>
-			<div id="sabores" class="d-none">
-				<div id="sabores-container" class="container d-flex justify-content-center flex-wrap"></div>
-				<div class="d-flex justify-content-center align-items-center mb-3">
-					<button lang="lb-btn-main-section:btn-more" type="button" class="btn" id="mostrar-mas">
-						<i style="font-size: 22px;" class='bi bi-chevron-down'></i>
-						Mostrar más
-					</button>
+			<div class="align-items-center justify-content-center text-center d-none" style="margin: 5%;" id="errorAlfajores">
+				<div class="px-4">
+					<svg id="sad" xmlns="http://www.w3.org/2000/svg" width="204" height="204" viewBox="0 0 24 24" style="fill: var(--clr-general)"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-5 8.5a1.5 1.5 0 1 1 3.001.001A1.5 1.5 0 0 1 7 10.5zM8 17s1-3 4-3 4 3 4 3H8zm7.493-5.014a1.494 1.494 0 1 1 .001-2.987 1.494 1.494 0 0 1-.001 2.987z"></path></svg>
+				</div>
+				<hr class="hr">
+				<div class="px-4 text_error_404">
+					<p style="padding: 0%;">¡Ups! Ocurrió un error inesperado. 😔</p>
+					<p style="padding: 0%;">Intenta recargar la página. Si el problema continúa, inténtalo nuevamente más tarde.</p>
+					<a href="https://alfajoreslabarraca.com.ar/" class="btn btn-block btn-primary">Recargar</a>
 				</div>
 			</div>
-			<div id="chocolate" class="d-block">
-				<div id="chocolates-container" class="container d-flex justify-content-center flex-wrap"></div>
+			<div id="categoriasContenedor">
+				<div id="todosError" class="d-none">
+					<div id="todosError-container" class="container d-flex justify-content-center flex-wrap"></div>
+				</div>	
 			</div>
-			<div id="maicena" class="d-none">
-				<div id="maicena-container" class="container d-flex justify-content-center flex-wrap"></div>
-			</div>
-			<div id="avena" class="d-none">
-				<div id="avena-container" class="container d-flex justify-content-center flex-wrap"></div>
-			</div>
-			<div id="frutales" class="d-none">
-				<div id="frutales-container" class="container d-flex justify-content-center flex-wrap"></div>
-			</div>
-			<div id="saludables" class="d-none">
-				<div id="saludables-container" class="container d-flex justify-content-center flex-wrap"></div>
-			</div>
-			<div id="merengue" class="d-none">
-				<div id="merengue-container" class="container d-flex justify-content-center flex-wrap"></div>
-			</div>
-			<div id="integral" class="d-none">
-				<div id="integrales-container" class="container d-flex justify-content-center flex-wrap"></div>
-			</div>
-			<div id="cajas" class="d-none">
-				<div id="cajas-container" class="container d-flex justify-content-center flex-wrap"></div>
+			<div class="d-flex justify-content-center align-items-center mb-3">
+				<button lang="lb-btn-main-section:btn-more" type="button" class="btn btn-outline-primary" id="mostrar-mas" style="display: none;">
+					<svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" ><path d="M17.35 8H6.65c-.64 0-.99.76-.56 1.24l5.35 6.11c.3.34.83.34 1.13 0l5.35-6.11C18.34 8.76 18 8 17.36 8Z"></path></svg>
+					<span style="font-size: 14px;">Ver más</span>
+				</button>
 			</div>
 		</section>
 		<!-- ##### Sección 2 ##### -->
@@ -408,6 +381,7 @@
 	<script src="./js/navbar.js"></script>
 	<script src="./js/footer.js"></script>
 	<script src="https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/alfajores.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/categorias.js"></script>
 	<script src="./js/sidebar.js"></script>
 	<script src="./js/index.js"></script>
 	<script src="./js/cookies.js"></script>
