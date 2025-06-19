@@ -5,7 +5,7 @@ footerContent.id = 'footerContent';
 footerContent.innerHTML = `
     <div class="text-lg-start bg-light">
 		<!-- Btn Flotante -->
-		<button id="btn_flotante" class="btn_flotante"><i class='bx bx-chevron-up'></i></button>
+		<button id="btn_flotante" class="btn_flotante"><svg  xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" viewBox="0 0 24 24" ><path d="m7.71 15.71 4.29-4.3 4.29 4.3 1.42-1.42L12 8.59l-5.71 5.7z"></path></svg></button>
 		<!-- ##### Sección 4 ##### -->
 		<section>
 		<div class="container text-md-start mt-5">
@@ -38,7 +38,7 @@ footerContent.innerHTML = `
 		</section>
 		<div class="footercopy text-center">
 			<div>
-				<p lang="lb-text-footer-section:slogan" style="font-size: 14px; margin: 0%;"><i class='bx bxs-heart eslogan' style="color: red;"></i> Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor <i class='bx bxs-heart eslogan' style="color: red;"></i></p>
+				<p lang="lb-text-footer-section:slogan" style="font-size: 14px; margin: 0%;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24" ><path d="M11.29 20.69c.2.2.45.29.71.29s.51-.1.71-.29l7.5-7.5c2.35-2.35 2.35-6.05 0-8.41-2.29-2.29-5.84-2.35-8.21-.2-2.36-2.15-5.91-2.09-8.21.2-2.35 2.36-2.35 6.06 0 8.41z"></path></svg> Los mejores momentos de la vida, se disfrutan comiendo, un buen alfajor <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="red" viewBox="0 0 24 24" ><path d="M11.29 20.69c.2.2.45.29.71.29s.51-.1.71-.29l7.5-7.5c2.35-2.35 2.35-6.05 0-8.41-2.29-2.29-5.84-2.35-8.21-.2-2.36-2.15-5.91-2.09-8.21.2-2.35 2.36-2.35 6.06 0 8.41z"></path></svg></p>
 				<p lang="lb-text-footer-section:copyright" style="font-size: 12px; margin: 0%;">© 2021 - 2025, Alfajores La Barraca. Todos los derechos reservados. Buenos Aires, Argentina.</p>
 			</div>
 			<div class="justify-content-center">

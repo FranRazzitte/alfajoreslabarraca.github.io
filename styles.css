@@ -198,7 +198,7 @@
 
 body {
   margin: 0;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Montserrat', sans-serif;
   font-size: var(--bs-body-font-size);
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
@@ -219,6 +219,7 @@ hr {
 
 h6, .h6, h5, .h5, h4, .h4, h3, .h3, h2, .h2, h1, .h1 {
   margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
