@@ -8,79 +8,79 @@
 
   @font-face {
     font-family: 'pristinastd';
-    src: url(../pristinastd.woff2) format('woff2'),
-         url(../pristinastd.woff) format('woff');
+    src: url(../font/pristinastd.woff2) format('woff2'),
+         url(../font/pristinastd.woff) format('woff');
     font-weight: normal;
     font-style: normal;
   }
 
-  .dark-mode {
+  [data-bs-theme=dark] {
     color: white;
   }
 
-  .dark-mode .bg-white {
+  [data-bs-theme=dark] .bg-white {
     background-color: #212529 !important;
     color: white;
   }
 
-  .dark-mode .dropdown-menu {
+  [data-bs-theme=dark] .dropdown-menu {
     background-color: #212529 !important;
   }
 
-  .dark-mode .dropdown-menu button {
+  [data-bs-theme=dark] .dropdown-menu button {
     color: white;
   }
 
-  .dark-mode .dropdown-menu .selected {
+  [data-bs-theme=dark] .dropdown-menu .selected {
     background-color: rgb(16, 16, 16);
   }
 
-  .dark-mode .theme-style {
+  [data-bs-theme=dark] .theme-style {
     fill: white !important;
   }
 
 
-  .dark-mode p,
-  .dark-mode h1,
-  .dark-mode h2,
-  .dark-mode h3,
-  .dark-mode h4,
-  .dark-mode h5,
-  .dark-mode h6,
-  .dark-mode small,
-  .dark-mode .btn-close {
+  [data-bs-theme=dark] p,
+  [data-bs-theme=dark] h1,
+  [data-bs-theme=dark] h2,
+  [data-bs-theme=dark] h3,
+  [data-bs-theme=dark] h4,
+  [data-bs-theme=dark] h5,
+  [data-bs-theme=dark] h6,
+  [data-bs-theme=dark] small,
+  [data-bs-theme=dark] .btn-close {
       color: white !important;
       fill: white !important;
   }
 
-  .dark-mode #sidebar,
-  .dark-mode .list-group-item {
+  [data-bs-theme=dark] #sidebar,
+  [data-bs-theme=dark] .list-group-item {
     color: white;
     fill: white;
     background-color: #1c1f23;
   }
 
-  .dark-mode #interfazVentanaEmergente {
+  [data-bs-theme=dark] #interfazVentanaEmergente {
     background-color: #272b30 !important;
   }
 
-  .dark-mode .notiAlerta {
+  [data-bs-theme=dark] .notiAlerta {
     background-color: #721c24;
     color: white;
     border-color: rgb(63, 0, 0);
   }
 
-  .dark-mode .evento {
+  [data-bs-theme=dark] .evento {
     background-color: #aa4700;
   }
 
-  .dark-mode .btn-primary,
-  .dark-mode .btn-outline-primary:hover {
+  [data-bs-theme=dark] .btn-primary,
+  [data-bs-theme=dark] .btn-outline-primary:hover {
     color: black;
     fill: black;
   }
 
-  .dark-mode .btn-primary:hover {
+  [data-bs-theme=dark] .btn-primary:hover {
     color: white;
     fill: white;
   }
@@ -556,7 +556,7 @@
 }
 
 @media screen and (max-width: 600px) { /* Estilos para Dispositivos Moviles Vertical */
-  .dark-mode #interfazVentanaEmergente {
+  [data-bs-theme=dark] #interfazVentanaEmergente {
     background-color: transparent !important;
   }
   .navDiv1 {

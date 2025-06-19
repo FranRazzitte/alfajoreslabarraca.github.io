@@ -11,7 +11,6 @@ const dropdownMenu = document.getElementById('dropdownMenu');
 
 function aplicarTema(tema) {
     if (tema === "dark") {
-        document.body.classList.add('dark-mode');
         document.body.setAttribute('data-bs-theme', 'dark');
         btnCambiarTema.classList.add('dark');
         btnCambiarTema.classList.remove('auto');
@@ -26,7 +25,6 @@ function aplicarTema(tema) {
         btnModoOscuroMovil.classList.add('selected');
         btnIgualarSistemaMovil.classList.remove('selected');
     } else if (tema === "light") {
-        document.body.classList.remove('dark-mode');
         document.body.setAttribute('data-bs-theme', 'light');
         btnCambiarTema.classList.add('light');
         btnCambiarTema.classList.remove('dark');
@@ -94,10 +92,8 @@ function recargarTema() {
     function aplicarTemaSegunPreferencias() {
         if (localStorage.getItem('tema') == 'auto') {
             if (isDarkMode.matches ? 'dark' : 'light' === "dark") {
-                document.body.classList.add('dark-mode');
                 document.body.setAttribute('data-bs-theme', 'dark');
             } else {
-                document.body.classList.remove('dark-mode');
                 document.body.setAttribute('data-bs-theme', 'light');
             }
         }
