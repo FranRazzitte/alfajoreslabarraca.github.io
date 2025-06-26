@@ -12,8 +12,8 @@ function agregarSabores() {
           <div class="card mb-3 card-style" id="producto_${urlSabor}">
             <a href="./productos/?p=${urlSabor}" title="${sabor.nombre}">
               <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="./imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img">
+                <div class="col-md-4 placeholder-glow">
+                  <img src="./imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid rounded-start img placeholder'">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -230,8 +230,8 @@ function generarResultados(resultadosHTML, searchTerm, searchStyle) {
       resultadosHTML += `
         <li class="list-group-item" ${searchStyle}>
           <a class="d-flex justify-content-between align-items-center" href="./productos/?p=${urlSabor}" title="${productoNombre}">
-            <div class="d-flex align-items-center">
-              <img src="./imagenes/sabores/${imgSabor}.png" class="img-fluid img">
+            <div class="d-flex align-items-center placeholder-glow">
+              <img src="./imagenes/sabores/${imgSabor}.png" class="img-fluid img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid img placeholder'">
               <div class="ms-3">
                 <p class="mb-1 titulo">${productoNombre}</p>
                 <p class="d-none descripcion">${productoDesc}</p>
