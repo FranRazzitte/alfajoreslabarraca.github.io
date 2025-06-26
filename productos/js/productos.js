@@ -68,8 +68,8 @@ function productosRelacionados (categoria, titulo) {
             <div class="card mb-3 card-style">
               <a href="./?p=${urlSabor}" title="${sabor.nombre}">
                 <div class="row g-0">
-                  <div class="col-md-4">
-                    <img src="../imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img">
+                  <div class="col-md-4 placeholder-glow">
+                    <img src="../imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img" onerror="this.onerror=null; this.src='./img/404NotFound.svg'; this.className='img-fluid rounded-start img placeholder'">
                   </div>
                   <div class="col-md-8">
                     <div class="card-body">
