@@ -80,6 +80,16 @@
     fill: black;
   }
 
+  [data-bs-theme=dark] .footer-bottom a,
+  [data-bs-theme=dark] .footer-col a,
+  [data-bs-theme=dark] .footer-col ul li {
+    color: white;
+  }
+
+  [data-bs-theme=dark] .footer-bottom {
+    border-top: 1px solid #ebebeb;
+  }
+
   [data-bs-theme=dark] .btn-primary:hover {
     color: white;
     fill: white;
@@ -419,12 +429,8 @@
 .btn_flotante {
   transition: 0.3s;
   position: fixed;
-  bottom: 40px; 
-  right: 30px; 
   width: 50px;
   height: 50px;
-  background-color: #ffffffb7; 
-  color: black;
   border-color: transparent; 
   text-decoration: none;
   border-radius: 50%;
@@ -433,7 +439,6 @@
   font-size: 20px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.377);
   display: flex;
-  opacity: 0;
   justify-content: center;
   align-items: center;
   z-index: 10;
@@ -446,6 +451,29 @@
 .btn_flotante:hover {
   transition: 0.5s;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.377);
+}
+
+.btn_flotante.default {
+  bottom: 30px;
+  right: 90px;
+  background-color: #ffffffb7;
+  color: black;
+  opacity: 0;
+}
+
+.btn_flotante.chat {
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff00b7b7;
+  color: white;
+}
+
+.btn_flotante.chat.icon-chat #icon-chat {
+  display: block !important;
+}
+
+.btn_flotante.chat.icon-close #icon-close {
+  display: block !important;
 }
 
 .btn_flotante.mostrar {
@@ -532,6 +560,82 @@
   width: 70%;
 }
 
+.footer {
+  padding: 40px 20px 10px;
+}
+
+.footer-main {
+  display: flex;
+  justify-content: end;
+  margin-right: 3%;
+  margin-left: 3%;
+  padding-bottom: calc(var(--spacing) * 4);
+  padding-top: calc(var(--spacing) * 8);
+  padding-inline: calc(var(--spacing) * 10);
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  margin: auto;
+  gap: 120px;
+}
+
+.footer-logo img {
+  width: 150px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.footer-slogan {
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding-bottom: 4px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer-col a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #a0a0a0;
+  margin-top: 30px;
+  padding-top: 10px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-bottom a {
+  color: #000000;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+
 @media screen and (min-width: 600px) { /* Estilos para Computadoras */
   #noti {
   padding: 25px;
@@ -600,6 +704,14 @@
     height: 40px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.527);
   }
+  .btn_flotante.default {
+    bottom: 80px;
+    right: 30px;
+  }
+  .btn_flotante.chat {
+    bottom: 30px;
+    right: 30px;
+  }
   .btn_flotante i {
     font-size: 30px;
   }
@@ -633,6 +745,25 @@
   .productoVista figure {
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+  .footer li svg,
+  .footer .icon_pago {
+    display: none;
+  }
+  .footer-main {
+    display: block;
+    margin: 0;
+  }
+  .footer-main .footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 0px;
+  }
+  .footer-logo {
+    margin-bottom: 30px;
+  }
+  .footer-logo img {
+    width: 100px;
   }
 }
 @media screen and (max-height: 600px) { /* Estilos para Dispositivos Moviles Horizontal */
