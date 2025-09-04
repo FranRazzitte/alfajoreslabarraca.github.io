@@ -14,12 +14,12 @@
 	<meta name="twitter:title" content="Alfajores La Barraca">
 	<meta name="twitter:description" content="Explora la página web oficial de los Alfajores la Barraca. Aquí encontrarás una amplia variedad de alfajores exquisitos. ¡Conócenos!">
 	<meta name="twitter:image" content="https://alfajoreslabarraca.com.ar/imagenes/meta.png">
-	<link rel="stylesheet" href="/styles.css">
+	<link rel="stylesheet" href="/css/styles-bt.css">
 	<link rel="stylesheet" href="/css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-	<link rel="icon" value="64x64" href="/logo.png">
+	<link rel="icon" value="64x64" href="/imagenes/logo.png">
 	<title>Página no encontrada · Alfajores La Barraca</title>
 </head>
 <body>
@@ -75,13 +75,12 @@
 		</div>
 		<section class="align-items-center justify-content-center text-center" style="margin: 5%;">
 			<div class="px-4">
-				<!--<img src="/imagenes/PixelArt404.png" alt="ERROR 404" width="200px" height="200px">-->
 				<svg id="ghost" xmlns="http://www.w3.org/2000/svg" width="204" height="204" viewBox="0 0 24 24" style="fill: var(--clr-general)"><path d="M3 11v8h.051c.245 1.692 1.69 3 3.449 3 1.174 0 2.074-.417 2.672-1.174a3.99 3.99 0 0 0 5.668-.014c.601.762 1.504 1.188 2.66 1.188 1.93 0 3.5-1.57 3.5-3.5V11c0-4.962-4.037-9-9-9s-9 4.038-9 9zm6 1c-1.103 0-2-.897-2-2s.897-2 2-2 2 .897 2 2-.897 2-2 2zm6-4c1.103 0 2 .897 2 2s-.897 2-2 2-2-.897-2-2 .897-2 2-2z"></path></svg>
 				<svg id="sad" xmlns="http://www.w3.org/2000/svg" width="204" height="204" viewBox="0 0 24 24" style="fill: var(--clr-general); display: none"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm-5 8.5a1.5 1.5 0 1 1 3.001.001A1.5 1.5 0 0 1 7 10.5zM8 17s1-3 4-3 4 3 4 3H8zm7.493-5.014a1.494 1.494 0 1 1 .001-2.987 1.494 1.494 0 0 1-.001 2.987z"></path></svg>
 			</div>
 			<hr class="hr">
 			<div class="px-4 text_error_404">
-				<p style="padding: 0%;">¡Ups! <span id="text">ERROR 404</span> 😔</p>
+				<p id="text" style="padding: 0%;">ERROR 404</p>
 				<a href="https://alfajoreslabarraca.com.ar/" class="btn btn-block btn-primary">Regresar</a>
 			</div>
 		</section>
@@ -107,12 +106,59 @@
 		</section>
 	</footer>
 	<!-- Scripts -->
+	<script>
+		var svg_ghost = document.getElementById('ghost');
+		var svg_sad = document.getElementById('sad');
+		var text = document.getElementById('text');
+
+		function notfound() {
+			const notfound = new URLSearchParams(window.location.search);
+			const notfoundValor = notfound.get('q');
+			const internalServerError = notfound.get('ise');
+
+			console.log(internalServerError)
+
+			if (internalServerError) {
+				svg_ghost.style.display = 'none';
+				svg_sad.style.display = '';
+				text.innerHTML = '<span style="font-size: 15px" class="fw-bold">Okay, eso fue inesperado.</span><br><span style="font-size: 14px">Hubo un problema interno en nuestro servidor. Estamos trabajando para solucionarlo.</span><br><span style="font-size: 12px; color: gray;" class="fw-bold">Error: 500</span>';
+				console.error('Element Not Found: «' + notfoundValor + '»')
+			} else if (notfoundValor) {
+				svg_ghost.style.display = '';
+				svg_sad.style.display = 'none';
+				text.innerHTML = '<span style="font-size: 15px" class="fw-bold">¡Ups! El producto que intentas consultar no está disponible. 😔</span><br><span style="font-size: 14px">El producto que intentaste buscar no está disponible o nunca existió. Verifica que la dirección URL sea correcta e inténtalo nuevamente.</span><br><span style="font-size: 12px; color: gray;" class="fw-bold">Error: 404</span>'
+				console.error('Element Not Found: «' + notfoundValor + '»')
+			} else {
+				svg_ghost.style.display = '';
+				svg_sad.style.display = 'none';
+				text.innerHTML = '<span style="font-size: 15px" class="fw-bold">¡Ups! La página que intentas visitar no existe. 😔</span><br><span style="font-size: 14px">La página que intentaste buscar no está disponible o nunca existió. Verifica que la dirección URL sea correcta e inténtalo nuevamente.</span><br><span style="font-size: 12px; color: gray;" class="fw-bold">Error: 404</span>'
+			}
+		}
+
+		notfound();
+
+		const elements = document.querySelectorAll('[src], [href]');
+
+		elements.forEach(element => {
+			if (element.hasAttribute('src')) {
+				let srcValue = element.getAttribute('src');
+				if (srcValue.startsWith('./')) {
+					element.setAttribute('src', srcValue.replace('./', '/'));
+				}
+			}
+			if (element.hasAttribute('href')) {
+				let hrefValue = element.getAttribute('href');
+				if (hrefValue.startsWith('./')) {
+					element.setAttribute('href', hrefValue.replace('./', '/'));
+				}
+			}
+		});
+	</script> 
 	<script src="/js/navbar.js"></script>
 	<script src="/js/footer.js"></script>
 	<script src="/js/cookies.js"></script>
 	<script src="/js/sidebar.js"></script>
 	<script src="/js/tema.js"></script>
-	<script src="/js/404.js"></script>
 	<script src="/js/eventos.js"></script>
 </body>
 </html>

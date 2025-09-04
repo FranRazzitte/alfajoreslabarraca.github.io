@@ -1,3 +1,8 @@
+// CONSOLE ERROR
+function showConsoleError(a, e) {
+  console.error(`Error al cargar ${a}. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.`, e)
+}
+
 // AGREGAR SABORES
 
 function agregarSabores() {
@@ -13,7 +18,7 @@ function agregarSabores() {
             <a href="./productos/?p=${urlSabor}" title="${sabor.nombre}">
               <div class="row g-0">
                 <div class="col-md-4 placeholder-glow">
-                  <img src="./imagenes/sabores/${imgSabor}.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid rounded-start img placeholder'">
+                  <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid rounded-start img placeholder'">
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -52,7 +57,7 @@ function agregarSabores() {
       }
     })
   } catch(e) {
-    console.error('Error al cargar productos. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+    showConsoleError('productos', e);
     document.getElementById('errorAlfajores').classList.remove('d-none');
   }
 }
@@ -125,7 +130,7 @@ function crearCategorias() {
       btnCategorias.appendChild(boton);
     });
   } catch(e) {
-    console.error('Error al cargar categorías. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+    showConsoleError('categorías', e);
     categoriasError = true;
   } finally {
     agregarSabores();
@@ -152,7 +157,7 @@ function mostrarCategoria(activa) {
       }
     });
   } catch(e) {
-    console.error('Error al mostrar categorías. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+    showConsoleError('categorías', e);
     categoriasError = true;
   }
 }
@@ -169,7 +174,7 @@ try {
     });
   });
 } catch(e) {
-  console.error('Error al cargar categorías. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.', e);
+  showConsoleError('categorías', e);
   categoriasError = true;
 }
 
@@ -231,7 +236,7 @@ function generarResultados(resultadosHTML, searchTerm, searchStyle) {
         <li class="list-group-item" ${searchStyle}>
           <a class="d-flex justify-content-between align-items-center" href="./productos/?p=${urlSabor}" title="${productoNombre}">
             <div class="d-flex align-items-center placeholder-glow">
-              <img src="./imagenes/sabores/${imgSabor}.png" class="img-fluid img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid img placeholder'">
+              <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" class="img-fluid img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid img placeholder'">
               <div class="ms-3">
                 <p class="mb-1 titulo">${productoNombre}</p>
                 <p class="d-none descripcion">${productoDesc}</p>
@@ -281,41 +286,66 @@ if (window.innerWidth >= 768) {
   })
 }
 
-// Carrusel
+// Carrusel 
 
-const carouselItems = document.querySelectorAll('.carousel-item');
+const carouselContainer = document.getElementById('carousel');
 let currentSlide = 0;
 const intervalDuration = 10000;
 let intervalCarousel;
 
 function showSlide(index) {
-    carouselItems[currentSlide].classList.remove('active');
-    currentSlide = (index + carouselItems.length) % carouselItems.length;
-    carouselItems[currentSlide].classList.add('active');
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  carouselItems[currentSlide].classList.remove('active');
+  currentSlide = (index + carouselItems.length) % carouselItems.length;
+  carouselItems[currentSlide].classList.add('active');
 }
 
 function nextSlide() {
-    showSlide(currentSlide + 1);
+  showSlide(currentSlide + 1);
 }
 
 function startAutoCarousel() {
-    clearInterval(intervalCarousel)
-    intervalCarousel = setInterval(nextSlide, intervalDuration);
+  clearInterval(intervalCarousel)
+  intervalCarousel = setInterval(nextSlide, intervalDuration);
 }
 
 document.getElementById('prevBtn').addEventListener('click', () => {
-    startAutoCarousel();
-    showSlide(currentSlide - 1);
+  startAutoCarousel();
+  showSlide(currentSlide - 1);
 });
 
 document.getElementById('nextBtn').addEventListener('click', () => {
-    startAutoCarousel();
-    showSlide(currentSlide + 1);
+  startAutoCarousel();
+  showSlide(currentSlide + 1);
 });
 
-showSlide(currentSlide);
+function cargarImgCarousel() {
+  try {
+    carousel.forEach(imgC => {
+      const a = document.createElement('a');
+      a.classList = 'carousel-item';
+      a.href = imgC.href;
+      const img = document.createElement('img');
+      img.classList = 'd-block w-100';
+      img.src = 'https://bd.alfajoreslabarraca.com.ar' + imgC.src;
+      if (imgC.id == 1) {
+        a.classList.add('active');
+      }
+      a.appendChild(img);
+      carouselContainer.appendChild(a);
+      if (carousel.length == imgC.id) {
+        showSlide(currentSlide);
+        startAutoCarousel();
+        document.getElementById('carousel-section').classList.replace('d-none', 'd-flex');
+      }
+    })
+  } catch (error) {
+    showConsoleError('carrusel', error);
+  }
+  
+}
 
-startAutoCarousel();
+cargarImgCarousel();
 
 // MOSTRAR MÁS
 
@@ -387,43 +417,46 @@ document.getElementById('cerrar-ventana').addEventListener('click', function() {
   ventana.style.display = 'none';
 });
 
-const proximosEventos = [
-  { titulo: 'Campeonato Argentino del Alfajor', dia1: 20, dia2: 22, mes: 6, año: 2025, horaI: '12', horaF: '20', ubicacion: 'Parque La Estación, Güemes 700, Avellaneda', desc: '¡Nos emociona anunciar que estaremos nuevamente presentes en el Campeonato Argentino del Alfajor en el Parque La Estación, Avellaneda! Expondremos varios de nuestros sabores más exquisitos y algunas sorpresas especiales. Los invitamos a que disfruten de nuestras delicias artesanales y vivan una experiencia única llena de sabor y tradición.', entrada: 'ENTRADA LIBRE Y GRATUITA', iframe: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13124.711883189852!2d-58.3626242!3d-34.6754575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a33311617aba41%3A0x180bd9cabe2e852e!2sLa%20Estaci%C3%B3n%20-%20Parque%20Municipal%20Multiprop%C3%B3sito!5e0!3m2!1ses-419!2sar!4v1717558761912!5m2!1ses-419!2sar' },
-  { titulo: 'Mundial del Alfajor', dia1: 15, dia2: 17, mes: 8, año: 2025, horaI: '12', horaF: '20', ubicacion: 'Costa Salguero, Pabellón 6, Av. Costanera Rafael Obligado 1221, Ciudad de Buenos Aires', desc: '¡Nos emociona anunciar que vamos a estar nuevamente presentes en el Mundial del Alfajor, pero esta vez en Costa Salguero, Ciudad de Buenos Aires! Los invitamos a que disfruten de nuestras delicias artesanales y vivan una experiencia única llena de sabor y tradición.', entrada: '', iframe: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d821.3403565786506!2d-58.39880380779504!3d-34.56972030412223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb50061ea0ff7%3A0x86629f006abf71bc!2sCentro%20Costa%20Salguero%20Pabell%C3%B3n%206!5e0!3m2!1ses-419!2sar!4v1742837578429!5m2!1ses-419!2sar' }
-  ];
-
-const eventosCumplenCondicion = proximosEventos.filter(evento => {
-  const fechaEvento = new Date(fechaActual.getFullYear(), evento.mes - 1, evento.dia2);
-  const diferenciaDias = Math.floor((fechaEvento - fechaActual) / (1000 * 60 * 60 * 24));
-  return diferenciaDias >= 0 && diferenciaDias <= 10;
-});
-
-if (eventosCumplenCondicion.length > 0) {
-  const primerEvento = eventosCumplenCondicion[0];
-  tituloVentana.textContent = primerEvento.titulo;
-  iframeVentana.src = primerEvento.iframe;
-  fechaVentana.textContent = formatoRangoFechas({ dia1: primerEvento.dia1, dia2: primerEvento.dia2, mes: primerEvento.mes, año: primerEvento.año });
-  horaVentana.textContent = 'De ' + primerEvento.horaI + ' a ' + primerEvento.horaF + ' horas';
-  ubicacionVentana.textContent = primerEvento.ubicacion;
-  descVentana.textContent = primerEvento.desc;
-  entradaVentana.textContent = primerEvento.entrada;
-  ventana.style.display = 'block';
+try {
+  const eventosCumplenCondicion = proximosEventos.filter(evento => {
+    const fechaEvento = new Date(fechaActual.getFullYear(), evento.mes - 1, evento.diaF);
+    const diferenciaDias = Math.floor((fechaEvento - fechaActual) / (1000 * 60 * 60 * 24));
+    return diferenciaDias >= 0 && diferenciaDias <= 10;
+  });
+  if (eventosCumplenCondicion.length > 0) {
+    const primerEvento = eventosCumplenCondicion[0];
+    tituloVentana.textContent = primerEvento.titulo;
+    iframeVentana.src = primerEvento.iframe;
+    fechaVentana.textContent = formatoRangoFechas({ diaI: primerEvento.diaI, diaF: primerEvento.diaF, mes: primerEvento.mes, año: primerEvento.año });
+    horaVentana.textContent = 'De ' + primerEvento.horaI + ' a ' + primerEvento.horaF + ' horas';
+    ubicacionVentana.textContent = primerEvento.ubicacion;
+    descVentana.innerHTML = primerEvento.desc.replace("{[", "<a class='fw-bold text-decoration-underline' href='").replace("]", "'>").replace("}", "</a>");;
+    entradaVentana.textContent = primerEvento.entrada;
+    ventana.style.display = 'block';
+  }  
+} catch (error) {
+  showConsoleError('eventos', error);
 }
 
-function formatoRangoFechas({ dia1, dia2, mes, año }) {
-  let fecha1 = new Date(año, mes - 1, dia1);
-  let fecha2 = new Date(año, mes - 1, dia2);
+function formatoRangoFechas({ diaI, diaF, mes, año }) {
+  let fecha2 = new Date(año, mes - 1, diaF);
 
   let formatoDia = new Intl.DateTimeFormat("es-ES", { weekday: "long" });
   let formatoMes = new Intl.DateTimeFormat("es-ES", { month: "long" });
 
-  let diaSemana1 = formatoDia.format(fecha1);
   let diaSemana2 = formatoDia.format(fecha2);
-  let nombreMes = formatoMes.format(fecha1);
+  let nombreMes = formatoMes.format(fecha2);
 
-  diaSemana1 = diaSemana1.charAt(0).toUpperCase() + diaSemana1.slice(1);
   diaSemana2 = diaSemana2.charAt(0).toUpperCase() + diaSemana2.slice(1);
   nombreMes = nombreMes.charAt(0).toLowerCase() + nombreMes.slice(1);
 
-  return `${diaSemana1} ${dia1} al ${diaSemana2} ${dia2} de ${nombreMes}`;
+  if (diaI) {
+    let fecha1 = new Date(año, mes - 1, diaI);
+    let diaSemana1 = formatoDia.format(fecha1);
+    diaSemana1 = diaSemana1.charAt(0).toUpperCase() + diaSemana1.slice(1);
+
+    return `${diaSemana1} ${diaI} al ${diaSemana2} ${diaF} de ${nombreMes}`;
+  } else {
+    return `${diaSemana2} ${diaF} de ${nombreMes}`;
+  }
 }

@@ -14,12 +14,13 @@
 	<meta name="twitter:title" content="Alfajores La Barraca">
 	<meta name="twitter:description" content="Explora la página web oficial de los Alfajores la Barraca. Aquí encontrarás una amplia variedad de alfajores exquisitos. ¡Conócenos!">
 	<meta name="twitter:image" content="https://alfajoreslabarraca.com.ar/imagenes/meta.png">
-	<link rel="stylesheet" href="../styles.css">
+	<link rel="stylesheet" href="../css/styles-bt.css">
 	<link rel="stylesheet" href="../css/styles.css">
+	<link rel="stylesheet" href="./css/styles.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-	<link rel="icon" value="64x64" href="../logo.png">
+	<link rel="icon" value="64x64" href="../imagenes/logo.png">
 	<title> - Alfajores La Barraca</title>
 </head>
 <body>
@@ -80,15 +81,22 @@
                     <div class="row justify-content-center">
                         <div class="col-xl-5 col-lg-6 mb-4 mb-lg-0 ">
                             <figure>
-                                <blockquote class="blockquote placeholder-glow">
-                                	<img class="w-100 rounded-3 shadow-4 mb-1 placeholder" id="imgProducto" src="./img/404NotFound.svg" onerror="this.src='./img/404NotFound.svg'; this.onerror='null'; this.className='w-100 rounded-3 shadow-4 mb-1 placeholder'">
+                                <blockquote class="blockquote">
+									<section id="collage-item" class="collage"></section>
+									<div class="img-container placeholder-glow" id="img-container">
+										<img class="w-100 rounded-3 shadow-4 mb-1 placeholder" id="imgProducto" src="./img/loader.svg" onerror="this.src='./img/404NotFound.svg'; this.onerror='null'; this.className='w-100 rounded-3 shadow-4 mb-1 placeholder'">
+										<div class="lente rounded-3" id="lente"></div>
+									</div>
                                 </blockquote>
                                 <figcaption class="blockquote-footer" style="font-size: 10px;">
                                     La imagen es ilustrativa y puede no coincidir con la composición o presentación actual del producto.<br>Consúltenos a nuestro <span><a href="https://wa.me/5491120518253" class="text-decoration-underline">WhatsApp</a></span> para obtener información detallada.
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="d-flex justify-content-center justify-content-between col-xl-5 col-lg-6" style="flex-direction: column; height: max-content;">
+						<div class="col-xl-5 col-lg-6 align-content-center" id="zoom-section" style="display: none;">
+							<div class="zoom-result rounded-3 w-100 d-block" id="zoom-result"></div>
+						</div>
+                        <div id="productSection" class="justify-content-center justify-content-between col-xl-5 col-lg-6" style="display: flex; flex-direction: column; height: max-content;">
                             <div>
                                 <h1 class="fw-bold mb-3" id="tituloProducto"><span class="placeholder col-9"></span></h1>
                                 <p class="mb-4 placeholder" id="conPrecio"><span class="lead fw-normal" style="font-size: 24px;" id="precio"></span><span class="lead fw-normal" style="font-size: 24px;">.-</span> <span class="small">ARS</span></p>
@@ -304,7 +312,7 @@
 	<script src="../js/cookies.js"></script>
 	<script src="../js/sidebar.js"></script>
 	<script src="../js/tema.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/alfajores.js"></script>
+    <script src="https://bd.alfajoreslabarraca.com.ar/js/alfajores.js"></script>
 	<script src="../js/compartir.js"></script>
 	<script src="./js/productos.js"></script>
 </body>

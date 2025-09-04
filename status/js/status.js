@@ -57,10 +57,10 @@ sidebarElements.forEach(element => {
 // STATUS PAGE
 
 const archivos = [
-    { nombre: "Products", url: "https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/alfajores.js" },
-    { nombre: "Categories", url: "https://cdn.jsdelivr.net/gh/FranRazzitte/bd.alfajoreslabarraca@main/categorias.js" },
-    // { nombre: "Carousel"},
-    // { nombre: "Events"},
+    { nombre: "alfajores.js", url: "https://bd.alfajoreslabarraca.com.ar/js/alfajores.js" },
+    { nombre: "categorias.js", url: "https://bd.alfajoreslabarraca.com.ar/js/categorias.js" },
+    { nombre: "carousel.js", url: "https://bd.alfajoreslabarraca.com.ar/js/carousel.js"},
+    { nombre: "eventos.js", url: "https://bd.alfajoreslabarraca.com.ar/js/eventos.js"},
     // { nombre: "Announcements"}
 ];
 
