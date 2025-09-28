@@ -4,8 +4,10 @@ const logoH = document.getElementById('logoH');
 const logoF = document.getElementById('logoF');
 const logoM = document.getElementById('logoM');
 
-var diaActual = fechaActual.getDate();
-var mesActual = fechaActual.getMonth();
+const fecha = new Date();
+
+var diaActual = fecha.getDate();
+var mesActual = fecha.getMonth();
 
 if (mesActual === 4 && diaActual >= 18 && diaActual <= 25) {
   if (document.title === "Página no encontrada · Alfajores La Barraca") {

@@ -142,9 +142,15 @@ function cargarProducto() {
                             linkProducto.href = link;
 
                             imgProducto.onload = function() {
-                                imgProducto.classList.remove('placeholder');
-                                cargarImgLente();
-                            }
+                                if (!imgProducto.src.toString().includes('404NotFound.svg')) {
+                                    imgProducto.classList.remove('placeholder');
+                                    cargarImgLente();
+                                } else {
+                                    document.getElementById("lente").className = 'd-none';
+                                    document.getElementById("zoom-section").className = 'd-none';
+                                    document.getElementById("productSection").classList.add('d-flex');
+                                }
+                            };
 
                             document.title = titulo + " - Alfajores La Barraca";
 
@@ -191,12 +197,11 @@ function cargarProducto() {
                                     figure.className = 'item';
                                     figure.appendChild(img);
                                     collage_item.appendChild(figure);
+                                    if (i >= 2) { collage_item.classList.remove('d-none'); }
                                     i++;
                                     cargarImagen();
                                 };
-                                img.onerror = function() {
-                                    console.info('Loading image collage stopped at index ' + i, img.src);
-                                }  
+                                img.onerror = function() { console.info('Loading image collage stopped at index ' + i, img.src); }  
                             }
 
                             cargarImagen();
@@ -204,7 +209,7 @@ function cargarProducto() {
                             const categoria = categoriaArray.find(sabor => sabor != 'todos').toString();
                             var numeroRelacionados = productosRelacionados(categoria, titulo);
                             if (numeroRelacionados == 0) {
-                                productosRelacionados('chocolates', titulo)
+                                productosRelacionados('chocolates', titulo);
                                 tituloRelacionados.textContent = 'Productos recomendados';
                             }
                             relacionadosBeforeLoad.remove();
