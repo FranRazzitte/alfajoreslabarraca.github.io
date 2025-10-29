@@ -1,7 +1,7 @@
 # Alfajores La Barraca
 
 ![Estado del proyecto](https://img.shields.io/badge/Estado-Estable-green)
-![Versión](https://img.shields.io/badge/Versión-12.9.0-red)
+![Versión](https://img.shields.io/badge/Versión-12.9.1-red)
 
 Este repositorio contiene el código fuente de la página web Alfajores La Barraca. La página está en constante desarrollo y se puede acceder a ella en: [https://alfajoreslabarraca.com.ar](https://alfajoreslabarraca.com.ar).
 
