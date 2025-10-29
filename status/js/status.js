@@ -36,24 +36,6 @@ footerElements.forEach(element => {
     }
 });
 
-const sidebarProductos = document.getElementById('sidebar');
-const sidebarElements = sidebarProductos.querySelectorAll('[src], [href]');
-
-sidebarElements.forEach(element => {
-    if (element.hasAttribute('src')) {
-        let srcValue = element.getAttribute('src');
-        if (srcValue.startsWith('./')) {
-            element.setAttribute('src', srcValue.replace('./', '../'));
-        }
-    }
-    if (element.hasAttribute('href')) {
-        let hrefValue = element.getAttribute('href');
-        if (hrefValue.startsWith('./')) {
-            element.setAttribute('href', hrefValue.replace('./', '../'));
-        }
-    }
-});
-
 // STATUS PAGE
 
 const archivos = [
@@ -100,7 +82,7 @@ archivos.forEach(archivo => {
     .catch((err) => {
         statusIcon.className = 'status-icon fail';
         textSpan.textContent = 'Error';
-        const hora = new Date().toLocaleTimeString();
+        document.getElementById('logErrores').innerHTML = '';
         registrarError(archivo.nombre, err.message || 'Error al acceder');
     });
 });

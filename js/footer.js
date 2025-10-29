@@ -3,7 +3,7 @@ const footerContainer = document.getElementById('footer');
 const footerContent = document.createElement('div');
 footerContent.id = 'footerContent';
 footerContent.innerHTML = `
-    <div class="text-lg-start bg-light">
+    <div class="text-lg-start bg-light" style="background-color: var(--bs-body-bg) !important;">
 		<!-- Chat -->
 		<!-- <div id="chat" class="border" style="display: none; overflow: hidden; position: fixed; width: 25%; height: 75%; bottom: 90px; right: 15px; z-index: 2147483647; left: unset; border-radius: 15px; box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.377);">
 			<iframe src="./chat/" frameborder="0" style="border: 0px; position: relative; top: 0px; left: 0px; width: 100%; height: 100%; max-height: 100vh; display: flex;"></iframe>

@@ -36,58 +36,39 @@ footerElements.forEach(element => {
     }
 });
 
-const sidebarProductos = document.getElementById('sidebar');
-const sidebarElements = sidebarProductos.querySelectorAll('[src], [href]');
-
-sidebarElements.forEach(element => {
-    if (element.hasAttribute('src')) {
-        let srcValue = element.getAttribute('src');
-        if (srcValue.startsWith('./')) {
-            element.setAttribute('src', srcValue.replace('./', '../'));
-        }
-    }
-    if (element.hasAttribute('href')) {
-        let hrefValue = element.getAttribute('href');
-        if (hrefValue.startsWith('./')) {
-            element.setAttribute('href', hrefValue.replace('./', '../'));
-        }
-    }
-});
-
 // Relacionados y Recomendados
 
 function productosRelacionados (categoria, titulo) {
     const relacionados = document.getElementById('relacionados');
     var saboresRelacionados = 0
     alfajores.forEach(sabor => {
-        descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(Number= 0, Number= 120) + "...";
-        var imgSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
-        var urlSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
-        if (sabor.visible && sabor.categoria.includes(categoria) && sabor.nombre != titulo) {
-          const productoHTML = `
-            <div class="card mb-3 card-style">
-              <a href="./?p=${urlSabor}" title="${sabor.nombre}">
-                <div class="row g-0">
-                  <div class="col-md-4 placeholder-glow">
-                    <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img" onerror="this.onerror=null; this.src='./img/404NotFound.svg'; this.className='img-fluid rounded-start img placeholder'">
-                  </div>
-                  <div class="col-md-8">
-                    <div class="card-body">
-                      <h5 class="card-title titulo">${sabor.nombre}</h5>
-                      <p class="descripcion d-none">${sabor.desc}</p>
-                      <p class="card-text descDisplay">${descDisplay}</p>
-                      <p class="precio">${sabor.precioPagina}</p>
-                      <p class="linkCatalogo">${sabor.linkCatalogo}</p>
-                      <p class="card-text">
-                        <small class="text-muted text-decoration-underline">Presiona para leer más</small>
-                      </p>
+        let descNum;
+        if (window.innerWidth <= 600) { descNum = 60; } else { descNum = 80; }
+        descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(numero= 0, numero= descNum) + "...";
+        var imgSabor = sabor.id.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
+        var urlSabor = sabor.id.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
+        if (sabor.visible && sabor.category.includes(categoria) && sabor.name != titulo) {
+            const productoHTML = `
+                <div class="card m-0 p-0 card-style" style="border: none; margin-right: 2%" id="producto_${urlSabor}">
+                    <a href="./productos/?p=${urlSabor}" title="${sabor.name}">
+                    <div class="flex-movil">
+                        <div class="p-1 placeholder-glow img-movil">
+                        <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" decoding="async" alt="${sabor.name}" id="${sabor.name}" class="w-100 rounded" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='w-100 rounded placeholder'">
+                        </div>
+                        <div>
+                        <div class="card-body">
+                            <h5 class="card-title titulo">${sabor.name}</h5>
+                            <p class="card-text descDisplay">${descDisplay}</p>
+                            <p class="card-text catDisplay d-none">
+                            <small class="text-uppercase rounded p-1" style="background-color: var(--btn-${sabor.category[0]}); color: var(--btn-general-color) !important;">${sabor.category[0]}</small>
+                            </p>
+                        </div>
+                        </div>
                     </div>
-                  </div>
-                </div>
-              </a>
-            </div>`
+                    </a>
+                </div>`
             relacionados.innerHTML += productoHTML;
-            saboresRelacionados += 1
+            saboresRelacionados += 1;
         }
     })
     return saboresRelacionados
@@ -123,15 +104,15 @@ function cargarProducto() {
                 const relacionadosBeforeLoad = document.getElementById('relacionadosBeforeLoad');
                 const tituloRelacionados = document.getElementById('tituloRelacionados');
                 if (parametroValor) {
-                    const productosListFind = alfajores.find(sabor => reemplazar(sabor.nombre) === parametroValor);
+                    const productosListFind = alfajores.find(sabor => reemplazar(sabor.id) === parametroValor);
                     if (productosListFind) {
                         if (productosListFind.visible) {
-                            const titulo = productosListFind.nombre
+                            const titulo = productosListFind.name
                             const descripcion = productosListFind.desc;
-                            const precio = productosListFind.precioPagina;
+                            const precio = productosListFind.price;
                             const imagen = 'https://bd.alfajoreslabarraca.com.ar/img/products/' + parametroValor + '/1.png';
-                            const link = productosListFind.linkCatalogo;
-                            const categoriaArray = productosListFind.categoria;
+                            const link = productosListFind.link;
+                            const categoriaArray = productosListFind.category;
 
                             imgActive = imagen;
 
@@ -205,9 +186,28 @@ function cargarProducto() {
                             }
 
                             cargarImagen();
+
+                            let historial = [];
+                            if (localStorage.getItem('historial')) {
+                                historial = JSON.parse(localStorage.getItem('historial'));
+                            }
+                            newItemHistory = {
+                                name : titulo,
+                                price : precio,
+                                desc : descripcion,
+                                category : categoriaArray,
+                                new : productosListFind.new,
+                                link : link,
+                            };
+                            if (!historial.some(i => i.nombre === titulo)) {
+                                console.table(historial);
+                                historial.unshift(newItemHistory);
+                                console.table(historial);
+                            }
+                            localStorage.setItem('historial', JSON.stringify(historial));
                             
-                            const categoria = categoriaArray.find(sabor => sabor != 'todos').toString();
-                            var numeroRelacionados = productosRelacionados(categoria, titulo);
+                            const categoria_producto = categoriaArray.find(sabor => sabor != 'todos').toString();
+                            var numeroRelacionados = productosRelacionados(categoria_producto, titulo);
                             if (numeroRelacionados == 0) {
                                 productosRelacionados('chocolates', titulo);
                                 tituloRelacionados.textContent = 'Productos recomendados';
