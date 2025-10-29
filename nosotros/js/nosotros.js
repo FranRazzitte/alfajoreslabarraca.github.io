@@ -36,24 +36,6 @@ footerElements.forEach(element => {
     }
 });
 
-const sidebarProductos = document.getElementById('sidebar');
-const sidebarElements = sidebarProductos.querySelectorAll('[src], [href]');
-
-sidebarElements.forEach(element => {
-    if (element.hasAttribute('src')) {
-        let srcValue = element.getAttribute('src');
-        if (srcValue.startsWith('./')) {
-            element.setAttribute('src', srcValue.replace('./', '../'));
-        }
-    }
-    if (element.hasAttribute('href')) {
-        let hrefValue = element.getAttribute('href');
-        if (hrefValue.startsWith('./')) {
-            element.setAttribute('href', hrefValue.replace('./', '../'));
-        }
-    }
-});
-
 // AÑOS
 
 var currentDate = new Date();

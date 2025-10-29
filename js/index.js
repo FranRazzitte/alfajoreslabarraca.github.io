@@ -8,50 +8,52 @@ function showConsoleError(a, e) {
 function agregarSabores() {
   document.getElementById('categoriaBeforeLoad').remove();
   try {
+    alfajores.sort((a, b) => a.desc.localeCompare(b.desc));
     alfajores.forEach(sabor => {
-      descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(Number= 0, Number= 120) + "...";
-      var imgSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
-      var urlSabor = sabor.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
+      let descNum;
+      if (window.innerWidth <= 600) { descNum = 60; } else { descNum = 80; }
+      descDisplay = sabor.desc.replace(/<br>/g, ' ').slice(numero= 0, numero= descNum) + "...";
+      var imgSabor = sabor.id.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
+      var urlSabor = sabor.id.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and');
       if (sabor.visible) {
         const productoHTML = `
-          <div class="card mb-3 card-style" id="producto_${urlSabor}">
-            <a href="./productos/?p=${urlSabor}" title="${sabor.nombre}">
-              <div class="row g-0">
-                <div class="col-md-4 placeholder-glow">
-                  <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" alt="${sabor.nombre}" id="${sabor.nombre}" class="img-fluid rounded-start img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid rounded-start img placeholder'">
+          <div class="card m-0 p-0 card-style" style="border: none; margin-right: 2%" id="producto_${urlSabor}">
+            <a href="./productos/?p=${urlSabor}" title="${sabor.name}">
+              <div class="flex-movil">
+                <div class="p-1 placeholder-glow img-movil">
+                  <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" decoding="async" alt="${sabor.name}" id="${sabor.name}" class="w-100 rounded" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='w-100 rounded placeholder'">
                 </div>
-                <div class="col-md-8">
+                <div>
                   <div class="card-body">
-                    <h5 class="card-title titulo">${sabor.nombre}</h5>
-                    <p class="descripcion d-none">${sabor.desc}</p>
+                    <h5 class="card-title titulo">${sabor.name}</h5>
                     <p class="card-text descDisplay">${descDisplay}</p>
-                    <p class="precio">${sabor.precioPagina}</p>
-                    <p class="linkCatalogo">${sabor.linkCatalogo}</p>
-                    <p class="card-text">
-                      <small lang="lb-text-main-section:card-link" class="text-muted text-decoration-underline">Presiona para leer más</small>
+                    <p class="card-text catDisplay">
+                      <small class="text-uppercase rounded p-1" style="background-color: var(--btn-${sabor.category[0]}); color: var(--btn-general-color) !important;">${sabor.category[0]}</small>
                     </p>
                   </div>
                 </div>
               </div>
             </a>
           </div>`
-
-        if (categoriasError) {
-          document.getElementById('todosError').classList.remove('d-none');
-          const contenedorSabores = document.getElementById('todosError-container');
+        sabor.category.forEach(cat => {
+          const contenedorSabores = document.getElementById(cat);
           contenedorSabores.innerHTML += productoHTML;
-          contenedorSabores.querySelector('#producto_' + urlSabor).classList.add('d-flex');
-        } else {
-            sabor.categoria.forEach(cat => {
-              const contenedorSabores = document.getElementById(cat + '-container');
-              contenedorSabores.innerHTML += productoHTML;
-              document.getElementById('btn' + cat.charAt(0).toUpperCase() + cat.slice(1)).classList.remove('d-none');
-              const productoContenedor = contenedorSabores.querySelector('#producto_' + urlSabor);
-              if (cat === catActiva && !catCeroAmpliable) {
-                productoContenedor.classList.add('d-flex');
-              } else {
-                productoContenedor.classList.remove('d-flex');
-              }
+        })
+        if (sabor.new) {
+          const nuevosSabores = document.getElementById('nuevos');
+          nuevosSabores.innerHTML += productoHTML;
+        }
+        if (Math.floor(Math.random() * 2) === 1) {
+          const suggSabores = document.getElementById('sugg');
+          suggSabores.innerHTML += productoHTML;
+        }
+        if (localStorage.getItem('historial')) {
+          let historial = JSON.parse(localStorage.getItem('historial'));
+          historial.forEach(p => {
+            if (p.nombre === sabor.name) {
+              const historialSabores = document.getElementById('historial');
+              historialSabores.innerHTML += productoHTML;
+            }
           })
         }
       }
@@ -59,48 +61,48 @@ function agregarSabores() {
   } catch(e) {
     showConsoleError('productos', e);
     document.getElementById('errorAlfajores').classList.remove('d-none');
+  } finally {
+    sliderCategorias();
   }
 }
 
 // CATEGORÍAS
 
-const btnCategorias = document.getElementById('categorias');
 const contenedorCategorias = document.getElementById('categoriasContenedor');
 const styleSheet = document.createElement('style');
-const mostrarMasBtn = document.getElementById('mostrar-mas');
-var catActiva;
-var catCeroAmpliable;
-let categoriasError;
 document.head.appendChild(styleSheet);
-
-const botones = {};
-const secciones = {};
 
 function crearCategorias() {
   try {
-    categorias.forEach((cat, index) => {
-      const key = cat.nombre.toLowerCase();
-      botones[key] = document.getElementById('btn' + cat.nombre);
-      secciones[key] = document.getElementById(key);
+    categorias.unshift({ nombre : 'sugg' });
+    categorias.push({ nombre : 'nuevos' }, { nombre : 'historial'});
+    categorias.forEach(cat => {
       contenedorCategorias.innerHTML += `
-        <div id="${cat.nombre.toLowerCase()}" class="d-none">
-					<div id="${cat.nombre.toLowerCase()}-container" class="container d-flex justify-content-center flex-wrap"></div>
-				</div>
+        <div id="${cat.nombre.toLowerCase()}-base" class="base rounded d-none">
+          <div class="name-cat">
+            <div class="d-flex flex-wrap justify-content-between align-items-center p-2" style="margin-left: 10px !important; margin-right: 10px !important;">
+              <h2 class="m-0" style="font-size: 20px;" id="titleCat-${cat.nombre.toLowerCase()}"></h2>
+              <div id="linkCatPc-${cat.nombre.toLowerCase()}" class="d-none">
+                <a class="fw-bold linkCatPc" href="./c/${cat.nombre.toLowerCase()}" style="display: block; font-size: 14px; color: var(--clr-general);">Ver Categoría ${cat.nombre}</a>
+              </div>
+            </div>
+            <hr class="hr m-0">
+          </div>
+          <div id="${cat.nombre.toLowerCase()}-container" class="container-base justify-content-center flex-wrap">
+            <button class="btn-prev d-none" id="btn-prev" onclick="sliderPrev(${cat.nombre.toLowerCase()})"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px"><path d="M560-267.69 347.69-480 560-692.31 588.31-664l-184 184 184 184L560-267.69Z"/></svg></button>
+            <div class="viewport"><div id="${cat.nombre.toLowerCase()}" class="container d-grid p-0 ${cat.nombre.toLowerCase()}" style="grid-auto-flow: column; gap: 1px; grid-auto-columns: calc((100% - (1px * 5)) / 6); transition: transform 0.5s ease;" slider="0"></div></div>
+            <button class="btn-next d-none" id="btn-next" onclick="sliderNext(${cat.nombre.toLowerCase()})"><svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px"><path d="m531.69-480-184-184L376-692.31 588.31-480 376-267.69 347.69-296l184-184Z"/></svg></button>
+          </div>
+          <div class="linkCatMovil">
+            <div id="linkCatMovil-${cat.nombre.toLowerCase()}" class="d-none">
+              <hr class="hr m-0">
+              <div class="d-flex justify-content-end p-1" style="margin-right: 10px;">
+                <a class="fw-bold" href="./c/${cat.nombre.toLowerCase()}" style="display: block; font-size: 14px; color: var(--clr-general);">Ver Categoría ${cat.nombre}</a>
+              </div>
+            </div>
+          </div>
+        </div>
       `;
-      const boton = document.createElement('button');
-      boton.textContent = cat.nombre;
-      boton.type = 'button';
-      boton.id = 'btn' + cat.nombre;
-      boton.classList = 'btn btn-nuestros-productos btn-outline-'+ cat.nombre.toLowerCase() + ' m-1 d-none';
-      if (index === 0) {
-        boton.classList.add('active');
-        catActiva = cat.nombre.toLowerCase();
-        catCeroAmpliable = cat.ampliable;
-        document.getElementById(cat.nombre.toLowerCase()).classList.replace('d-none', 'd-block');
-        if (catCeroAmpliable) {
-          mostrarMasBtn.style.display = 'block';
-        }
-      }
       styleSheet.innerHTML += `
         [data-bs-theme=light] {
           --btn-${cat.nombre.toLowerCase()}: ${cat.colorLight};
@@ -109,73 +111,89 @@ function crearCategorias() {
         [data-bs-theme=dark] {
           --btn-${cat.nombre.toLowerCase()}: ${cat.colorDark};
         }
-        
-        .btn-outline-${cat.nombre.toLowerCase()} {
-          --bs-btn-color: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-border-color: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-hover-color: var(--btn-general-color);
-          --bs-btn-hover-bg: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-hover-border-color: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-focus-shadow-rgb: 13, 110, 253;
-          --bs-btn-active-color: var(--btn-general-color);
-          --bs-btn-active-bg: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-active-border-color: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-          --bs-btn-disabled-color: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-btn-disabled-bg: transparent;
-          --bs-btn-disabled-border-color: var(--btn-${cat.nombre.toLowerCase()});
-          --bs-gradient: none;
-        }
       `;
-      btnCategorias.appendChild(boton);
     });
   } catch(e) {
     showConsoleError('categorías', e);
-    categoriasError = true;
   } finally {
     agregarSabores();
   }
 }
 
+
 crearCategorias();
 
-function mostrarCategoria(activa) {
+function sliderCategorias() {
   try {
+    let titleCat;
+    let catLastName;
     categorias.forEach(cat => {
-      const key = cat.nombre.toLowerCase();
-      botones[key] = document.getElementById('btn' + cat.nombre);
-      secciones[key] = document.getElementById(key);
-      if (key === activa) {
-        botones[key].classList.add('active');
-        secciones[key].classList.remove('d-none');
-        secciones[key].classList.add('d-block');
-        catActiva = key;
-      } else {
-        botones[key].classList.remove('active');
-        secciones[key].classList.remove('d-block');
-        secciones[key].classList.add('d-none');
-      }
-    });
-  } catch(e) {
-    showConsoleError('categorías', e);
-    categoriasError = true;
-  }
-}
-
-try {
-  categorias.forEach(cat => {
-    const key = cat.nombre.toLowerCase();
-    botones[key] = document.getElementById('btn' + cat.nombre);
-    botones[key].addEventListener('click', () => {
-      if (catActiva !== key) {
-        mostrarCategoria(key);
-        comprobarVerMas();
-      }
-    });
-  });
-} catch(e) {
-  showConsoleError('categorías', e);
-  categoriasError = true;
+      const contenedorSabores = document.getElementById((cat.nombre).toLowerCase());
+      const productos = contenedorSabores.children;
+      const container_base = contenedorSabores.parentElement.parentElement;
+      const btnNext = container_base.children[2];
+      for (let i = 0; i < productos.length; i++) {
+        if (productos.length > 0) {
+          const titleSugg = [
+            'Sugerencias para vos 😎',
+            'Te pueden gustar ❤️',
+            'Nuestras sugerencias 💪',
+            'Pueden interesarte 😊',
+            'Elegidos especialmente 😍',
+            'Recomendados para vos 🔥',
+            'No te los pierdas 😉',
+            'Podrían encantarte 💖'
+          ];
+          const titleDefault = [
+            'Más populares en %value ✨',
+            'Más vendidos en %value 🤩',
+            'Elegidos en %value ❤️',
+            'Lo mejor en %value ✨',
+            'Más buscados en %value 🔍',
+            'Imperdibles de %value 😍'
+          ];
+          const id = cat.nombre.toLowerCase();
+          const titleEl = document.getElementById('titleCat-' + id);
+          const linkCatPc = document.getElementById('linkCatPc-' + id);
+          const linkCatMovil = document.getElementById('linkCatMovil-' + id);
+          if (titleEl && titleEl.textContent.length === 0) {
+            switch ((cat.nombre).toLowerCase()) {
+              case 'sugg':
+                titleCat = titleSugg[Math.floor(Math.random() * titleSugg.length)];
+                break;
+              case 'todos':
+                titleCat = 'Todos nuestros productos';
+                break;
+              case 'nuevos':
+                titleCat = 'Recientemente agregados 🟢';
+                break;
+              case 'historial':
+                titleCat = 'Tu historial';
+                break;
+              default:
+                let newTitle;
+                do {
+                  newTitle = titleDefault[Math.floor(Math.random() * titleDefault.length)];
+                } while (newTitle === catLastName);
+                catLastName = newTitle;
+                titleCat = newTitle.replace('%value', cat.nombre.toLowerCase());
+                linkCatPc.classList.remove('d-none');
+                linkCatMovil.classList.remove('d-none');
+                break;
+            }
+            titleEl.textContent = titleCat;
+          }
+          document.getElementById(cat.nombre.toLowerCase() + '-base')?.classList.remove('d-none');
+        }
+        if (i >= 6) {
+          btnNext.classList.remove('d-none');
+        }
+      }  
+    }) 
+  } catch (e) {
+    showConsoleError('categorias', e);
+    document.getElementById('errorAlfajores').classList.remove('d-none');
+  } 
 }
 
 // REDIRECCIONAR
@@ -183,107 +201,6 @@ try {
 var hashUrl = window.location.hash.substring(1);
 if (window.location.hash != '') {
   window.location.href = './productos/?p=' + hashUrl;
-}
-
-// BUSQUEDA
-
-const searchInput = document.getElementById('buscar');
-const searchInputMovil = document.getElementById('buscarMovil');
-const resultados = document.getElementById('busqueda').querySelector('.resultado');
-const resultadosMovil = document.getElementById('busquedaMovil').querySelector('.resultadoMovil');
-const divNav2 = document.querySelector('.navDiv2');
-const divNav2Movil = document.querySelector('.navDiv2Movil');
-
-document.getElementById('formSearch').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var valorSearch = document.getElementById('buscar').value;
-  var querySearch = valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
-  window.location.href = './search/?q=' + querySearch;
-});
-
-document.getElementById('formSearchMovil').addEventListener('submit', function(event) {
-  event.preventDefault();
-  var valorSearch = document.getElementById('buscar').value;
-  var querySearch = valorSearch.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u');
-  window.location.href = './search/?q=' + querySearch;
-});
-
-document.addEventListener('click', function(event) {
-  const target = event.target;
-  if (!target.closest('#navDiv2') && !target.closest('#ventana') && !target.closest('#sidebar')) {
-    resultados.parentElement.classList.remove('mostrar');
-    if (window.innerWidth <= 768) {
-      divNav2.style.display = 'none';
-    }
-  }
-});
-
-function generarResultados(resultadosHTML, searchTerm, searchStyle) {
-  alfajores.forEach(sabor => {
-    const productoBuscar = sabor;
-    const productoNombre = productoBuscar.nombre;
-    const productoDesc = productoBuscar.desc;
-    const productoValor = productoBuscar.precioPagina;
-    const productoLink = productoBuscar.linkCatalogo;
-
-    var imgSabor = productoBuscar.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u')
-    var urlSabor = productoBuscar.nombre.toLowerCase().replace(/\s+/g, '-').replace(/ñ/g, 'n').replace(/á/g, 'a').replace(/é/g, 'e').replace(/í/g, 'i').replace(/ó/g, 'o').replace(/ú/g, 'u').replace(/&/g, 'and')
-
-    const productoNombreLowercase = productoNombre.toLowerCase();
-
-    if (productoNombreLowercase.includes(searchTerm) && productoBuscar.visible) {
-      resultadosHTML += `
-        <li class="list-group-item" ${searchStyle}>
-          <a class="d-flex justify-content-between align-items-center" href="./productos/?p=${urlSabor}" title="${productoNombre}">
-            <div class="d-flex align-items-center placeholder-glow">
-              <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" class="img-fluid img" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='img-fluid img placeholder'">
-              <div class="ms-3">
-                <p class="mb-1 titulo">${productoNombre}</p>
-                <p class="d-none descripcion">${productoDesc}</p>
-                <p class="d-none precio">${productoValor}</p>
-                <p class="d-none linkCatalogo" href="${productoLink}"></p>
-              </div>
-            </div>
-          </a>
-        </li>
-      `;
-    }
-  })
-  return resultadosHTML
-}
-
-if (window.innerWidth >= 768) {
-  searchInput.addEventListener('input', function() {
-    const searchTerm = searchInput.value.toLowerCase();
-
-    let resultadosHTML = '';
-    var searchStyle = '';
-
-    resultadosHTML = generarResultados(resultadosHTML, searchTerm, searchStyle);
-
-    resultados.innerHTML = resultadosHTML;
-    if (searchInput.value.length > 0) {
-      resultados.parentElement.classList.add('mostrar');
-    } else {
-      resultados.parentElement.classList.remove('mostrar');
-    }
-  })
-} else {
-  searchInputMovil.addEventListener('input', function() {
-    const searchTerm = searchInputMovil.value.toLowerCase();
-
-    let resultadosHTML = '';
-    var searchStyle = 'style="height: auto; border-color: transparent"';
-
-    resultadosHTML = generarResultados(resultadosHTML, searchTerm, searchStyle);
-
-    resultadosMovil.innerHTML = resultadosHTML;
-    if (searchInputMovil.value.length > 0) {
-      resultadosMovil.parentElement.classList.add('mostrar');
-    } else {
-      resultadosMovil.parentElement.classList.remove('mostrar');
-    }
-  })
 }
 
 // Carrusel 
@@ -326,7 +243,8 @@ function cargarImgCarousel() {
       a.classList = 'carousel-item';
       a.href = imgC.href;
       const img = document.createElement('img');
-      img.classList = 'd-block w-100';
+      img.classList = 'd-block img-fluid w-100 h-auto';
+      img.style = 'object-fit: cover; min-height: 175px'
       img.src = 'https://bd.alfajoreslabarraca.com.ar' + imgC.src;
       if (imgC.id == 1) {
         a.classList.add('active');
@@ -347,59 +265,49 @@ function cargarImgCarousel() {
 
 cargarImgCarousel();
 
-// MOSTRAR MÁS
+// SLIDER
 
-let mostrarMas = false;
+const visibles = 6;
 
-function verMasHTML(estado) {
-  if (estado) {
-    mostrarMasBtn.classList.remove('btn-outline-primary');
-    mostrarMasBtn.classList.add('btn-primary');
-    return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M6.65 16h10.69c.64 0 .99-.76.56-1.24l-5.35-6.11a.753.753 0 0 0-1.13 0l-5.35 6.11c-.42.48-.08 1.24.56 1.24Z"></path></svg><span style="font-size: 14px;">Ver menos</span>'
+function slider(c, inicio) {
+  const pasoPercent = 100 / visibles;
+  const desplaz = -inicio * pasoPercent;
+  c.style.transform = `translateX(${desplaz}%)`;
+
+  const productos = c.children
+  const container_base = c.parentElement.parentElement;
+  const btnPrev = container_base.children[0];
+  const btnNext = container_base.children[2];
+  if (inicio == 0) {
+    btnPrev.classList.add('d-none');
+    btnNext.classList.remove('d-none');
+  } else if (inicio + visibles == productos.length) {
+    btnPrev.classList.remove('d-none');
+    btnNext.classList.add('d-none');
   } else {
-    mostrarMasBtn.classList.remove('btn-primary');
-    mostrarMasBtn.classList.add('btn-outline-primary');
-    return `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24" ><path d="M17.35 8H6.65c-.64 0-.99.76-.56 1.24l5.35 6.11c.3.34.83.34 1.13 0l5.35-6.11C18.34 8.76 18 8 17.36 8Z"></path></svg><span style="font-size: 14px;">Ver más</span>`;
+    btnNext.classList.remove('d-none');
+    btnPrev.classList.remove('d-none');
   }
 }
 
-function verMas() {
-  const contenedorVerMas = document.getElementById(catActiva);
-  const productosVerMas = contenedorVerMas.querySelectorAll('.card-style');
-  productosVerMas.forEach((producto, index) => {
-    if (index >= 4) {
-      producto.style.display = mostrarMas ? 'flex' : 'none';
-    }
-  });
-  mostrarMasBtn.innerHTML = verMasHTML(mostrarMas);
-}
+function sliderNext(c) {
+  var inicio = Number(c.getAttribute('slider'));
+  const productos = c.children;
+  if (inicio + visibles < productos.length) {
+    inicio++
+    c.setAttribute('slider', inicio);
+    slider(c, inicio);
+  }
+};
 
-function comprobarVerMas() {
-  const contenedorComprobarVerMas = document.getElementById(catActiva);
-  const productosComprobarVerMas = contenedorComprobarVerMas.querySelectorAll('.card-style');
-  categorias.forEach(cat => {
-    if (cat.nombre.toLowerCase() === catActiva) {
-      if (cat.ampliable) {
-        if (productosComprobarVerMas.length >= 5) {
-          mostrarMasBtn.style.display = 'block';
-          mostrarMas = false;
-          verMas();
-        } else {
-          mostrarMasBtn.style.display = 'none';
-        }
-      } else {
-        mostrarMas = true;
-        verMas();
-        mostrarMasBtn.style.display = 'none';
-      }
-    }
-  })
-}
-
-mostrarMasBtn.addEventListener('click', () => {
-  mostrarMas = !mostrarMas;
-  verMas();
-});
+function sliderPrev(c) {
+  var inicio = Number(c.getAttribute('slider'));
+  if (inicio > 0) {
+    inicio--
+    c.setAttribute('slider', inicio);
+    slider(c, inicio);
+  }
+};
 
 // VENTANA EMERGENTE
 
