@@ -5,7 +5,7 @@ navbarContent.id = 'navbar';
 navbarContent.innerHTML = `
     <div class="navbar navbar-sticky-top-responsive navbar-expand-lg shadow-sm py-2 bg-white" style="padding: 0 3% 0 3%">
         <div class="container-fluid">
-            <a class="navbar-brand me-2 fw-bold" href="#">
+            <a class="navbar-brand me-2 fw-bold" href="https://alfajoreslabarraca.com.ar/">
                 <img src="https://alfajoreslabarraca.com.ar/imagenes/logo.png" alt="Logo" width="55px" class="me-2">
             </a>
             <button class="btn navbar-menu collapsed" style="display: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
