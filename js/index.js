@@ -47,12 +47,12 @@ function agregarSabores() {
           const suggSabores = document.getElementById('sugg');
           suggSabores.innerHTML += productoHTML;
         }
-        if (localStorage.getItem('historial')) {
-          let historial = JSON.parse(localStorage.getItem('historial'));
-          historial.forEach(p => {
-            if (p.nombre === sabor.name) {
-              const historialSabores = document.getElementById('historial');
-              historialSabores.innerHTML += productoHTML;
+        if (localStorage.getItem('UserHistory')) {
+          let UserHistory = JSON.parse(localStorage.getItem('UserHistory'));
+          UserHistory.forEach(p => {
+            if (p === sabor.name) {
+              const UserHistorySabores = document.getElementById('userhistory');
+              UserHistorySabores.innerHTML += productoHTML;
             }
           })
         }
@@ -75,7 +75,7 @@ document.head.appendChild(styleSheet);
 function crearCategorias() {
   try {
     categorias.unshift({ nombre : 'sugg' });
-    categorias.push({ nombre : 'nuevos' }, { nombre : 'historial'});
+    categorias.push({ nombre : 'nuevos' }, { nombre : 'UserHistory'});
     categorias.forEach(cat => {
       contenedorCategorias.innerHTML += `
         <div id="${cat.nombre.toLowerCase()}-base" class="base rounded d-none">
@@ -167,7 +167,7 @@ function sliderCategorias() {
               case 'nuevos':
                 titleCat = 'Recientemente agregados 🟢';
                 break;
-              case 'historial':
+              case 'userhistory':
                 titleCat = 'Tu historial';
                 break;
               default:

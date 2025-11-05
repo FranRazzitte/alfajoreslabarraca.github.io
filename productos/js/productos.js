@@ -187,24 +187,12 @@ function cargarProducto() {
 
                             cargarImagen();
 
-                            let historial = [];
-                            if (localStorage.getItem('historial')) {
-                                historial = JSON.parse(localStorage.getItem('historial'));
+                            let UserHistory = [];
+                            if (localStorage.getItem('UserHistory')) {
+                                UserHistory = JSON.parse(localStorage.getItem('UserHistory'));
                             }
-                            newItemHistory = {
-                                name : titulo,
-                                price : precio,
-                                desc : descripcion,
-                                category : categoriaArray,
-                                new : productosListFind.new,
-                                link : link,
-                            };
-                            if (!historial.some(i => i.nombre === titulo)) {
-                                console.table(historial);
-                                historial.unshift(newItemHistory);
-                                console.table(historial);
-                            }
-                            localStorage.setItem('historial', JSON.stringify(historial));
+                            if (!UserHistory.some(i => i === titulo)) { UserHistory.unshift(titulo); }
+                            localStorage.setItem('UserHistory', JSON.stringify(UserHistory));
                             
                             const categoria_producto = categoriaArray.find(sabor => sabor != 'todos').toString();
                             var numeroRelacionados = productosRelacionados(categoria_producto, titulo);
