@@ -18,10 +18,10 @@ function agregarSabores() {
       if (sabor.visible) {
         const productoHTML = `
           <div class="card m-0 p-0 card-style" style="border: none; margin-right: 2%" id="producto_${urlSabor}">
-            <a href="./productos/?p=${urlSabor}" title="${sabor.name}">
+            <a href="/productos/?p=${urlSabor}" title="${sabor.name}">
               <div class="flex-movil">
                 <div class="p-1 placeholder-glow img-movil">
-                  <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" decoding="async" alt="${sabor.name}" id="${sabor.name}" class="w-100 rounded" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='w-100 rounded placeholder'">
+                  <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" decoding="async" alt="${sabor.name}" id="${sabor.name}" class="w-100 rounded" onerror="this.onerror=null; this.src='/productos/img/404NotFound.svg'; this.className='w-100 rounded placeholder'">
                 </div>
                 <div>
                   <div class="card-body">
@@ -47,15 +47,18 @@ function agregarSabores() {
           const suggSabores = document.getElementById('sugg');
           suggSabores.innerHTML += productoHTML;
         }
-        if (localStorage.getItem('UserHistory')) {
-          let UserHistory = JSON.parse(localStorage.getItem('UserHistory'));
-          UserHistory.forEach(p => {
-            if (p === sabor.name) {
-              const UserHistorySabores = document.getElementById('userhistory');
-              UserHistorySabores.innerHTML += productoHTML;
-            }
-          })
+        if (cookiesHabilitadas('localStorage')) {
+          if (localStorage.getItem('UserHistory')) {
+            let UserHistory = JSON.parse(localStorage.getItem('UserHistory'));
+            UserHistory.forEach(p => {
+              if (p === sabor.name) {
+                const UserHistorySabores = document.getElementById('userhistory');
+                UserHistorySabores.innerHTML += productoHTML;
+              }
+            })
+          }  
         }
+        
       }
     })
   } catch(e) {
@@ -83,7 +86,7 @@ function crearCategorias() {
             <div class="d-flex flex-wrap justify-content-between align-items-center p-2" style="margin-left: 10px !important; margin-right: 10px !important;">
               <h2 class="m-0" style="font-size: 20px;" id="titleCat-${cat.nombre.toLowerCase()}"></h2>
               <div id="linkCatPc-${cat.nombre.toLowerCase()}" class="d-none">
-                <a class="fw-bold linkCatPc" href="./c/${cat.nombre.toLowerCase()}" style="display: block; font-size: 14px; color: var(--clr-general);">Ver Categoría ${cat.nombre}</a>
+                <a class="fw-bold linkCatPc" href="/c/${cat.nombre.toLowerCase()}" style="display: block; font-size: 14px; color: var(--clr-general);">Ver Categoría ${cat.nombre}</a>
               </div>
             </div>
             <hr class="hr m-0">
@@ -97,7 +100,7 @@ function crearCategorias() {
             <div id="linkCatMovil-${cat.nombre.toLowerCase()}" class="d-none">
               <hr class="hr m-0">
               <div class="d-flex justify-content-end p-1" style="margin-right: 10px;">
-                <a class="fw-bold" href="./c/${cat.nombre.toLowerCase()}" style="display: block; font-size: 14px; color: var(--clr-general);">Ver Categoría ${cat.nombre}</a>
+                <a class="fw-bold" href="/c/${cat.nombre.toLowerCase()}" style="display: block; font-size: 14px; color: var(--clr-general);">Ver Categoría ${cat.nombre}</a>
               </div>
             </div>
           </div>
@@ -135,22 +138,22 @@ function sliderCategorias() {
       for (let i = 0; i < productos.length; i++) {
         if (productos.length > 0) {
           const titleSugg = [
-            'Sugerencias para vos 😎',
-            'Te pueden gustar ❤️',
-            'Nuestras sugerencias 💪',
-            'Pueden interesarte 😊',
-            'Elegidos especialmente 😍',
-            'Recomendados para vos 🔥',
-            'No te los pierdas 😉',
-            'Podrían encantarte 💖'
+            '<span lang="lb-text-main-section:sugg1">Sugerencias para vos 😎</span>',
+            '<span lang="lb-text-main-section:sugg2">Te pueden gustar ❤️</span>',
+            '<span lang="lb-text-main-section:sugg3">Nuestras sugerencias 💪</span>',
+            '<span lang="lb-text-main-section:sugg4">Pueden interesarte 😊</span>',
+            '<span lang="lb-text-main-section:sugg5">Elegidos especialmente 😍</span>',
+            '<span lang="lb-text-main-section:sugg6">Recomendados para vos 🔥</span>',
+            '<span lang="lb-text-main-section:sugg7">No te los podés perder 😉</span>',
+            '<span lang="lb-text-main-section:sugg8">Podrían encantarte 💖</span>'
           ];
           const titleDefault = [
-            'Más populares en %value ✨',
-            'Más vendidos en %value 🤩',
-            'Elegidos en %value ❤️',
-            'Lo mejor en %value ✨',
-            'Más buscados en %value 🔍',
-            'Imperdibles de %value 😍'
+            '<span lang="lb-text-main-section:category-title1">Más populares en</span> %value ✨',
+            '<span lang="lb-text-main-section:category-title2">Más vendidos en</span> %value 🤩',
+            '<span lang="lb-text-main-section:category-title3">Elegidos en</span> %value ❤️',
+            '<span lang="lb-text-main-section:category-title4">Lo mejor en</span> %value ✨',
+            '<span lang="lb-text-main-section:category-title5">Más buscados en</span> %value 🔍',
+            '<span lang="lb-text-main-section:category-title6">Imperdibles de</span> %value 😍'
           ];
           const id = cat.nombre.toLowerCase();
           const titleEl = document.getElementById('titleCat-' + id);
@@ -162,13 +165,13 @@ function sliderCategorias() {
                 titleCat = titleSugg[Math.floor(Math.random() * titleSugg.length)];
                 break;
               case 'todos':
-                titleCat = 'Todos nuestros productos';
+                titleCat = '<span lang="lb-text-main-section:products-title">Todos nuestros productos</span>';
                 break;
               case 'nuevos':
-                titleCat = 'Recientemente agregados 🟢';
+                titleCat = '<span lang="lb-text-main-section:products-new-title">Recientemente agregados 🟢</span>';
                 break;
               case 'userhistory':
-                titleCat = 'Tu historial';
+                titleCat = '<span lang="lb-text-main-section:user-history-title">Tu historial</span>';
                 break;
               default:
                 let newTitle;
@@ -181,7 +184,7 @@ function sliderCategorias() {
                 linkCatMovil.classList.remove('d-none');
                 break;
             }
-            titleEl.textContent = titleCat;
+            titleEl.innerHTML = titleCat;
           }
           document.getElementById(cat.nombre.toLowerCase() + '-base')?.classList.remove('d-none');
         }
@@ -200,7 +203,7 @@ function sliderCategorias() {
 
 var hashUrl = window.location.hash.substring(1);
 if (window.location.hash != '') {
-  window.location.href = './productos/?p=' + hashUrl;
+  window.location.href = '/productos/?p=' + hashUrl;
 }
 
 // Carrusel 
