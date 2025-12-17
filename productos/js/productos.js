@@ -1,41 +1,3 @@
-// ADAPTAR ATRIBUTOS
-
-const navbarProductos = document.getElementById('header');
-const navbarElements = navbarProductos.querySelectorAll('[src], [href]');
-
-navbarElements.forEach(element => {
-    if (element.hasAttribute('src')) {
-        let srcValue = element.getAttribute('src');
-        if (srcValue.startsWith('./')) {
-            element.setAttribute('src', srcValue.replace('./', '../'));
-        }
-    }
-    if (element.hasAttribute('href')) {
-        let hrefValue = element.getAttribute('href');
-        if (hrefValue.startsWith('./')) {
-            element.setAttribute('href', hrefValue.replace('./', '../'));
-        }
-    }
-});
-
-const footerProductos = document.getElementById('footerContent');
-const footerElements = footerProductos.querySelectorAll('[src], [href]');
-
-footerElements.forEach(element => {
-    if (element.hasAttribute('src')) {
-        let srcValue = element.getAttribute('src');
-        if (srcValue.startsWith('./')) {
-            element.setAttribute('src', srcValue.replace('./', '../'));
-        }
-    }
-    if (element.hasAttribute('href')) {
-        let hrefValue = element.getAttribute('href');
-        if (hrefValue.startsWith('./')) {
-            element.setAttribute('href', hrefValue.replace('./', '../'));
-        }
-    }
-});
-
 // Relacionados y Recomendados
 
 function productosRelacionados (categoria, titulo) {
@@ -50,10 +12,10 @@ function productosRelacionados (categoria, titulo) {
         if (sabor.visible && sabor.category.includes(categoria) && sabor.name != titulo) {
             const productoHTML = `
                 <div class="card m-0 p-0 card-style" style="border: none; margin-right: 2%" id="producto_${urlSabor}">
-                    <a href="./productos/?p=${urlSabor}" title="${sabor.name}">
+                    <a href="/productos/?p=${urlSabor}" title="${sabor.name}">
                     <div class="flex-movil">
                         <div class="p-1 placeholder-glow img-movil">
-                        <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" decoding="async" alt="${sabor.name}" id="${sabor.name}" class="w-100 rounded" onerror="this.onerror=null; this.src='./productos/img/404NotFound.svg'; this.className='w-100 rounded placeholder'">
+                        <img src="https://bd.alfajoreslabarraca.com.ar/img/products/${imgSabor}/1.png" decoding="async" alt="${sabor.name}" id="${sabor.name}" class="w-100 rounded" onerror="this.onerror=null; this.src='/productos/img/404NotFound.svg'; this.className='w-100 rounded placeholder'">
                         </div>
                         <div>
                         <div class="card-body">
@@ -187,18 +149,21 @@ function cargarProducto() {
 
                             cargarImagen();
 
-                            let UserHistory = [];
-                            if (localStorage.getItem('UserHistory')) {
-                                UserHistory = JSON.parse(localStorage.getItem('UserHistory'));
+                            if (cookiesHabilitadas('localStorage')) {
+                                let UserHistory = [];
+                                if (localStorage.getItem('UserHistory')) {
+                                    UserHistory = JSON.parse(localStorage.getItem('UserHistory'));
+                                }
+                                if (!UserHistory.some(i => i === titulo)) { UserHistory.unshift(titulo); }
+                                localStorage.setItem('UserHistory', JSON.stringify(UserHistory));
                             }
-                            if (!UserHistory.some(i => i === titulo)) { UserHistory.unshift(titulo); }
-                            localStorage.setItem('UserHistory', JSON.stringify(UserHistory));
-                            
+
                             const categoria_producto = categoriaArray.find(sabor => sabor != 'todos').toString();
                             var numeroRelacionados = productosRelacionados(categoria_producto, titulo);
                             if (numeroRelacionados == 0) {
                                 productosRelacionados('chocolates', titulo);
                                 tituloRelacionados.textContent = 'Productos recomendados';
+                                tituloRelacionados.setAttribute('lang', 'lb-text-products-section:recommended-products');
                             }
                             relacionadosBeforeLoad.remove();
                             

@@ -125,6 +125,8 @@
   /* Variables personalizadas */
   --clr-general: #485206;
   --btn-general-color: white;
+  --bs-btn-disabled-color: #343a40;
+  --bs-btn-disabled-border-color: #343a40;
 }
 
 [data-bs-theme=dark] {
@@ -182,6 +184,8 @@
   /* Variables personalizadas */
   --clr-general: #a9c20a;
   --btn-general-color: black;
+  --bs-btn-disabled-color: #adb5bd;
+  --bs-btn-disabled-border-color: #adb5bd;
 }
 
 *,
@@ -3022,12 +3026,13 @@ textarea.form-control-lg {
 .btn-check:checked + .btn:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .btn.active:focus-visible, .btn.show:focus-visible {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+.btn:disabled, .btn.disabled, .btn.disabled svg, fieldset:disabled .btn {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
   background-color: var(--bs-btn-disabled-bg);
   border-color: var(--bs-btn-disabled-border-color);
   opacity: var(--bs-btn-disabled-opacity);
+  fill: var(--bs-btn-disabled-color) !important;
 }
 
 .btn-primary {
@@ -5063,7 +5068,6 @@ textarea.form-control-lg {
   padding: var(--bs-list-group-item-padding-y) var(--bs-list-group-item-padding-x);
   color: var(--bs-list-group-color);
   text-decoration: none;
-  background-color: #f8f8f8;
   border: var(--bs-list-group-border-width) solid var(--bs-list-group-border-color);
 }
 .list-group-item:first-child {

@@ -1,9 +1,11 @@
-var btnCambiarTema = document.getElementById('btn-cambiar-tema');
-var btnModoClaro = document.getElementById('light-mode');
-var btnModoOscuro = document.getElementById('dark-mode');
-var btnIgualarSistema = document.getElementById('auto-mode');
+const btnCambiarTema = document.getElementById('btn-cambiar-tema');
+const btnModoClaro = document.getElementById('light-mode');
+const btnModoOscuro = document.getElementById('dark-mode');
+const btnIgualarSistema = document.getElementById('auto-mode');
+const temaActual = document.getElementById('tema-actual');
 const dropdownButton = document.getElementById('btn-cambiar-tema');
-const dropdownMenu = document.getElementById('dropdownMenu');
+const dropdownMenu = document.getElementById('dropdownMenuTheme');
+let pageTheme;
 
 function aplicarTema(tema) {
     if (tema === "dark") {
@@ -14,6 +16,8 @@ function aplicarTema(tema) {
         btnModoClaro.classList.remove('selected');
         btnModoOscuro.classList.add('selected');
         btnIgualarSistema.classList.remove('selected');
+        temaActual.textContent = btnModoOscuro.textContent;
+        temaActual.setAttribute('lang', btnModoOscuro.getAttribute('lang'));
     } else if (tema === "light") {
         document.body.setAttribute('data-bs-theme', 'light');
         btnCambiarTema.classList.add('light');
@@ -22,71 +26,51 @@ function aplicarTema(tema) {
         btnModoClaro.classList.add('selected');
         btnModoOscuro.classList.remove('selected');
         btnIgualarSistema.classList.remove('selected');
+        temaActual.textContent = btnModoClaro.textContent;
+        temaActual.setAttribute('lang', btnModoClaro.getAttribute('lang'));
     } else {
+        document.body.setAttribute('data-bs-theme', getSystemTheme());
         btnCambiarTema.classList.add('auto');
         btnCambiarTema.classList.remove('light');
         btnCambiarTema.classList.remove('dark');
         btnModoClaro.classList.remove('selected');
         btnModoOscuro.classList.remove('selected');
         btnIgualarSistema.classList.add('selected');
-        recargarTema();
+        temaActual.textContent = btnIgualarSistema.textContent;
+        temaActual.setAttribute('lang', btnIgualarSistema.getAttribute('lang'));
     }
 }
 
 function cambiarTema(tema) {
-    if (cookies) {
-        localStorage.setItem('tema', tema);
-    }
+    if (cookiesHabilitadas('localStorage')) localStorage.setItem('tema', tema);
+    pageTheme = tema;
     aplicarTema(tema);
 }
 
 btnModoClaro.addEventListener('click', () => {
     cambiarTema('light');
-  });
+});
 btnModoOscuro.addEventListener('click', () => {
     cambiarTema('dark');
-  });
+});
 btnIgualarSistema.addEventListener('click', () => {
-    if (cookies) {
-        cambiarTema('auto');
-    }
-  });
+    cambiarTema('auto');
+});
 
-function recargarTema() {
-    var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)');
-
-    function aplicarTemaSegunPreferencias() {
-        if (localStorage.getItem('tema') == 'auto') {
-            if (isDarkMode.matches ? 'dark' : 'light' === "dark") {
-                document.body.setAttribute('data-bs-theme', 'dark');
-            } else {
-                document.body.setAttribute('data-bs-theme', 'light');
-            }
-        }
-    }
-
-    aplicarTemaSegunPreferencias();
-    isDarkMode.addEventListener('change', aplicarTemaSegunPreferencias);
+function getSystemTheme() {
+    const currentSystemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+    return currentSystemTheme.matches ? 'dark' : 'light' === 'dark';
 }
 
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (pageTheme === 'auto') aplicarTema('auto');
+})
+
 document.addEventListener('DOMContentLoaded', () => {
-    if (cookies) {
-        var temaGuardado = localStorage.getItem('tema')
-        if (temaGuardado == null) {
-            localStorage.setItem('tema', 'auto')
-            aplicarTema('auto');
-        } else if (temaGuardado == 'dark') {
-            aplicarTema('dark');
-        } else if (temaGuardado == 'light') {
-            aplicarTema('light');
-        } else {
-            aplicarTema('auto');
-        } 
-    } else {
-        aplicarTema('light');
-        btnIgualarSistema.classList.add('disabled');
-    }
-    
+    pageTheme = cookiesHabilitadas('localStorage') ? localStorage.getItem('tema') || 'auto' : 'auto';
+    if (pageTheme === 'dark') aplicarTema('dark');
+    if (pageTheme === 'light') aplicarTema('light');
+    if (pageTheme === 'auto') aplicarTema('auto'); 
 });
 
 dropdownButton.addEventListener('click', () => {
