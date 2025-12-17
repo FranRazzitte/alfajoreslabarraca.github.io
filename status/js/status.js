@@ -11,11 +11,11 @@ const archivos = [
 const container = document.getElementById('statusContainer');
 
 function registrarError(nombreArchivo, mensaje) {
-  const log = document.getElementById('logErrores');
-  const li = document.createElement('li');
-  const hora = new Date().toLocaleTimeString();
-  li.innerHTML = `<small><strong>Error al acceder a ${nombreArchivo}:</strong> ${mensaje} <span style="color:gray;">(${hora})</span></small>`;
-  log.appendChild(li);
+    const log = document.getElementById('logErrores');
+    const li = document.createElement('li');
+    const hora = new Date().toLocaleTimeString();
+    li.innerHTML = `<small><strong>Error al acceder a ${nombreArchivo}:</strong> ${mensaje} <span style="color:gray;">(${hora})</span></small>`;
+    log.appendChild(li);
 }
 
 archivos.forEach(archivo => {
@@ -44,7 +44,8 @@ archivos.forEach(archivo => {
     .catch((err) => {
         statusIcon.className = 'status-icon fail';
         textSpan.textContent = 'Error';
-        document.getElementById('logErrores').innerHTML = '';
+        const log = document.getElementById('logErrores');
+        if (log.innerHTML.includes('No hay errores')) log.innerHTML = '';
         registrarError(archivo.nombre, err.message || 'Error al acceder');
     });
 });
