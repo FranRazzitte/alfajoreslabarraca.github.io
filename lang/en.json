@@ -1,13 +1,13 @@
 {
     "navbar": {
-        "lb-test": "¡Hello World!",
+        "lb-test": "Hello World!",
         "lb-placeholder-navbar-section:search": "Search",
         "lb-text-navbar-section:about-us": "About Us",
         "lb-text-navbar-section:questions": "Frequently Asked Questions",
         "lb-btn-navbar-section:share": "Share"
     },
     "footer": {
-        "lb-test": "¡Hello World!",
+        "lb-test": "Hello World!",
         "lb-text-footer-section:title-info": "Information",
         "lb-text-footer-section:whatsapp-info": "Catalog",
         "lb-text-footer-section:about-us-info": "About Us",
@@ -27,7 +27,7 @@
         "lb-innerHTML-footer-section:creator": "Developed  by <a href='https://www.instagram.com/franrazzitte/' class='text-reset'>@franrazzitte</a>"
     },
     "main": {
-        "lb-test": "¡Hello World!",
+        "lb-test": "Hello World!",
         "lb-text-main-section:sugg1": "Suggestions for you 😎",
         "lb-text-main-section:sugg2": "You might like them ❤️",
         "lb-text-main-section:sugg3": "Our suggestions 💪",
@@ -45,7 +45,7 @@
         "lb-text-main-section:products-title": "All our products",
         "lb-text-main-section:products-new-title": "Recently added 🟢",
         "lb-text-main-section:user-history-title": "Your history",
-        "lb-innerHTML-main-section:title-social": "¡Follow<span style='margin-right: 8px;'></span>Us!",
+        "lb-innerHTML-main-section:title-social": "Follow<span style='margin-right: 8px;'></span>Us!",
         "lb-text-main-section:desc-instagram": "See more on our Instagram",
         "lb-text-main-section:desc-facebook": "See more on our Facebook",
         "lb-text-main-section:title-time": "Orders 72 Hours in Advance",
@@ -59,7 +59,7 @@
         "lb-btn-main-section:btn-accept-cookies": "ACCEPT"
     },
     "products": {
-        "lb-test": "¡Hello World!",
+        "lb-test": "Hello World!",
         "lb-innerHTML-products-section:figcaption-img": "The image is for illustrative purposes only and may not match the current composition or presentation of the product.<br>Please contact us via <span><a href='https://wa.me/5491120518253' class='text-decoration-underline'>WhatsApp</a></span> for detailed information.",
         "lb-text-products-section:check-price": "Check Price",
         "lb-text-products-section:out-of-stock": "Out of Stock",
