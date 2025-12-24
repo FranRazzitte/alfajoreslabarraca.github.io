@@ -1,6 +1,6 @@
 // CONSOLE ERROR
 function showConsoleError(a, e) {
-  console.error(`Error al cargar ${a}. Visitar https://alfajoreslabarraca.com.ar/status/ para comprobar la disponibilidad de archivos escenciales.`, e)
+  console.error(`Error al cargar ${a}. Verificá la disponibilidad de los archivos esenciales en https://status.alfajoreslabarraca.com.ar/. (${e.message})`);
 }
 
 // AGREGAR SABORES
