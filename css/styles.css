@@ -139,6 +139,64 @@ body {
   color: var(--bs-body-color);
 }
 
+.carousel-item {
+  transition: opacity .6s ease-in-out;
+}
+
+.carousel-item img {
+  transform: scale(1.05);
+  transition: transform 10s linear;
+}
+
+.carousel-item.active img {
+  transform: scale(1);
+}
+
+.carousel-item.active {
+  transition: transform 0.1s linear;
+}
+
+.carousel-item.active:hover {
+  transform: scale(1.05);
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: auto;
+  opacity: 1 !important;
+  transition: none;
+}
+
+.carousel-control-prev button,
+.carousel-control-next button {
+  background-color: white;
+  border-radius: 70px;
+  transition: 0.15s ease;
+}
+
+.carousel-control-prev button:hover,
+.carousel-control-next button:hover {
+  background-color: white;
+  opacity: 0.8;
+}
+
+.carousel-control-prev button span,
+.carousel-control-next button span {
+  height: 24px;
+  width: 24px;
+  filter: invert(1) grayscale(100);
+}
+
+.carousel-control-prev button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.carousel-control-next button {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
 /* PRODUCTS */
 
 .base {
@@ -586,6 +644,16 @@ body {
   }
   nav ul li.share {
     display: block !important;
+  }
+  .carousel-control-prev button,
+  .carousel-control-next button {
+    background-color: transparent;
+    border: 0;
+    opacity: 0.5;
+  }
+  .carousel-control-prev button:hover,
+  .carousel-control-next button:hover {
+    background-color: transparent;
   }
   .footer-conf {
     flex-direction: column;

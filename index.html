@@ -61,16 +61,18 @@
 	<main>
 		<!-- Carrusel -->
 		<div id="carousel-section" class="d-none mb-3 justify-content-center">
-			<div class="carousel slide carousel-fade w-100">
+			<div id="mainCarousel" class="carousel slide carousel-fade w-100" data-bs-ride="carousel" data-bs-pause="hover">
 				<div id="carousel" class="carousel-inner"></div>
-				<button id="prevBtn" class="carousel-control-prev" type="button">
-					<span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(0) grayscale(0);"></span>
-					<span class="visually-hidden">Anterior</span>
-				</button>
-				<button id="nextBtn" class="carousel-control-next" type="button">
-					<span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(0) grayscale(0);"></span>
-					<span class="visually-hidden">Siguiente</span>
-				</button>
+				<div class="carousel-control-prev">
+					<button class="btn d-flex p-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon"></span>
+					</button>
+				</div>
+				<div class="carousel-control-next">
+					<button class="btn d-flex p-3" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+						<span class="carousel-control-next-icon"></span>
+					</button>
+				</div>
 			</div>
 		</div>
 		<!-- ##### Sección 1 ##### -->
