@@ -208,62 +208,37 @@ if (window.location.hash != '') {
 
 // Carrusel 
 
+const carouselElement = document.getElementById('mainCarousel');
 const carouselContainer = document.getElementById('carousel');
-let currentSlide = 0;
-const intervalDuration = 10000;
-let intervalCarousel;
 
-function showSlide(index) {
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  carouselItems[currentSlide].classList.remove('active');
-  currentSlide = (index + carouselItems.length) % carouselItems.length;
-  carouselItems[currentSlide].classList.add('active');
-}
-
-function nextSlide() {
-  showSlide(currentSlide + 1);
-}
-
-function startAutoCarousel() {
-  clearInterval(intervalCarousel)
-  intervalCarousel = setInterval(nextSlide, intervalDuration);
-}
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-  startAutoCarousel();
-  showSlide(currentSlide - 1);
-});
-
-document.getElementById('nextBtn').addEventListener('click', () => {
-  startAutoCarousel();
-  showSlide(currentSlide + 1);
+const carouselInstance = new bootstrap.Carousel(carouselElement, {
+  interval: 10000,
+  pause: 'hover',
+  touch: true,
+  ride: 'carousel'
 });
 
 function cargarImgCarousel() {
   try {
-    carousel.forEach(imgC => {
+    carousel.forEach((imgC, index) => {
       const a = document.createElement('a');
-      a.classList = 'carousel-item';
+      a.className = 'carousel-item';
+      if (index === 0) a.classList.add('active');
       a.href = imgC.href;
       const img = document.createElement('img');
-      img.classList = 'd-block img-fluid w-100 h-auto';
-      img.style = 'object-fit: cover; min-height: 175px'
+      img.className = 'd-block w-100';
+      img.style.objectFit = 'cover';
+      img.style.minHeight = '175px';
       img.src = 'https://bd.alfajoreslabarraca.com.ar' + imgC.src;
-      if (imgC.id == 1) {
-        a.classList.add('active');
-      }
       a.appendChild(img);
       carouselContainer.appendChild(a);
-      if (carousel.length == imgC.id) {
-        showSlide(currentSlide);
-        startAutoCarousel();
-        document.getElementById('carousel-section').classList.replace('d-none', 'd-flex');
-      }
-    })
+    });
+    if (carousel.length) {
+      document.getElementById('carousel-section').classList.replace('d-none', 'd-flex');
+    }
   } catch (error) {
     showConsoleError('carrusel', error);
   }
-  
 }
 
 cargarImgCarousel();
