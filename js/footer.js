@@ -105,7 +105,7 @@ footerContent.innerHTML = `
 							<a href="https://www.facebook.com/alfajoreslabarraca"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.06c-5.5 0-10 4.5-10 10 0 4.94 3.61 9.06 8.33 9.89l.06-.05h-.06v-7.06h-2.5v-2.78h2.5V9.84c0-2.5 1.61-3.89 3.89-3.89.72 0 1.5.11 2.22.22v2.56h-1.28c-1.22 0-1.5.61-1.5 1.39v1.94h2.67l-.44 2.78h-2.22v7.06h-.06l.06.05c4.72-.83 8.33-4.94 8.33-9.89 0-5.5-4.5-10-10-10"></path></svg></a>
 						</div>
 						<div class="footer-col" style="margin-bottom: 5px; margin-top: 5px">
-							<p class="m-0" lang="lb-text-footer-section:copyright">© 2021 - 2025 Alfajores La Barraca. Todos los derechos reservados.</p>
+							<p class="m-0" lang="lb-text-footer-section:copyright">© 2021-2026, Alfajores La Barraca. Todos los derechos reservados.</p>
 						</div>
 						<div class="footer-col" style="margin-bottom: 5px; margin-top: 5px">
 							<p lang="lb-innerHTML-footer-section:creator">Creado por <a href="https://www.instagram.com/franrazzitte/">@franrazzitte</a></p>
