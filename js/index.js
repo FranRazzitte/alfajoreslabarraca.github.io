@@ -316,8 +316,8 @@ try {
     fechaVentana.textContent = formatoRangoFechas({ diaI: primerEvento.diaI, diaF: primerEvento.diaF, mes: primerEvento.mes, año: primerEvento.año });
     horaVentana.textContent = 'De ' + primerEvento.horaI + ' a ' + primerEvento.horaF + ' horas';
     ubicacionVentana.textContent = primerEvento.ubicacion;
-    descVentana.innerHTML = primerEvento.desc.replace("{[", "<a class='fw-bold text-decoration-underline' href='").replace("]", "'>").replace("}", "</a>");;
-    entradaVentana.textContent = primerEvento.entrada;
+    descVentana.innerHTML = primerEvento.desc.replace("{[", "<a class='fw-bold text-decoration-underline' href='").replace("]", "'>").replace("}", "</a>");
+    entradaVentana.innerHTML = primerEvento.entrada.replace("{[", "<a class='fw-bold text-decoration-underline' href='").replace("]", "'>").replace("}", "</a>");
     ventana.style.display = 'block';
   }  
 } catch (error) {
