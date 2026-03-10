@@ -2,9 +2,10 @@
     "navbar": {
         "lb-test": "¡Hola Mundo!",
         "lb-placeholder-navbar-section:search": "Buscar",
-        "lb-text-navbar-section:about-us": "Nosotros",
-        "lb-text-navbar-section:questions": "FAQ",
-        "lb-btn-navbar-section:share": "Compartir"
+        "lb-text-navbar-section:about-us": "Sobre Nosotros",
+        "lb-text-navbar-section:questions": "Preguntas Frecuentes",
+        "lb-btn-navbar-section:share": "Compartir",
+        "lb-text-navbar-section:events": "Eventos"
     },
     "footer": {
         "lb-test": "¡Hola Mundo!",
