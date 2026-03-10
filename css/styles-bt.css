@@ -127,6 +127,8 @@
   --btn-general-color: white;
   --bs-btn-disabled-color: #343a40;
   --bs-btn-disabled-border-color: #343a40;
+  --clr-background-lb: #1b1f07;
+  --clr-text-lb: #d5dda2;
 }
 
 [data-bs-theme=dark] {
@@ -186,6 +188,8 @@
   --btn-general-color: black;
   --bs-btn-disabled-color: #adb5bd;
   --bs-btn-disabled-border-color: #adb5bd;
+  --clr-background-lb: #d5dda2;
+  --clr-text-lb: #1b1f07;
 }
 
 *,

@@ -3,8 +3,9 @@
         "lb-test": "Hello World!",
         "lb-placeholder-navbar-section:search": "Search",
         "lb-text-navbar-section:about-us": "About Us",
-        "lb-text-navbar-section:questions": "Frequently Asked Questions",
-        "lb-btn-navbar-section:share": "Share"
+        "lb-text-navbar-section:questions": "FAQ",
+        "lb-btn-navbar-section:share": "Share",
+        "lb-text-navbar-section:events": "Events"
     },
     "footer": {
         "lb-test": "Hello World!",

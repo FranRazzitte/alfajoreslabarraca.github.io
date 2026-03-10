@@ -67,7 +67,7 @@ if (localStorage.getItem('versionBeta')) {
                             <h5 class="card-title titulo">${v.nombre}</h5>
                             <p class="card-text descDisplay">${descDisplay}</p>
                             <p class="card-text">
-                                <small lang="lb-text-main-section:card-link" class="text-muted text-decoration-underline">Presiona para leer más</small>
+                                <small lang="lb-text-main-section:card-link" class=" text-decoration-underline">Presiona para leer más</small>
                             </p>
                         </div>
                         </div>
