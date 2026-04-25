@@ -90,14 +90,7 @@ formSearch.addEventListener('submit', event => {
   event.preventDefault();
   const valorSearch = searchInput.value.trim();
 
-  if (valorSearch === '') return;
-
-  const querySearch = valorSearch
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/ñ/g, 'n');
+  const querySearch = encodeURIComponent(valorSearch);
 
   window.location.href = '/search/?q=' + querySearch;
 });

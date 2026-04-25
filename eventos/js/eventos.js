@@ -184,12 +184,12 @@ function renderizarEventos() {
           <div class="fecha-mes small">${mesShort} ${evento.año}</div>
         </div>
         <div class="col-12 col-md-7 p-4">
-          <h5 class="fw-bold mb-2">${evento.titulo}</h5>
+          <h5 class="fw-bold mb-2">${evento.tituloAlter}</h5>
           <p class="small mb-1">📅 ${formatoRangoFechas(evento)} de ${evento.año}</p>
           <p class="small mb-2">📍 ${evento.ubicacion || "-"}</p>
           <p class="small mb-3">El pasado ${formatoRangoFechas(evento)} de ${evento.año} estuvimos presentes en ${evento.tituloAlter}. Te invitamos a revivir los mejores momentos a través de nuestra galería de fotos.</p>
           <div class="d-flex gap-2">
-            <button class="btn btn-outline-secondary" onclick="verGaleria('${evento.imagenes}')">
+            <button class="btn btn-outline-primary" onclick="verGaleria('${evento.imagenes}')">
               Ver galería
             </button>
           </div>
